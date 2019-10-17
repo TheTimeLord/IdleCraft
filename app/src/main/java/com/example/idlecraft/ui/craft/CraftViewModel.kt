@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class CraftViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is craft Fragment"
+        value = "Craft Stuff Here! (Eventually)"
     }
     val text: LiveData<String> = _text
 }
