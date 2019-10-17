@@ -62,11 +62,21 @@ public class Item {
     }
 
     public void increaseCount(int amount) {
-        count += amount;
+        if ((count + amount) >= max) {
+            count = max;
+        }
+        else {
+            count += amount;
+        }
     }
 
     public void decreaseCount(int amount) {
-        count -= amount;
+        if ((count - amount) <= 0){
+            count = 0;
+        }
+        else {
+            count -= amount;
+        }
     }
 
     public void increaseMax(int amount) {
