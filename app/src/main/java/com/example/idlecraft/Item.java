@@ -15,11 +15,11 @@ public class Item {
         this.unlocked = true;
     }
 
-    public Item(String name, boolean unlocked) {
+    public Item(String name, int owned, int max, int rate, boolean unlocked) {
         this.name = name;
-        this.owned = 0;
-        this.max = 0;
-        this.rate = 0;
+        this.owned = owned;
+        this.max = max;
+        this.rate = rate;
         this.unlocked = unlocked;
     }
 
