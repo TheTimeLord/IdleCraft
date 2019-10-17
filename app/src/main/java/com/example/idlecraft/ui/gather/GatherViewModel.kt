@@ -1,13 +1,13 @@
-package com.example.idlecraft.ui.home
+package com.example.idlecraft.ui.gather
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class GatherViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+        value = "This is gather Fragment"
     }
     val text: LiveData<String> = _text
 }

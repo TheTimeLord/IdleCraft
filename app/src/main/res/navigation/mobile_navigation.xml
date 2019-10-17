@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_gather">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.example.idlecraft.ui.home.HomeFragment"
-        android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/navigation_gather"
+        android:name="com.example.idlecraft.ui.gather.GatherFragment"
+        android:label="@string/title_gather"
+        tools:layout="@layout/fragment_gather" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.idlecraft.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_craft"
+        android:name="com.example.idlecraft.ui.craft.CraftFragment"
+        android:label="@string/title_craft"
+        tools:layout="@layout/fragment_craft" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.idlecraft.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        android:id="@+id/navigation_shop"
+        android:name="com.example.idlecraft.ui.shop.ShopFragment"
+        android:label="@string/title_shop"
+        tools:layout="@layout/fragment_shop" />
 </navigation>

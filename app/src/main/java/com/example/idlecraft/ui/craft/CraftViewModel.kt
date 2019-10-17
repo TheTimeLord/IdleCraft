@@ -1,13 +1,13 @@
-package com.example.idlecraft.ui.notifications
+package com.example.idlecraft.ui.craft
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class NotificationsViewModel : ViewModel() {
+class CraftViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is notifications Fragment"
+        value = "This is craft Fragment"
     }
     val text: LiveData<String> = _text
 }

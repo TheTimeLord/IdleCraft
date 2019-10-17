@@ -1,4 +1,4 @@
-package com.example.idlecraft.ui.dashboard
+package com.example.idlecraft.ui.gather
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.idlecraft.R
 
-class DashboardFragment : Fragment() {
+class GatherFragment : Fragment() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
+    private lateinit var gatherViewModel: GatherViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        dashboardViewModel =
-            ViewModelProviders.of(this).get(DashboardViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
-        dashboardViewModel.text.observe(this, Observer {
+        gatherViewModel =
+            ViewModelProviders.of(this).get(GatherViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_gather, container, false)
+        val textView: TextView = root.findViewById(R.id.text_gather)
+        gatherViewModel.text.observe(this, Observer {
             textView.text = it
         })
         return root
