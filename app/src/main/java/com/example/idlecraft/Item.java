@@ -60,4 +60,20 @@ public class Item {
     public void setUnlocked(boolean unlocked) {
         this.unlocked = unlocked;
     }
+
+    public void increaseCount(int amount) {
+        count += amount;
+    }
+
+    public void decreaseCount(int amount) {
+        count -= amount;
+    }
+
+    public void increaseMax(int amount) {
+        max += amount;
+    }
+
+    public void decreaseMax(int amount) {
+        max -= amount;
+    }
 }
