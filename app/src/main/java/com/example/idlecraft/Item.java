@@ -35,7 +35,7 @@ public class Item {
         return max;
     }
 
-    public int getWorkers() {
+    public int getRate() {
         return rate;
     }
 
@@ -53,8 +53,8 @@ public class Item {
 
     public void setMax(int max) { this.max = max; }
 
-    public void setWorkers(int workers) {
-        this.rate = workers;
+    public void setRate(int rate) {
+        this.rate = rate;
     }
 
     public void setUnlocked(boolean unlocked) {
