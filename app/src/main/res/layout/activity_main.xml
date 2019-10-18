@@ -29,13 +29,44 @@
         app:layout_constraintGuide_begin="102dp" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/buttonInc"
         android:layout_width="101dp"
         android:layout_height="62dp"
-        android:text="Button"
+        android:text="INCR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonDec"
+        android:layout_width="101dp"
+        android:layout_height="64dp"
+        android:text="DECR"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <Button
+        android:id="@+id/buttonRes"
+        android:layout_width="102dp"
+        android:layout_height="64dp"
+        android:text="RESET"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+    <TextView
+        android:id="@+id/numberText"
+        android:layout_width="409dp"
+        android:layout_height="117dp"
+        android:layout_marginTop="164dp"
+        android:gravity="center"
+        android:text="0"
+        android:textSize="100sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
