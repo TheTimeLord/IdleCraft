@@ -39,7 +39,7 @@ public class Item {
         return rate;
     }
 
-    public boolean getUnlocked() {
+    public boolean isUnlocked() {
         return unlocked;
     }
 
