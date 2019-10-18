@@ -22,4 +22,10 @@
         android:name="com.example.idlecraft.ui.shop.ShopFragment"
         android:label="@string/title_shop"
         tools:layout="@layout/fragment_shop" />
+
+    <fragment
+        android:id="@+id/navigation_inventory"
+        android:name="com.example.idlecraft.ui.inventory.InventoryFragment"
+        android:label="@string/title_inventory"
+        tools:layout="@layout/fragment_inventory" />
 </navigation>

@@ -16,4 +16,9 @@
         android:icon="@drawable/ic_shop_black_24dp"
         android:title="@string/title_shop" />
 
+    <item
+        android:id="@+id/navigation_inventory"
+        android:icon="@drawable/ic_inventory_black_24dp"
+        android:title="@string/title_inventory" />
+
 </menu>
