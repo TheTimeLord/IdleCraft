@@ -19,8 +19,7 @@ class CraftFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        craftViewModel =
-            ViewModelProviders.of(this).get(CraftViewModel::class.java)
+        craftViewModel = ViewModelProviders.of(this).get(CraftViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_craft, container, false)
         val textView: TextView = root.findViewById(R.id.text_craft)
         craftViewModel.text.observe(this, Observer {

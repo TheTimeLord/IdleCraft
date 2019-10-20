@@ -7,7 +7,9 @@ import androidx.lifecycle.ViewModel
 class GatherViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "Gather Resources Here! (Eventually)"
+
     }
     val text: LiveData<String> = _text
+
+
 }

@@ -9,6 +9,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import kotlinx.android.synthetic.main.fragment_gather.view.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -35,7 +36,6 @@ class MainActivity : AppCompatActivity() {
     fun showCraftBtn (v: View) {
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         navView.getMenu().findItem(R.id.navigation_craft).isVisible = true
-        v.findViewById<Button>(R.id.show_craft_btn).isEnabled = false
     }
 
     fun showShopBtn (v: View) {

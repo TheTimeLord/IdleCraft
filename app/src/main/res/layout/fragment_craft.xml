@@ -8,7 +8,7 @@
         android:id="@+id/show_shop_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="76dp"
         android:onClick="showShopBtn"
         android:text="@string/show_shop"
         app:layout_constraintEnd_toEndOf="parent"
