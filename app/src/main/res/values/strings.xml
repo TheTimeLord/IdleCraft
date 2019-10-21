@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">IdleCraft</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_gather">Gather</string>
+    <string name="title_craft">Craft</string>
+    <string name="title_shop">Shop</string>
+    <string name="title_inventory">Inventory</string>
+    <string name="show_craft">Discover Crafting</string>
+    <string name="show_shop">Discover Shop</string>
 </resources>
