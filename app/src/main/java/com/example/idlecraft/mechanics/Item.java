@@ -12,6 +12,7 @@ public class Item {
     private int reqAmount1;
     private int reqAmount2;
     private int reqAmount3;
+    private int sellvalue;
 
 
     public Item() {
@@ -26,10 +27,12 @@ public class Item {
         this.reqAmount1 = 0;
         this.reqAmount2 = 0;
         this.reqAmount3 = 0;
+        this.sellvalue = 0;
     }
 
     public Item(String name, int count, int max, int rate, boolean unlocked, String req1,
-                String req2, String req3, int reqAmount1, int reqAmount2, int reqAmount3) {
+                String req2, String req3, int reqAmount1, int reqAmount2, int reqAmount3,
+                int sellvalue) {
         this.name = name;
         this.count = count;
         this.max = max;
@@ -41,6 +44,7 @@ public class Item {
         this.reqAmount1 = reqAmount1;
         this.reqAmount2 = reqAmount2;
         this.reqAmount3 = reqAmount3;
+        this.sellvalue = sellvalue;
     }
 
     public String getName() {
@@ -70,6 +74,8 @@ public class Item {
     public int getReqAmount2() { return reqAmount2; }
 
     public int getReqAmount3() { return reqAmount3; }
+
+    public int getSellvalue() { return sellvalue; }
 
     public boolean isUnlocked() {
         return unlocked;
@@ -105,6 +111,8 @@ public class Item {
     public void setReqAmount2 (int reqAmount2) { this.reqAmount2 = reqAmount2; }
 
     public void setReqAmount3 (int reqAmount3) { this.reqAmount3 = reqAmount3; }
+
+    public void setSellvalue (int sellvalue) { this.sellvalue = sellvalue; }
 
 
 
