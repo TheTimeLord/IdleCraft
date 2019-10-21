@@ -41,6 +41,21 @@ public class Inventory {
         for (int i = 0; i < inventory.getItems().size(); i++) { // Searches if the object to be crafted already exists in inventory to avoid duplicates
             if (inventory.getItems().get(i).getName().equals(craft_item.getName())) { // If item exists, update it
                 inventory.getItems().get(i).increaseCount(amount);
+
+                for (int j = 0; j < inventory.getItems().size(); j++) {
+                    if (inventory.getItems().get(j).getReq1().equals(inventory.getItems().get(i).getName())) {
+                        int multiplier = inventory.getItems().get(i).getReqAmount1();
+                        inventory.getItems().get(j).decreaseCount(amount * multiplier);
+                    }
+                    else if (inventory.getItems().get(j).getReq2().equals(inventory.getItems().get(i).getName())) {
+                        int multiplier = inventory.getItems().get(i).getReqAmount2();
+                        inventory.getItems().get(j).decreaseCount(amount * multiplier);
+                    }
+                    else if (inventory.getItems().get(j).getReq3().equals(inventory.getItems().get(i).getName())) {
+                        int multiplier = inventory.getItems().get(i).getReqAmount3();
+                        inventory.getItems().get(j).decreaseCount(amount * multiplier);
+                    }
+                }
                 item_exists = true;
                 break;
             }
