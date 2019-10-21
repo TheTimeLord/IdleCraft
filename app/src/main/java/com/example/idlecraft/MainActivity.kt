@@ -18,8 +18,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         // remove craft and shop tab initially
-        navView.getMenu().findItem(R.id.navigation_craft).isVisible = false
-        navView.getMenu().findItem(R.id.navigation_shop).isVisible = false
+        navView.getMenu().findItem(R.id.navigation_craft).isVisible = true
+        navView.getMenu().findItem(R.id.navigation_shop).isVisible =  true
 
         val navController = findNavController(R.id.nav_host_fragment)
         // Passing each menu ID as a set of Ids because each
@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
     }
 
+    /*
     fun showCraftBtn (v: View) {
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         navView.getMenu().findItem(R.id.navigation_craft).isVisible = true
@@ -43,4 +44,6 @@ class MainActivity : AppCompatActivity() {
         navView.getMenu().findItem(R.id.navigation_shop).isVisible = true
         v.findViewById<Button>(R.id.show_shop_btn).isEnabled = false
     }
+
+     */
 }

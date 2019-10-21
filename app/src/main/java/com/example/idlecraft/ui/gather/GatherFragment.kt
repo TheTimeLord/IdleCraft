@@ -1,7 +1,6 @@
 package com.example.idlecraft.ui.gather
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,10 +8,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.example.idlecraft.R
 import kotlinx.android.synthetic.main.fragment_gather.view.*
+import com.example.idlecraft.mechanics.*
 
 class GatherFragment : Fragment() {
 
     private lateinit var gatherViewModel: GatherViewModel
+    val Item = Item()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,10 +30,13 @@ class GatherFragment : Fragment() {
             // TODO: of the edittext text.
             // TODO: Turn progress bar thread code into a function with the progress bar and time
             // TODO: as parameters
+            // TODO: Increment the counter at the end of the progress bar instead of the beginning
             var progressBar = view.progress_g_sticks
 
             // Create a thread that animates the progress bar and ensure that the gather button
             // cannot be clicked while currently gathering.
+
+
             if (progressBar.progress != 0) return@setOnClickListener
             Thread(Runnable {
                 var progress = 0
@@ -45,11 +49,16 @@ class GatherFragment : Fragment() {
                 progressBar.progress = 0 // Reset progress bar
             }).start()
 
+            // Update the data in the Item class
+            // TODO: Use these variables globally so that other files see the changes
+            Item.setCount(Item.getCount() + 1)
+            var sticks = Item.getCount()
+
             // Increment the number of sticks on the GUI.
             val str = view.edit_g_sticks.text.toString()
             val substr = str.substring(0, str.indexOf(" "))
             val incVal = 1 + (substr.toInt())
-            val newStr = incVal.toString() + " Sticks"
+            val newStr = sticks.toString() + " Sticks"
             view.edit_g_sticks.setText(newStr)
         }
         return view
