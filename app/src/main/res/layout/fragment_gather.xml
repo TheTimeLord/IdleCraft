@@ -32,7 +32,7 @@
         app:layout_constraintHorizontal_bias="0.719"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <EditText
         android:id="@+id/edit_g_sticks"
@@ -65,7 +65,7 @@
         app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04"
+        app:layout_constraintVertical_bias="0.043"
         app:srcCompat="@drawable/sticks" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
