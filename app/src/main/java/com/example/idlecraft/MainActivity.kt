@@ -58,11 +58,3 @@ class MainActivity : AppCompatActivity() {
 
      */
 }
-
-fun MainActivity.getMainItem(): Item {
-    return this.getItem()
-}
-
-fun MainActivity.setMainItem(newItem: Item) {
-    this.setItem(newItem)
-}
