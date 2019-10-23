@@ -24,6 +24,8 @@ public class Inventory {
         this.items = items;
     }
 
+    public void addItem(Item item) { this.items.add(item); }
+
     public void setMoney(int money) {
         this.money = money;
     }
