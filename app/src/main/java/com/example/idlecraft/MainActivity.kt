@@ -9,9 +9,12 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.idlecraft.mechanics.Item
 import kotlinx.android.synthetic.main.fragment_gather.view.*
 
 class MainActivity : AppCompatActivity() {
+
+    var mainItem = Item()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +36,14 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
     }
 
+    fun getItem(): Item {
+        return mainItem
+    }
+
+    fun setItem(newItem: Item) {
+        mainItem = newItem
+    }
+
     /*
     fun showCraftBtn (v: View) {
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
@@ -46,4 +57,12 @@ class MainActivity : AppCompatActivity() {
     }
 
      */
+}
+
+fun MainActivity.getMainItem(): Item {
+    return this.getItem()
+}
+
+fun MainActivity.setMainItem(newItem: Item) {
+    this.setItem(newItem)
 }
