@@ -36,20 +36,35 @@ public class Inventory {
         money -= amount;
     }
 
-    public Inventory craftItem(Inventory inventory, Item craft_item, int amount) {
+    public Inventory craftItem(Item craft_item, int amount) {
         boolean item_exists = false;
-        for (int i = 0; i < inventory.getItems().size(); i++) { // Searches if the object to be crafted already exists in inventory to avoid duplicates
-            if (inventory.getItems().get(i).getName().equals(craft_item.getName())) { // If item exists, update it
-                inventory.getItems().get(i).increaseCount(amount);
+        for (int i = 0; i < this.items.size(); i++) { // Searches if the object to be crafted already exists in inventory to avoid duplicates
+            if (this.items.get(i).getName().equals(craft_item.getName())) { // If item exists, update it
+                this.items.get(i).increaseCount(amount);
+
+                for (int j = 0; j < this.items.size(); j++) {
+                    if (this.items.get(j).getReq1().equals(this.items.get(i).getReq1())) {
+                        int multiplier = this.items.get(i).getReqAmount1();
+                        this.items.get(j).decreaseCount(amount * multiplier);
+                    }
+                    else if (this.items.get(j).getReq2().equals(this.items.get(i).getReq2())) {
+                        int multiplier = this.items.get(i).getReqAmount2();
+                        this.items.get(j).decreaseCount(amount * multiplier);
+                    }
+                    else if (this.items.get(j).getReq3().equals(this.items.get(i).getReq3())) {
+                        int multiplier = this.items.get(i).getReqAmount3();
+                        this.items.get(j).decreaseCount(amount * multiplier);
+                    }
+                }
                 item_exists = true;
                 break;
             }
         }
         if (!item_exists) { // If item doesn't exist in inventory create it and update it
             craft_item.increaseCount(amount);
-            inventory.getItems().add(craft_item);
+            this.items.add(craft_item);
 
         }
-        return inventory;
+        return this;
     }
 }
