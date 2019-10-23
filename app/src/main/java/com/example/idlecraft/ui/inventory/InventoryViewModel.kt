@@ -6,8 +6,6 @@ import androidx.lifecycle.ViewModel
 
 class InventoryViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "See Your Stuff Here! (Eventually)"
-    }
+    private val _text = MutableLiveData<String>().apply {}
     val text: LiveData<String> = _text
 }

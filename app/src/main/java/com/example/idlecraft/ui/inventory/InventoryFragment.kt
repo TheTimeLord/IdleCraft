@@ -19,13 +19,11 @@ class InventoryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        inventoryViewModel =
-            ViewModelProviders.of(this).get(InventoryViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_inventory, container, false)
-        val textView: TextView = root.findViewById(R.id.text_inventory)
-        inventoryViewModel.text.observe(this, Observer {
-            textView.text = it
-        })
-        return root
+        inventoryViewModel = ViewModelProviders.of(this).get(InventoryViewModel::class.java)
+        val view = inflater.inflate(R.layout.fragment_inventory, container, false)
+
+        // Insert fragment code here
+
+        return view
     }
 }
