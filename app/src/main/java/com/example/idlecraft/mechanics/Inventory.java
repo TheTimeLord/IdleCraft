@@ -39,13 +39,13 @@ public class Inventory {
     public Inventory craftItem(Inventory inventory, Item craft_item, int amount) {
         boolean item_exists = false;
         for (int i = 0; i < inventory.getItems().size(); i++) { // Searches if the object to be crafted already exists in inventory to avoid duplicates
-            if (inventory.getItems().get(i).getName() == craft_item.getName()) { // If item exists, update it
+            if (inventory.getItems().get(i).getName().equals(craft_item.getName())) { // If item exists, update it
                 inventory.getItems().get(i).increaseCount(amount);
                 item_exists = true;
                 break;
             }
         }
-        if (item_exists == false) { // If item doesn't exist in inventory create it and update it
+        if (!item_exists) { // If item doesn't exist in inventory create it and update it
             craft_item.increaseCount(amount);
             inventory.getItems().add(craft_item);
 
