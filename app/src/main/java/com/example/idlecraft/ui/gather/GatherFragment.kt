@@ -16,7 +16,6 @@ import kotlinx.android.synthetic.main.fragment_gather.*
 class GatherFragment : Fragment() {
 
     private lateinit var gatherViewModel: GatherViewModel
-    var gatherItem = Item()
     var act: MainActivity? = null
 
     private fun incrementEditText(edit : EditText) {
@@ -44,8 +43,8 @@ class GatherFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_gather, container, false)
         var editSticks = view.edit_g_sticks
         act = activity as MainActivity
-        gatherItem = act!!.getItem()
-        setEditText(editSticks, gatherItem.count)
+        var sticksItem = act!!.inventory.getItemByName("sticks");
+        setEditText(editSticks, sticksItem.count)
 
 
         // Called when the gather sticks button is clicked. It causes the progress bar to
@@ -71,8 +70,7 @@ class GatherFragment : Fragment() {
                 }
                 progressBar.progress = 0   // Reset progress bar
 
-                gatherItem.count += 1
-                act!!.setItem(gatherItem)
+                sticksItem.count += 1
 
                 // runOnUiThread allows the thread to update UI objects
                 activity?.runOnUiThread {
