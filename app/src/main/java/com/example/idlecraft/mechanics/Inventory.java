@@ -1,6 +1,7 @@
 package com.example.idlecraft.mechanics;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Inventory {
@@ -16,6 +17,17 @@ public class Inventory {
         return items;
     }
 
+    public Item getItemByName(String name) {
+        Iterator<Item> i = this.items.iterator();
+        while (i.hasNext()) {
+            Item item = i.next();
+            if (item.getName() == name) {
+                return item;
+            }
+        }
+        return null;
+    }
+
     public int getMoney() {
         return money;
     }
@@ -23,6 +35,8 @@ public class Inventory {
     public void setItems(List<Item> items) {
         this.items = items;
     }
+
+    public void addItem(Item item) { this.items.add(item); }
 
     public void setMoney(int money) {
         this.money = money;

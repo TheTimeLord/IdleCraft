@@ -9,9 +9,13 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.idlecraft.mechanics.Inventory
+import com.example.idlecraft.mechanics.Item
 import kotlinx.android.synthetic.main.fragment_gather.view.*
 
 class MainActivity : AppCompatActivity() {
+
+    var inventory = Inventory()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,6 +35,14 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        initInventory()
+    }
+
+    fun initInventory() {
+        val sticks = Item()
+        sticks.name = "sticks"
+        inventory.addItem(sticks)
     }
 
     /*
