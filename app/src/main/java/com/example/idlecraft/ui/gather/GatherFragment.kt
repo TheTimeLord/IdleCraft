@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_gather.*
 class GatherFragment : Fragment() {
 
     private lateinit var gatherViewModel: GatherViewModel
-    //val Item = Item()
+    var act: MainActivity? = null
 
     private fun incrementEditText(edit : EditText) {
         val str = edit.text.toString()
@@ -24,6 +24,13 @@ class GatherFragment : Fragment() {
         val itemType = str.substring(str.indexOf(" "), str.length)
         val incVal = 1 + (quantity.toInt())
         edit.setText(incVal.toString() + itemType)
+    }
+
+    private fun setEditText(edit: EditText, newVal: Int) {
+        val str = edit.text.toString()
+        val quantity = str.substring(0, str.indexOf(" "))
+        val itemType = str.substring(str.indexOf(" "), str.length)
+        edit.setText(newVal.toString() + itemType)
     }
 
 
@@ -34,6 +41,11 @@ class GatherFragment : Fragment() {
     ): View? {
         gatherViewModel = ViewModelProviders.of(this).get(GatherViewModel::class.java)
         val view = inflater.inflate(R.layout.fragment_gather, container, false)
+        var editSticks = view.edit_g_sticks
+        act = activity as MainActivity
+        var sticksItem = act!!.inventory.getItemByName("sticks");
+        setEditText(editSticks, sticksItem.count)
+
 
         // Called when the gather sticks button is clicked. It causes the progress bar to
         // start, and once finished, increments the amount of sticks that the player has.
@@ -44,7 +56,6 @@ class GatherFragment : Fragment() {
             // TODO: parameter (so we can call this function on multiple progress bars at a time)
             // TODO: Increment the counter at the end of the progress bar instead of the beginning
             var progressBar = view.progress_g_sticks
-            var editSticks = view.edit_g_sticks
 
             // Create a thread that animates the progress bar and ensure that the gather button
             // cannot be clicked while currently gathering.
@@ -58,6 +69,8 @@ class GatherFragment : Fragment() {
                     catch (e: InterruptedException) { e.printStackTrace() }
                 }
                 progressBar.progress = 0   // Reset progress bar
+
+                sticksItem.count += 1
 
                 // runOnUiThread allows the thread to update UI objects
                 activity?.runOnUiThread {

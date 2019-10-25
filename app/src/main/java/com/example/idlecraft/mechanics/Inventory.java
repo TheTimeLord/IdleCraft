@@ -1,6 +1,7 @@
 package com.example.idlecraft.mechanics;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Inventory {
@@ -16,6 +17,17 @@ public class Inventory {
         return items;
     }
 
+    public Item getItemByName(String name) {
+        Iterator<Item> i = this.items.iterator();
+        while (i.hasNext()) {
+            Item item = i.next();
+            if (item.getName() == name) {
+                return item;
+            }
+        }
+        return null;
+    }
+
     public int getMoney() {
         return money;
     }
@@ -23,6 +35,8 @@ public class Inventory {
     public void setItems(List<Item> items) {
         this.items = items;
     }
+
+    public void addItem(Item item) { this.items.add(item); }
 
     public void setMoney(int money) {
         this.money = money;
@@ -36,24 +50,24 @@ public class Inventory {
         money -= amount;
     }
 
-    public Inventory craftItem(Inventory inventory, Item craft_item, int amount) {
+    public Inventory craftItem(Item craft_item, int amount) {
         boolean item_exists = false;
-        for (int i = 0; i < inventory.getItems().size(); i++) { // Searches if the object to be crafted already exists in inventory to avoid duplicates
-            if (inventory.getItems().get(i).getName().equals(craft_item.getName())) { // If item exists, update it
-                inventory.getItems().get(i).increaseCount(amount);
+        for (int i = 0; i < this.items.size(); i++) { // Searches if the object to be crafted already exists in inventory to avoid duplicates
+            if (this.items.get(i).getName().equals(craft_item.getName())) { // If item exists, update it
+                this.items.get(i).increaseCount(amount);
 
-                for (int j = 0; j < inventory.getItems().size(); j++) {
-                    if (inventory.getItems().get(j).getReq1().equals(inventory.getItems().get(i).getName())) {
-                        int multiplier = inventory.getItems().get(i).getReqAmount1();
-                        inventory.getItems().get(j).decreaseCount(amount * multiplier);
+                for (int j = 0; j < this.items.size(); j++) {
+                    if (this.items.get(j).getReq1().equals(this.items.get(i).getReq1())) {
+                        int multiplier = this.items.get(i).getReqAmount1();
+                        this.items.get(j).decreaseCount(amount * multiplier);
                     }
-                    else if (inventory.getItems().get(j).getReq2().equals(inventory.getItems().get(i).getName())) {
-                        int multiplier = inventory.getItems().get(i).getReqAmount2();
-                        inventory.getItems().get(j).decreaseCount(amount * multiplier);
+                    else if (this.items.get(j).getReq2().equals(this.items.get(i).getReq2())) {
+                        int multiplier = this.items.get(i).getReqAmount2();
+                        this.items.get(j).decreaseCount(amount * multiplier);
                     }
-                    else if (inventory.getItems().get(j).getReq3().equals(inventory.getItems().get(i).getName())) {
-                        int multiplier = inventory.getItems().get(i).getReqAmount3();
-                        inventory.getItems().get(j).decreaseCount(amount * multiplier);
+                    else if (this.items.get(j).getReq3().equals(this.items.get(i).getReq3())) {
+                        int multiplier = this.items.get(i).getReqAmount3();
+                        this.items.get(j).decreaseCount(amount * multiplier);
                     }
                 }
                 item_exists = true;
@@ -62,9 +76,9 @@ public class Inventory {
         }
         if (!item_exists) { // If item doesn't exist in inventory create it and update it
             craft_item.increaseCount(amount);
-            inventory.getItems().add(craft_item);
+            this.items.add(craft_item);
 
         }
-        return inventory;
+        return this;
     }
 }
