@@ -4,14 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.idlecraft.R
-import com.example.idlecraft.mechanics.*
 import com.example.idlecraft.MainActivity
-import kotlinx.android.synthetic.main.fragment_gather.view.*
 import kotlinx.android.synthetic.main.fragment_inventory.*
 import kotlinx.android.synthetic.main.fragment_inventory.view.*
 
@@ -31,12 +27,14 @@ class InventoryFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_inventory, container, false)
         act = activity as MainActivity
         val inv = act!!.inventory
-        var textMoney = view.text_money_count
+        var textMoney = view.text_inv_money_cnt
+        var textSticks = view.text_inv_sticks_cnt
         val sticksItem = inv.getItemByName("sticks")
         var money = inv.getMoney()
 
         // Initializations
         textMoney.setText("$" + money.toString())
+        textSticks.setText(sticksItem.getCount().toString() + " sticks")
 
         // Insert fragment code here
 
@@ -46,7 +44,9 @@ class InventoryFragment : Fragment() {
                 sticksItem.decreaseCount(1)
                 inv.increaseMoney(3)
                 money = inv.getMoney()
-                text_money_count.setText("$" + money.toString())
+
+                text_inv_money_cnt.setText("$" + money.toString())
+                textSticks.setText(sticksItem.getCount().toString() + " sticks")
             }
         }
 

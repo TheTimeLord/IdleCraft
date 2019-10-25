@@ -22,21 +22,31 @@
         android:id="@+id/button_sell_sticks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="76dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginTop="162dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="160dp"
         android:text="$"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_money_count"
+        android:id="@+id/text_inv_money_cnt"
         android:layout_width="94dp"
         android:layout_height="48dp"
-        android:layout_marginStart="76dp"
-        android:layout_marginLeft="76dp"
-        android:layout_marginTop="162dp"
-        android:text="@"
+        android:layout_marginStart="168dp"
+        android:layout_marginLeft="168dp"
+        android:layout_marginTop="160dp"
         app:layout_constraintStart_toEndOf="@+id/button_sell_sticks"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_inv_sticks_cnt"
+        android:layout_width="78dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="152dp"
+        android:text="Sticks"
+        app:layout_constraintEnd_toStartOf="@+id/text_inv_money_cnt"
+        app:layout_constraintHorizontal_bias="0.511"
+        app:layout_constraintStart_toEndOf="@+id/button_sell_sticks"
+        app:layout_constraintTop_toTopOf="@+id/text_inventory" />
 </androidx.constraintlayout.widget.ConstraintLayout>

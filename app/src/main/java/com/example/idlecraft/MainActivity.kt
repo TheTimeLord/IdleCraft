@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         val sticks = Item()
         sticks.name = "sticks"
         inventory.addItem(sticks)
+        inventory.setMoney(0)
     }
 
     /*
