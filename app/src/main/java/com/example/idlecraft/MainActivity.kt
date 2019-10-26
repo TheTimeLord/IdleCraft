@@ -39,10 +39,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun initInventory() {
+        inventory.money = 0
         val sticks = Item()
         sticks.name = "sticks"
+        sticks.max = 10
         inventory.addItem(sticks)
-        inventory.money = 0
     }
 
 }

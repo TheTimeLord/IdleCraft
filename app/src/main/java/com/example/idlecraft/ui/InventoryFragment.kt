@@ -9,18 +9,17 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.example.idlecraft.R
 import com.example.idlecraft.MainActivity
+import com.example.idlecraft.mechanics.Item
 import kotlinx.android.synthetic.main.fragment_inventory.*
 import kotlinx.android.synthetic.main.fragment_inventory.view.*
 
 class InventoryFragment : Fragment() {
     private var act: MainActivity? = null
 
-    // updateItemText: Update the TextView for item quantity to newVal. The item name
-    // is appended to the quantity automatically.
-    private fun updateItemText(text: TextView, newVal: Int) {
-        val str = text.text.toString()
-        val itemType = str.substring(str.indexOf(" "), str.length)
-        text.text = newVal.toString() + itemType
+    // updateItemText: Update the TextView to display min/max quantity for an item and the
+    // item's name.
+    private fun updateItemText(text: TextView, item: Item) {
+        text.text = item.count.toString() + "/" + item.max.toString() + "\n" + item.name
     }
 
     // updateMoneyText: Update the TextView for money to newVal
@@ -43,7 +42,7 @@ class InventoryFragment : Fragment() {
 
         // UI Initialization
         updateMoneyText(textMoney, inv.money)
-        updateItemText(textSticks, sticksItem.count);
+        updateItemText(textSticks, sticksItem)
 
         // Insert fragment code here
 
@@ -53,7 +52,7 @@ class InventoryFragment : Fragment() {
                 sticksItem.decreaseCount(1)
                 inv.increaseMoney(3)
                 updateMoneyText(textMoney, inv.money)
-                updateItemText(textSticks, sticksItem.count);
+                updateItemText(textSticks, sticksItem)
             }
         }
 

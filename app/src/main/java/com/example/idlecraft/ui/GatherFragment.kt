@@ -10,17 +10,15 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.idlecraft.MainActivity
 import com.example.idlecraft.R
+import com.example.idlecraft.mechanics.Item
 import kotlinx.android.synthetic.main.fragment_gather.view.*
 
 class GatherFragment : Fragment() {
     private var act: MainActivity? = null
 
-    // updateItemText: Update the TextView for item quantity to newVal. The item name
-    // is appended to the quantity automatically.
-    private fun updateItemText(text: TextView, newVal: Int) {
-        val str = text.text.toString()
-        val itemType = str.substring(str.indexOf(" "), str.length)
-        text.text = newVal.toString() + itemType
+    // updateItemText: Update the TextView for an item to display its current count.
+    private fun updateItemText(text: TextView, item : Item) {
+        text.text = "x" + item.count + " " + item.name
     }
 
     override fun onCreateView(
@@ -28,25 +26,28 @@ class GatherFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         // Setup
         val view = inflater.inflate(R.layout.fragment_gather, container, false)
         act = activity as MainActivity
         val inv = act!!.inventory
-        val textSticks = view.edit_g_sticks
-        val progressBar = view.progress_g_sticks
+        val textSticks = view.text_gath_sticks
+        val progressBar = view.progress_gath_sticks
         val sticksItem = inv.getItemByName("sticks")
 
         // UI Initialization
-        updateItemText(textSticks, sticksItem.count)
+        updateItemText(textSticks, sticksItem)
 
         // Called when the gather sticks button is clicked. It causes the progress bar to
         // start, and once finished, increments the amount of sticks that the player has.
-        view.button_g_sticks.setOnClickListener {
+        view.button_gath_sticks.setOnClickListener {
             // TODO: Try to create the progress bar thread in the main activity so it persists
-            // Create a thread that animates the progress bar and ensure that the gather button
-            // cannot be clicked while currently gathering.
-            if (progressBar.progress != 0) return@setOnClickListener
+            // Ensure that gathering is disabled if the maximum of an item has already been
+            // obtained or if gathering is already taking place.
+            if (progressBar.progress != 0 || sticksItem.count == sticksItem.max)
+                return@setOnClickListener
+
+            // Create a thread that animates the item's progress bar, then increments the
+            // item's count.
             Thread(Runnable {
                 var progress = 0
                 while (progress < progressBar.max) {
@@ -60,7 +61,7 @@ class GatherFragment : Fragment() {
 
                 // runOnUiThread allows the thread to update UI objects
                 activity?.runOnUiThread {
-                    updateItemText(textSticks, sticksItem.count);
+                    updateItemText(textSticks, sticksItem);
                 }
             }).start()
         }
