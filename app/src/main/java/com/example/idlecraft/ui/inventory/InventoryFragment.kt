@@ -12,8 +12,6 @@ import kotlinx.android.synthetic.main.fragment_inventory.*
 import kotlinx.android.synthetic.main.fragment_inventory.view.*
 
 class InventoryFragment : Fragment() {
-
-    private lateinit var inventoryViewModel: InventoryViewModel
     var act: MainActivity? = null
 
     override fun onCreateView(
@@ -21,9 +19,6 @@ class InventoryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        inventoryViewModel = ViewModelProviders.of(this).get(InventoryViewModel::class.java)
-
-        // Variables here
         val view = inflater.inflate(R.layout.fragment_inventory, container, false)
         act = activity as MainActivity
         val inv = act!!.inventory

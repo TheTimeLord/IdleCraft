@@ -12,19 +12,13 @@ import com.example.idlecraft.R
 
 class CraftFragment : Fragment() {
 
-    private lateinit var craftViewModel: CraftViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        craftViewModel = ViewModelProviders.of(this).get(CraftViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_craft, container, false)
-        val textView: TextView = root.findViewById(R.id.text_craft)
-        craftViewModel.text.observe(this, Observer {
-            textView.text = it
-        })
-        return root
+        val view = inflater.inflate(R.layout.fragment_craft, container, false)
+
+        return view
     }
 }

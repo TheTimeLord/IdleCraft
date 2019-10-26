@@ -16,8 +16,6 @@ import com.example.idlecraft.mechanics.*
 import kotlinx.android.synthetic.main.fragment_gather.*
 
 class GatherFragment : Fragment() {
-
-    private lateinit var gatherViewModel: GatherViewModel
     var act: MainActivity? = null
 
     // setEditText: Set the item quantity inside edit to newVal. The item name
@@ -33,7 +31,7 @@ class GatherFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        gatherViewModel = ViewModelProviders.of(this).get(GatherViewModel::class.java)
+        //gatherViewModel = ViewModelProviders.of(this).get(GatherViewModel::class.java)
         val view = inflater.inflate(R.layout.fragment_gather, container, false)
         act = activity as MainActivity
 
