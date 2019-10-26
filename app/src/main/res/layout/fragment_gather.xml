@@ -18,12 +18,11 @@
         app:srcCompat="@drawable/stone_wall" />
 
     <ProgressBar
-        android:id="@+id/progress_g_sticks"
+        android:id="@+id/progress_gath_sticks"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="290dp"
         android:layout_height="39dp"
         android:foregroundGravity="fill_horizontal"
-        android:progress="0"
         android:progressDrawable="@drawable/progressbar"
         android:scaleY="1"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,12 +32,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.051" />
 
-    <EditText
-        android:id="@+id/edit_g_sticks"
+    <TextView
+        android:id="@+id/text_gath_sticks"
         android:layout_width="277dp"
         android:layout_height="32dp"
+        android:layout_marginBottom="624dp"
         android:background="@drawable/rounded_rectangle"
-        android:editable="false"
         android:ems="10"
         android:gravity="center_horizontal|center_vertical"
         android:inputType="none"
@@ -47,13 +46,13 @@
         android:typeface="sans"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.582"
+        app:layout_constraintHorizontal_bias="0.649"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progress_g_sticks"
+        app:layout_constraintTop_toBottomOf="@+id/progress_gath_sticks"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageButton
-        android:id="@+id/button_g_sticks"
+        android:id="@+id/button_gath_sticks"
         android:layout_width="85dp"
         android:layout_height="82dp"
         android:background="@drawable/rounded_button"
