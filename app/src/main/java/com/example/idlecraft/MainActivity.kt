@@ -3,7 +3,6 @@ package com.example.idlecraft
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.webkit.WebViewFragment
 import android.widget.Button
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity() {
         val sticks = Item()
         sticks.name = "sticks"
         inventory.addItem(sticks)
-        inventory.setMoney(0)
+        inventory.money = 0
     }
 
 }

@@ -1,4 +1,4 @@
-package com.example.idlecraft.ui.shop
+package com.example.idlecraft.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,14 +10,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.idlecraft.R
 
-class ShopFragment : Fragment() {
+class CraftFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_shop, container, false)
+        val view = inflater.inflate(R.layout.fragment_craft, container, false)
 
         return view
     }
