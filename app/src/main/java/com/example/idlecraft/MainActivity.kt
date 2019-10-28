@@ -44,9 +44,10 @@ class MainActivity : AppCompatActivity() {
         sticks.name = "sticks"
         sticks.max = 10
         inventory.addItem(sticks)
+        
         val rocks = Item()
-        sticks.name = "rocks"
-        sticks.max = 10
+        rocks.name = "rocks"
+        rocks.max = 10
         inventory.addItem(rocks)
     }
 
