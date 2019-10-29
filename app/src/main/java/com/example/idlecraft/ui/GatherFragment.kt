@@ -34,8 +34,13 @@ class GatherFragment : Fragment() {
         val progressBar = view.progress_gath_sticks
         val sticksItem = inv.getItemByName("sticks")
 
+        val textRocks = view.text_gath_rocks
+        val progressBarRocks = view.progress_gath_rocks
+        val rocksItem = inv.getItemByName("rocks")
+
         // UI Initialization
         updateItemText(textSticks, sticksItem)
+        updateItemText(textRocks, rocksItem)
 
         // Called when the gather sticks button is clicked. It causes the progress bar to
         // start, and once finished, increments the amount of sticks that the player has.
@@ -61,7 +66,29 @@ class GatherFragment : Fragment() {
 
                 // runOnUiThread allows the thread to update UI objects
                 activity?.runOnUiThread {
-                    updateItemText(textSticks, sticksItem);
+                    updateItemText(textSticks, sticksItem)
+                }
+            }).start()
+        }
+
+        view.button_gath_rocks.setOnClickListener {
+
+            if (progressBarRocks.progress != 0 || rocksItem.count == rocksItem.max)
+                return@setOnClickListener
+
+            Thread(Runnable {
+                var progress = 0
+                while (progress < progressBarRocks.max) {
+                    progress += 1
+                    progressBarRocks.progress = progress
+                    try { Thread.sleep(16) } // 3 seconds
+                    catch (e: InterruptedException) { e.printStackTrace() }
+                }
+                progressBarRocks.progress = 0     // Reset progress bar
+                rocksItem.count += 1        // Increment number of sticks
+
+                activity?.runOnUiThread {
+                    updateItemText(textRocks, rocksItem)
                 }
             }).start()
         }
