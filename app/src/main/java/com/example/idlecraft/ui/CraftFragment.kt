@@ -1,4 +1,4 @@
-package com.example.idlecraft.ui.inventory
+package com.example.idlecraft.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,19 +10,14 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.idlecraft.R
 
-class InventoryFragment : Fragment() {
-
-    private lateinit var inventoryViewModel: InventoryViewModel
+class CraftFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        inventoryViewModel = ViewModelProviders.of(this).get(InventoryViewModel::class.java)
-        val view = inflater.inflate(R.layout.fragment_inventory, container, false)
-
-        // Insert fragment code here
+        val view = inflater.inflate(R.layout.fragment_craft, container, false)
 
         return view
     }
