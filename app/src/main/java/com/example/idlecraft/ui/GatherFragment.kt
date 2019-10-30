@@ -43,7 +43,7 @@ class GatherFragment : Fragment() {
             // TODO: Try to create the progress bar thread in the main activity so it persists
             // Ensure that gathering is disabled if the maximum of an item has already been
             // obtained or if gathering is already taking place.
-            if (progressBar.progress != 0 || sticksItem.count == sticksItem.max)
+            if (progressBar.progress != 0 || sticksItem.count >= sticksItem.max)
                 return@setOnClickListener
 
             // Create a thread that animates the item's progress bar, then increments the

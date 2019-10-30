@@ -5,16 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/text_inv_money_cnt"
-        android:layout_width="133dp"
-        android:layout_height="41dp"
-        android:gravity="center_vertical"
+    <ImageView
+        android:id="@+id/image_inv_sticks_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleY="1.15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_text_inv_money_background"
+        app:layout_constraintVertical_bias="0.01"
+        app:srcCompat="@drawable/inv_background" />
+
+    <ImageView
+        android:id="@+id/image_text_inv_money_background"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/currency_bar" />
+
+    <TextView
+        android:id="@+id/text_inv_money_cnt"
+        android:layout_width="140dp"
+        android:layout_height="40dp"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:textSize="23sp"
+        android:textStyle="bold|italic"
+        app:fontFamily="serif"
+        app:layout_constraintBottom_toBottomOf="@+id/image_text_inv_money_background"
+        app:layout_constraintEnd_toEndOf="@+id/image_text_inv_money_background"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/image_text_inv_money_background"
+        app:layout_constraintTop_toTopOf="@+id/image_text_inv_money_background"
         app:layout_constraintVertical_bias="0" />
 
     <ImageView
@@ -23,11 +51,11 @@
         android:layout_height="70dp"
         android:scaleX="0.52"
         android:scaleY="1.8"
-        app:layout_constraintBottom_toBottomOf="@+id/image_sell_sticks_background"
+        app:layout_constraintBottom_toBottomOf="@+id/image_button_sell_sticks_border"
         app:layout_constraintEnd_toEndOf="@+id/button_sell_sticks"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="@+id/button_sell_sticks"
-        app:layout_constraintTop_toTopOf="@+id/image_sell_sticks_background"
+        app:layout_constraintTop_toTopOf="@+id/image_button_sell_sticks_border"
         app:layout_constraintVertical_bias="0.6"
         app:srcCompat="@drawable/red_bar" />
 
@@ -39,7 +67,6 @@
         android:ems="10"
         android:gravity="bottom|center_horizontal"
         android:inputType="none"
-        android:text="0/10\nsticks"
         android:textAllCaps="false"
         android:textSize="20sp"
         android:textStyle="bold|italic"
@@ -53,16 +80,16 @@
         app:layout_constraintVertical_bias="0.5" />
 
     <ImageView
-        android:id="@+id/image_sell_sticks_background"
+        android:id="@+id/image_button_sell_sticks_border"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="64dp"
-        app:layout_constraintBottom_toBottomOf="@+id/image_sticks_background"
+        android:layout_marginTop="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/image_inv_sticks_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.025"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="@+id/image_inv_sticks_background"
+        app:layout_constraintTop_toTopOf="@+id/image_inv_sticks_background"
+        app:layout_constraintVertical_bias="1.05"
         app:srcCompat="@drawable/red_circle" />
 
     <ImageButton
@@ -73,11 +100,11 @@
         android:foreground="?android:attr/selectableItemBackground"
         android:scaleX="1"
         android:scaleY="1"
-        app:layout_constraintBottom_toBottomOf="@+id/image_sell_sticks_background"
-        app:layout_constraintEnd_toEndOf="@+id/image_sell_sticks_background"
+        app:layout_constraintBottom_toBottomOf="@+id/image_button_sell_sticks_border"
+        app:layout_constraintEnd_toEndOf="@+id/image_button_sell_sticks_border"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/image_sell_sticks_background"
-        app:layout_constraintTop_toTopOf="@+id/image_sell_sticks_background"
+        app:layout_constraintStart_toStartOf="@+id/image_button_sell_sticks_border"
+        app:layout_constraintTop_toTopOf="@+id/image_button_sell_sticks_border"
         app:layout_constraintVertical_bias="0.5"
         app:srcCompat="@drawable/sticks" />
 
@@ -89,8 +116,8 @@
         app:layout_constraintEnd_toEndOf="@+id/button_sell_sticks"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/button_sell_sticks"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintTop_toTopOf="@+id/image_inv_sticks_background"
+        app:layout_constraintVertical_bias="0.05"
         app:srcCompat="@drawable/sell_label" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
