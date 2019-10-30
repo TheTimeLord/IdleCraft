@@ -9,8 +9,8 @@
         android:id="@+id/button_inv_rocks_sell"
         android:layout_width="63dp"
         android:layout_height="35dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
         android:layout_marginTop="244dp"
         android:text="Sell"
         app:layout_constraintStart_toEndOf="@+id/text_inv_rocks_cnt"
@@ -157,7 +157,7 @@
         android:layout_marginLeft="36dp"
         android:text="$6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.289"
+        app:layout_constraintHorizontal_bias="0.418"
         app:layout_constraintStart_toEndOf="@+id/button_inv_rocks_sell"
         app:layout_constraintTop_toBottomOf="@+id/button_inv_rocks_buy" />
 
@@ -165,13 +165,37 @@
         android:id="@+id/button_inv_rocks_buy"
         android:layout_width="63dp"
         android:layout_height="35dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
         android:layout_marginTop="244dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
         android:text="Buy"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/text_inv_rocks_sellCnt"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_inv_rocks_sellCnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="252dp"
+        android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/button_inv_rocks_sell"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_inv_rocks_decrSell"
+        android:layout_width="35dp"
+        android:layout_height="38dp"
+        android:text="-"
+        app:layout_constraintEnd_toStartOf="@+id/button_inv_rocks_buy"
+        app:layout_constraintTop_toBottomOf="@+id/text_inv_rocks_sellCnt" />
+
+    <Button
+        android:id="@+id/button_inv_rocks_incrSell"
+        android:layout_width="35dp"
+        android:layout_height="38dp"
+        android:text="+"
+        app:layout_constraintBottom_toTopOf="@+id/text_inv_rocks_sellCnt"
+        app:layout_constraintEnd_toStartOf="@+id/button_inv_rocks_buy" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

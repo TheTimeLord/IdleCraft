@@ -27,6 +27,11 @@ class InventoryFragment : Fragment() {
         textMoney.text = "$" + newVal.toString()
     }
 
+    // updateTextNum: Update the TextView to display the number newVal
+    private fun updateTextNum(text: TextView, newVal: Int) {
+        text.text = newVal.toString()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -39,14 +44,20 @@ class InventoryFragment : Fragment() {
         val textMoney = view.text_inv_money_cnt
         val textSticks = view.text_inv_sticks_cnt
         val textRocks = view.text_inv_rocks_cnt
+        val textSellRocks = view.text_inv_rocks_sellCnt
         val sticksItem = inv.getItemByName("sticks")
         val rocksItem = inv.getItemByName("rocks")
+        val rocksPrice = 3
+        val sticksPrice = 3
+
+        var rocksSellCnt = 1
+
 
         // UI Initialization
         updateMoneyText(textMoney, inv.money)
         updateItemText(textSticks, sticksItem)
         updateItemText(textRocks, rocksItem)
-
+        updateTextNum(textSellRocks, rocksSellCnt)
 
         // Insert fragment code here
 
@@ -54,28 +65,42 @@ class InventoryFragment : Fragment() {
         view.button_sell_sticks.setOnClickListener() {
             if(sticksItem.count > 0) {
                 sticksItem.decreaseCount(1)
-                inv.increaseMoney(3)
+                inv.increaseMoney(sticksPrice)
                 updateMoneyText(textMoney, inv.money)
                 updateItemText(textSticks, sticksItem)
             }
         }
 
-        //Buy and Sell Rocks Buttons
+        //Buy/Sell Rocks Buttons
         view.button_inv_rocks_buy.setOnClickListener() {
             if(rocksItem.count < rocksItem.max )
-                if(inv.money >= 6) {
-                    inv.decreaseMoney(6)
-                    rocksItem.increaseCount(1)
+                if(inv.money >= (rocksPrice * 2 * rocksSellCnt)) {
+                    inv.decreaseMoney(rocksPrice * 2 * rocksSellCnt)
+                    rocksItem.increaseCount(rocksSellCnt)
                     updateMoneyText(textMoney, inv.money)
                     updateItemText(textRocks, rocksItem)
                 }
         }
         view.button_inv_rocks_sell.setOnClickListener() {
-            if(rocksItem.count > 0) {
-                rocksItem.decreaseCount(1)
-                inv.increaseMoney(3)
+            if(rocksItem.count >= rocksSellCnt) {
+                rocksItem.decreaseCount(rocksSellCnt)
+                inv.increaseMoney(rocksPrice * rocksSellCnt)
                 updateMoneyText(textMoney, inv.money)
                 updateItemText(textRocks, rocksItem)
+            }
+        }
+
+        //Incr/Decr Sell amount Rocks
+        view.button_inv_rocks_incrSell.setOnClickListener() {
+            if(rocksSellCnt < rocksItem.max) {
+                rocksSellCnt += 1
+                updateTextNum(textSellRocks, rocksSellCnt)
+            }
+        }
+        view.button_inv_rocks_decrSell.setOnClickListener() {
+            if(rocksSellCnt > 1) {
+                rocksSellCnt -= 1
+                updateTextNum(textSellRocks, rocksSellCnt)
             }
         }
 
