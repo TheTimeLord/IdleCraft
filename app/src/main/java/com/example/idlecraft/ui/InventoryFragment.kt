@@ -38,11 +38,15 @@ class InventoryFragment : Fragment() {
         val inv = act!!.inventory
         val textMoney = view.text_inv_money_cnt
         val textSticks = view.text_inv_sticks_cnt
+        val textRocks = view.text_inv_rocks_cnt
         val sticksItem = inv.getItemByName("sticks")
+        val rocksItem = inv.getItemByName("rocks")
 
         // UI Initialization
         updateMoneyText(textMoney, inv.money)
         updateItemText(textSticks, sticksItem)
+        updateItemText(textRocks, rocksItem)
+
 
         // Insert fragment code here
 
