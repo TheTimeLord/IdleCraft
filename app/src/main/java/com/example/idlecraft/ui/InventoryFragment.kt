@@ -60,6 +60,25 @@ class InventoryFragment : Fragment() {
             }
         }
 
+        //Buy and Sell Rocks Buttons
+        view.button_inv_rocks_buy.setOnClickListener() {
+            if(rocksItem.count < rocksItem.max )
+                if(inv.money >= 6) {
+                    inv.decreaseMoney(6)
+                    rocksItem.increaseCount(1)
+                    updateMoneyText(textMoney, inv.money)
+                    updateItemText(textRocks, rocksItem)
+                }
+        }
+        view.button_inv_rocks_sell.setOnClickListener() {
+            if(rocksItem.count > 0) {
+                rocksItem.decreaseCount(1)
+                inv.increaseMoney(3)
+                updateMoneyText(textMoney, inv.money)
+                updateItemText(textRocks, rocksItem)
+            }
+        }
+
         return view
     }
 }
