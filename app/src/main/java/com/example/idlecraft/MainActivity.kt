@@ -49,6 +49,11 @@ class MainActivity : AppCompatActivity() {
         rocks.name = "rocks"
         rocks.max = 10
         inventory.addItem(rocks)
+
+        val hide = Item()
+        hide.name = "hide"
+        hide.max = 10
+        inventory.addItem(hide)
     }
 
 }
