@@ -158,10 +158,10 @@
 
         <TextView
             android:id="@+id/text_craft_spear_count"
-            android:layout_width="70dp"
+            android:layout_width="40dp"
             android:layout_height="70dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginRight="20dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
             android:background="@drawable/simple_background"
             android:ems="10"
             android:gravity="center"
@@ -179,35 +179,35 @@
 
         <Button
             android:id="@+id/button_craft_spear_count_inc"
-            android:layout_width="70dp"
-            android:layout_height="25dp"
-            android:background="#ADF7B6"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:background="@drawable/green_bg"
             android:text="+"
             android:textStyle="bold"
             android:typeface="sans"
             app:fontFamily="serif"
             app:layout_constraintBottom_toBottomOf="@+id/image_craft_spear_background"
             app:layout_constraintEnd_toEndOf="@+id/image_craft_spear_background"
-            app:layout_constraintHorizontal_bias="0.941"
+            app:layout_constraintHorizontal_bias="0.853"
             app:layout_constraintStart_toStartOf="@+id/image_craft_spear_background"
             app:layout_constraintTop_toTopOf="@+id/image_craft_spear_background"
-            app:layout_constraintVertical_bias="0.201" />
+            app:layout_constraintVertical_bias="0.287" />
 
         <Button
             android:id="@+id/button_craft_spear_count_dec"
-            android:layout_width="70dp"
-            android:layout_height="25dp"
-            android:background="#EDAFB8"
+            android:layout_width="30dp"
+            android:layout_height="35dp"
+            android:background="@drawable/red_bg"
             android:text="-"
             android:textStyle="bold"
             android:typeface="sans"
             app:fontFamily="serif"
             app:layout_constraintBottom_toBottomOf="@+id/image_craft_spear_background"
             app:layout_constraintEnd_toEndOf="@+id/image_craft_spear_background"
-            app:layout_constraintHorizontal_bias="0.941"
+            app:layout_constraintHorizontal_bias="0.853"
             app:layout_constraintStart_toStartOf="@+id/image_craft_spear_background"
             app:layout_constraintTop_toTopOf="@+id/image_craft_spear_background"
-            app:layout_constraintVertical_bias="0.778" />
+            app:layout_constraintVertical_bias="0.659" />
 
         <Button
             android:id="@+id/button_hide_craft_spear"
