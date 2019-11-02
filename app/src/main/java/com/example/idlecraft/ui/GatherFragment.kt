@@ -38,9 +38,14 @@ class GatherFragment : Fragment() {
         val progressBarRocks = view.progress_gath_rocks
         val rocksItem = inv.getItemByName("rocks")
 
+        val textHide = view.text_gath_hide
+        val progressBarHide = view.progress_gath_hide
+        val hideItem = inv.getItemByName("hide")
+
         // UI Initialization
         updateItemText(textSticks, sticksItem)
         updateItemText(textRocks, rocksItem)
+        updateItemText(textHide, hideItem)
 
         // Called when the gather sticks button is clicked. It causes the progress bar to
         // start, and once finished, increments the amount of sticks that the player has.
@@ -72,10 +77,8 @@ class GatherFragment : Fragment() {
         }
 
         view.button_gath_rocks.setOnClickListener {
-
             if (progressBarRocks.progress != 0 || rocksItem.count == rocksItem.max)
                 return@setOnClickListener
-
             Thread(Runnable {
                 var progress = 0
                 while (progress < progressBarRocks.max) {
@@ -86,9 +89,27 @@ class GatherFragment : Fragment() {
                 }
                 progressBarRocks.progress = 0     // Reset progress bar
                 rocksItem.count += 1        // Increment number of sticks
-
                 activity?.runOnUiThread {
                     updateItemText(textRocks, rocksItem)
+                }
+            }).start()
+        }
+
+        view.button_gath_hide.setOnClickListener {
+            if (progressBarHide.progress != 0 || hideItem.count == hideItem.max)
+                return@setOnClickListener
+            Thread(Runnable {
+                var progress = 0
+                while (progress < progressBarHide.max) {
+                    progress += 1
+                    progressBarHide.progress = progress
+                    try { Thread.sleep(16) } // 3 seconds
+                    catch (e: InterruptedException) { e.printStackTrace() }
+                }
+                progressBarHide.progress = 0     // Reset progress bar
+                hideItem.count += 1        // Increment number of sticks
+                activity?.runOnUiThread {
+                    updateItemText(textHide, hideItem)
                 }
             }).start()
         }
