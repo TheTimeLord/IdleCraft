@@ -12,7 +12,7 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/image_temp3_background"
+            android:id="@+id/image_temp_background2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="548dp"
@@ -24,7 +24,7 @@
             app:srcCompat="@drawable/stone_wall" />
 
         <ImageView
-            android:id="@+id/image_temp2_background"
+            android:id="@+id/image_temp_background3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="684dp"
@@ -36,7 +36,7 @@
             app:srcCompat="@drawable/stone_wall" />
 
         <ImageView
-            android:id="@+id/image_temp1_background"
+            android:id="@+id/image_temp_background4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="820dp"
@@ -60,7 +60,7 @@
             app:srcCompat="@drawable/stone_wall" />
 
         <ImageView
-            android:id="@+id/image_hide_background4"
+            android:id="@+id/image_temp_background1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="412dp"
