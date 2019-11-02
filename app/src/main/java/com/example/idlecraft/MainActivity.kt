@@ -38,18 +38,25 @@ class MainActivity : AppCompatActivity() {
         initInventory()
     }
 
+    // Initialize items in the player's inventory.
     fun initInventory() {
         inventory.money = 0
+
+        // Create sticks item
         val sticks = Item()
         sticks.name = "sticks"
         sticks.max = 10
+        sticks.sellValue = 3;
+        sticks.buyValue = 6;
         inventory.addItem(sticks)
 
+        // Create rocks item
         val rocks = Item()
         rocks.name = "rocks"
         rocks.max = 10
         inventory.addItem(rocks)
 
+        // Create hide item
         val hide = Item()
         hide.name = "hide"
         hide.max = 10
