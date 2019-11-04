@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_shop,    R.id.navigation_inventory
             )
         )
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        //  setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
         initInventory()
