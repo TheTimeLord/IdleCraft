@@ -7,8 +7,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -17,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="visible"
-            app:constraint_referenced_ids=",image_craft_spear_background,text_craft_spear_req2,button_craft_spear,button_craft_spear_count_inc,image_text_craft_spear_border,button_craft_spear_count_dec,text_craft_spear_count,image_button_craft_spear_border,text_craft_spear_req1,image_progress_craft_spear_border,progress_craft_spear,text_craft_spear_title" />
+            app:constraint_referenced_ids=",image_craft_spear_background,text_craft_spear_req2,button_craft_spear,button_craft_spear_count_inc,image_text_craft_spear_border,button_craft_spear_count_dec,text_craft_spear_craft_count,image_button_craft_spear_border,text_craft_spear_req1,image_progress_craft_spear_border,progress_craft_spear,text_craft_spear_title" />
 
         <ImageView
             android:id="@+id/image_craft_spear_background"
@@ -157,7 +156,7 @@
             app:layout_constraintVertical_bias="0.05" />
 
         <TextView
-            android:id="@+id/text_craft_spear_count"
+            android:id="@+id/text_craft_spear_craft_count"
             android:layout_width="40dp"
             android:layout_height="70dp"
             android:layout_marginEnd="16dp"
@@ -220,6 +219,28 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/text_craft_spear_count"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginLeft="44dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/simple_background"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="none"
+            android:text="0"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:typeface="sans"
+            app:fontFamily="serif"
+            app:layout_constraintBottom_toBottomOf="@+id/image_craft_spear_background"
+            app:layout_constraintStart_toStartOf="@+id/image_craft_spear_background"
+            app:layout_constraintTop_toBottomOf="@+id/text_craft_spear_title"
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

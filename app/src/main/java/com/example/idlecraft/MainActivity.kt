@@ -61,6 +61,12 @@ class MainActivity : AppCompatActivity() {
         hide.name = "hide"
         hide.max = 10
         inventory.addItem(hide)
+
+        // Create spear item
+        val spear = Item()
+        spear.name = "spear"
+        spear.max = 10
+        inventory.addItem(spear)
     }
 
 }
