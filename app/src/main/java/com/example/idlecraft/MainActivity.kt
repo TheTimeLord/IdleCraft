@@ -66,6 +66,10 @@ class MainActivity : AppCompatActivity() {
         val spear = Item()
         spear.name = "spear"
         spear.max = 10
+        spear.req1 = "sticks"
+        spear.reqAmount1 = 5
+        spear.req2 = "rocks"
+        spear.reqAmount2 = 5
         inventory.addItem(spear)
     }
 

@@ -29,8 +29,8 @@ class CraftFragment : Fragment() {
         view.text_craft_spear_craft_count.text = count.toString()
 
         view.button_craft_spear.setOnClickListener {
-            // have to convert to string first and then int because the text field is complex
-            inv.craftItem(inv.getItemByName("spear"), count)
+            inv.craftItem("spear", count)
+            view.text_craft_spear_count.text = inv.getItemByName("spear").count.toString()
         }
 
         view.button_craft_spear_count_inc.setOnClickListener {

@@ -18,6 +18,9 @@ public class Inventory {
     }
 
     public Item getItemByName(String name) {
+        if (name == null) {
+            return null;
+        }
         Iterator<Item> i = this.items.iterator();
         while (i.hasNext()) {
             Item item = i.next();
@@ -50,35 +53,82 @@ public class Inventory {
         money -= amount;
     }
 
-    public Inventory craftItem(Item craft_item, int amount) {
-        boolean item_exists = false;
-        for (int i = 0; i < this.items.size(); i++) { // Searches if the object to be crafted already exists in inventory to avoid duplicates
-            if (this.items.get(i).getName().equals(craft_item.getName())) { // If item exists, update it
-                this.items.get(i).increaseCount(amount);
+    public boolean isCraftable(String itemName, int amount) {
+        Item targetItem = this.getItemByName(itemName);
+        Item req1 = this.getItemByName(targetItem.getReq1());
+        Item req2 = this.getItemByName(targetItem.getReq2());
+        Item req3 = this.getItemByName(targetItem.getReq3());
 
-                for (int j = 0; j < this.items.size(); j++) {
-                    if (this.items.get(j).getReq1().equals(this.items.get(i).getReq1())) {
-                        int multiplier = this.items.get(i).getReqAmount1();
-                        this.items.get(j).decreaseCount(amount * multiplier);
-                    }
-                    else if (this.items.get(j).getReq2().equals(this.items.get(i).getReq2())) {
-                        int multiplier = this.items.get(i).getReqAmount2();
-                        this.items.get(j).decreaseCount(amount * multiplier);
-                    }
-                    else if (this.items.get(j).getReq3().equals(this.items.get(i).getReq3())) {
-                        int multiplier = this.items.get(i).getReqAmount3();
-                        this.items.get(j).decreaseCount(amount * multiplier);
-                    }
-                }
-                item_exists = true;
-                break;
-            }
+        // requirements should be sequential, so if there is no reqN there should be no more reqs
+        if (req1 == null) {
+            return true;
         }
-        if (!item_exists) { // If item doesn't exist in inventory create it and update it
-            craft_item.increaseCount(amount);
-            this.items.add(craft_item);
-
+        if (req1.getCount() < (targetItem.getReqAmount1() * amount)) {
+            return false;
         }
-        return this;
+        if (req2 == null) {
+            return true;
+        }
+        if (req2.getCount() < (targetItem.getReqAmount2() * amount)) {
+            return false;
+        }
+        if (req3 == null) {
+            return true;
+        }
+        if (req3.getCount() < (targetItem.getReqAmount3() * amount)) {
+            return false;
+        }
+        return true;
     }
+
+    public void craftItem(String itemName, int amount) {
+        if (this.isCraftable(itemName, amount)) {
+            Item targetItem = this.getItemByName(itemName);
+            Item req1 = this.getItemByName(targetItem.getReq1());
+            Item req2 = this.getItemByName(targetItem.getReq2());
+            Item req3 = this.getItemByName(targetItem.getReq3());
+            if (req1 != null) {
+                req1.decreaseCount(amount * targetItem.getReqAmount1());
+            }
+            if (req2 != null) {
+                req2.decreaseCount(amount * targetItem.getReqAmount2());
+            }
+            if (req3 != null) {
+                req3.decreaseCount(amount * targetItem.getReqAmount3());
+            }
+            targetItem.increaseCount(amount);
+        }
+    }
+
+//    public Inventory craftItem(Item craft_item, int amount) {
+//        boolean item_exists = false;
+//        for (int i = 0; i < this.items.size(); i++) { // Searches if the object to be crafted already exists in inventory to avoid duplicates
+//            if (this.items.get(i).getName().equals(craft_item.getName())) { // If item exists, update it
+//                this.items.get(i).increaseCount(amount);
+//
+//                for (int j = 0; j < this.items.size(); j++) {
+//                    if (this.items.get(j).getReq1().equals(this.items.get(i).getReq1())) {
+//                        int multiplier = this.items.get(i).getReqAmount1();
+//                        this.items.get(j).decreaseCount(amount * multiplier);
+//                    }
+//                    else if (this.items.get(j).getReq2().equals(this.items.get(i).getReq2())) {
+//                        int multiplier = this.items.get(i).getReqAmount2();
+//                        this.items.get(j).decreaseCount(amount * multiplier);
+//                    }
+//                    else if (this.items.get(j).getReq3().equals(this.items.get(i).getReq3())) {
+//                        int multiplier = this.items.get(i).getReqAmount3();
+//                        this.items.get(j).decreaseCount(amount * multiplier);
+//                    }
+//                }
+//                item_exists = true;
+//                break;
+//            }
+//        }
+//        if (!item_exists) { // If item doesn't exist in inventory create it and update it
+//            craft_item.increaseCount(amount);
+//            this.items.add(craft_item);
+//
+//        }
+//        return this;
+//    }
 }
