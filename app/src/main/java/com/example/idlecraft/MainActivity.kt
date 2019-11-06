@@ -46,8 +46,8 @@ class MainActivity : AppCompatActivity() {
         val sticks = Item()
         sticks.name = "sticks"
         sticks.max = 10
-        sticks.sellValue = 3;
-        sticks.buyValue = 6;
+        sticks.sellValue = 3
+        sticks.buyValue = 6
         inventory.addItem(sticks)
 
         // Create rocks item
@@ -61,6 +61,31 @@ class MainActivity : AppCompatActivity() {
         hide.name = "hide"
         hide.max = 10
         inventory.addItem(hide)
+
+        // Create clay item
+        val clay = Item()
+        clay.name = "clay"
+        clay.max = 10
+        inventory.addItem(clay)
+
+        // Create metal item
+        val metal = Item()
+        metal.name = "metal"
+        metal.max = 10
+        inventory.addItem(metal)
+
+        // Create oil item
+        val oil = Item()
+        oil.name = "oil"
+        oil.max = 10
+        inventory.addItem(oil)
+
+        // Create paper item
+        val paper = Item()
+        paper.name = "paper"
+        paper.max = 10
+        inventory.addItem(paper)
+
 
         // Create spear item
         val spear = Item()
