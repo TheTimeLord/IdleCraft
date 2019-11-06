@@ -1,201 +1,272 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fillViewport="true">
 
-    <Button
-        android:id="@+id/button_inv_rocks_sell"
-        android:layout_width="63dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="244dp"
-        android:text="Sell"
-        app:layout_constraintStart_toEndOf="@+id/text_inv_rocks_cnt"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/text_inv_money_cnt"
-        android:layout_width="133dp"
-        android:layout_height="41dp"
-        android:gravity="center"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_inv_money"
-        app:layout_constraintVertical_bias="0.0" />
+        <ImageView
+            android:id="@+id/image_inv_sticks_background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:saveEnabled="false"
+            android:scaleY="1.15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/border_inv_money"
+            app:layout_constraintVertical_bias="0.01"
+            app:srcCompat="@drawable/inv_background" />
 
-    <ImageView
-        android:id="@+id/image_text_inv_sticks_border"
-        android:layout_width="270dp"
-        android:layout_height="70dp"
-        android:scaleX="0.52"
-        android:scaleY="1.8"
-        app:layout_constraintBottom_toBottomOf="@+id/image_sell_sticks_background"
-        app:layout_constraintEnd_toEndOf="@+id/button_sell_sticks"
-        app:layout_constraintHorizontal_bias="0.05"
-        app:layout_constraintStart_toStartOf="@+id/button_sell_sticks"
-        app:layout_constraintTop_toTopOf="@+id/image_sell_sticks_background"
-        app:layout_constraintVertical_bias="0.6"
-        app:srcCompat="@drawable/red_bar" />
+        <ImageView
+            android:id="@+id/border_inv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/currency_bar" />
 
-    <TextView
-        android:id="@+id/text_inv_sticks_cnt"
-        android:layout_width="125dp"
-        android:layout_height="50dp"
-        android:background="@drawable/rounded_rectangle_less"
-        android:ems="10"
-        android:gravity="bottom|center_horizontal"
-        android:inputType="none"
-        android:text="0/10\nsticks"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        android:textStyle="bold|italic"
-        android:typeface="sans"
-        app:fontFamily="serif"
-        app:layout_constraintBottom_toBottomOf="@+id/image_text_inv_sticks_border"
-        app:layout_constraintEnd_toEndOf="@+id/image_text_inv_sticks_border"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/image_text_inv_sticks_border"
-        app:layout_constraintTop_toTopOf="@+id/image_text_inv_sticks_border"
-        app:layout_constraintVertical_bias="0.5" />
+        <TextView
+            android:id="@+id/text_inv_money"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:textSize="23sp"
+            android:textStyle="bold|italic"
+            app:fontFamily="serif"
+            app:layout_constraintBottom_toBottomOf="@+id/border_inv_money"
+            app:layout_constraintEnd_toEndOf="@+id/border_inv_money"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/border_inv_money"
+            app:layout_constraintTop_toTopOf="@+id/border_inv_money"
+            app:layout_constraintVertical_bias="0" />
 
-    <ImageView
-        android:id="@+id/image_sell_sticks_background"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="64dp"
-        app:layout_constraintBottom_toBottomOf="@+id/image_sticks_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.025"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.516"
-        app:srcCompat="@drawable/red_circle" />
+        <ImageView
+            android:id="@+id/border_inv_sticks_quan"
+            android:layout_width="270dp"
+            android:layout_height="70dp"
+            android:scaleX="0.52"
+            android:scaleY="1.8"
+            app:layout_constraintBottom_toBottomOf="@+id/border_inv_sticks_icon"
+            app:layout_constraintEnd_toEndOf="@+id/image_inv_sticks_icon"
+            app:layout_constraintHorizontal_bias="0.15"
+            app:layout_constraintStart_toStartOf="@+id/image_inv_sticks_icon"
+            app:layout_constraintTop_toTopOf="@+id/border_inv_sticks_icon"
+            app:layout_constraintVertical_bias="0.5"
+            app:srcCompat="@drawable/red_bar" />
 
-    <ImageButton
-        android:id="@+id/button_sell_sticks"
-        android:layout_width="76dp"
-        android:layout_height="76dp"
-        android:background="@drawable/rounded_button"
-        android:foreground="?android:attr/selectableItemBackground"
-        android:scaleX="1"
-        android:scaleY="1"
-        app:layout_constraintBottom_toBottomOf="@+id/image_sell_sticks_background"
-        app:layout_constraintEnd_toEndOf="@+id/image_sell_sticks_background"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/image_sell_sticks_background"
-        app:layout_constraintTop_toTopOf="@+id/image_sell_sticks_background"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/sticks" />
+        <TextView
+            android:id="@+id/text_inv_sticks_quan"
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:background="@drawable/rounded_rectangle_less"
+            android:ems="10"
+            android:gravity="bottom|center_horizontal"
+            android:inputType="none"
+            android:textAllCaps="false"
+            android:textSize="19sp"
+            android:textStyle="bold|italic"
+            android:typeface="sans"
+            app:fontFamily="serif"
+            app:layout_constraintBottom_toBottomOf="@+id/border_inv_sticks_quan"
+            app:layout_constraintEnd_toEndOf="@+id/border_inv_sticks_quan"
+            app:layout_constraintHorizontal_bias="0.56"
+            app:layout_constraintStart_toStartOf="@+id/border_inv_sticks_quan"
+            app:layout_constraintTop_toTopOf="@+id/border_inv_sticks_quan"
+            app:layout_constraintVertical_bias="0.5" />
 
-    <ImageView
-        android:id="@+id/image_sell_sticks_icon"
-        android:layout_width="117dp"
-        android:layout_height="32dp"
-        app:layout_constraintBottom_toBottomOf="@+id/button_sell_sticks"
-        app:layout_constraintEnd_toEndOf="@+id/button_sell_sticks"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/button_sell_sticks"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/sell_label" />
+        <ImageView
+            android:id="@+id/border_inv_sticks_icon"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="48dp"
+            app:layout_constraintBottom_toBottomOf="@+id/image_inv_sticks_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.025"
+            app:layout_constraintStart_toStartOf="@+id/image_inv_sticks_background"
+            app:layout_constraintTop_toTopOf="@+id/image_inv_sticks_background"
+            app:layout_constraintVertical_bias="1.05"
+            app:srcCompat="@drawable/red_circle" />
 
-    <TextView
-        android:id="@+id/text_inv_money"
-        android:layout_width="61dp"
-        android:layout_height="30dp"
-        android:gravity="center"
-        android:text="Money"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/image_inv_sticks_icon"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:background="@drawable/rounded_button"
+            android:scaleX="1"
+            android:scaleY="1"
+            app:layout_constraintBottom_toBottomOf="@+id/border_inv_sticks_icon"
+            app:layout_constraintEnd_toEndOf="@+id/border_inv_sticks_icon"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/border_inv_sticks_icon"
+            app:layout_constraintTop_toTopOf="@+id/border_inv_sticks_icon"
+            app:layout_constraintVertical_bias="0.5"
+            app:srcCompat="@drawable/sticks" />
 
-    <TextView
-        android:id="@+id/text_inv_rocks"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="252dp"
-        android:text="Rocks"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageButton
+            android:id="@+id/button_inv_sticks_plus"
+            android:layout_width="53dp"
+            android:layout_height="25dp"
+            android:src="@drawable/plus_button"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:layout_constraintBottom_toTopOf="@+id/button_inv_sticks_minus"
+            app:layout_constraintEnd_toEndOf="@+id/border_inv_sticks_trade_quan"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toStartOf="@+id/button_inv_sticks_sell"
+            app:layout_constraintTop_toTopOf="@+id/button_inv_sticks_sell"
+            app:layout_constraintVertical_bias="0" />
 
-    <TextView
-        android:id="@+id/text_inv_rocks_cnt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="253dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/text_inv_rocks"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageButton
+            android:id="@+id/button_inv_sticks_minus"
+            android:layout_width="53dp"
+            android:layout_height="25dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:src="@drawable/minus_button"
+            app:layout_constraintBottom_toBottomOf="@+id/button_inv_sticks_buy"
+            app:layout_constraintEnd_toEndOf="@+id/border_inv_sticks_trade_quan"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@+id/border_inv_sticks_buy_price"
+            app:layout_constraintTop_toTopOf="@+id/border_inv_sticks_trade_quan"
+            app:layout_constraintVertical_bias="1.0" />
 
-    <TextView
-        android:id="@+id/text_inv_rocks_priceSell"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
-        android:text="$3"
-        app:layout_constraintEnd_toStartOf="@+id/text_inv_rocks_priceBuy"
-        app:layout_constraintHorizontal_bias="0.189"
-        app:layout_constraintStart_toEndOf="@+id/text_inv_rocks_cnt"
-        app:layout_constraintTop_toBottomOf="@+id/button_inv_rocks_sell" />
+        <ImageView
+            android:id="@+id/border_inv_sticks_trade_quan"
+            android:layout_width="53dp"
+            android:layout_height="53dp"
+            app:layout_constraintBottom_toBottomOf="@+id/button_inv_sticks_buy"
+            app:layout_constraintEnd_toEndOf="@+id/image_inv_sticks_background"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toEndOf="@+id/border_inv_sticks_quan"
+            app:layout_constraintTop_toTopOf="@+id/button_inv_sticks_sell"
+            app:srcCompat="@drawable/red_button1" />
 
-    <TextView
-        android:id="@+id/text_inv_rocks_priceBuy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:text="$6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.418"
-        app:layout_constraintStart_toEndOf="@+id/button_inv_rocks_sell"
-        app:layout_constraintTop_toBottomOf="@+id/button_inv_rocks_buy" />
+        <TextView
+            android:id="@+id/text_inv_sticks_trade_quan"
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:background="@drawable/square_rounded_green"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            app:fontFamily="serif"
+            app:layout_constraintBottom_toTopOf="@+id/button_inv_sticks_minus"
+            app:layout_constraintEnd_toEndOf="@+id/border_inv_sticks_trade_quan"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/border_inv_sticks_trade_quan"
+            app:layout_constraintTop_toBottomOf="@+id/button_inv_sticks_plus"
+            app:layout_constraintVertical_bias="0.5" />
 
-    <Button
-        android:id="@+id/button_inv_rocks_buy"
-        android:layout_width="63dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="244dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:text="Buy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/text_inv_rocks_sellCnt"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageButton
+            android:id="@+id/button_inv_sticks_sell"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/image_inv_sticks_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.46"
+            app:layout_constraintStart_toStartOf="@+id/border_inv_sticks_sell_price"
+            app:layout_constraintTop_toTopOf="@+id/image_inv_sticks_background"
+            app:layout_constraintVertical_bias="0.129"
+            app:srcCompat="@drawable/sell_label" />
 
-    <TextView
-        android:id="@+id/text_inv_rocks_sellCnt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="252dp"
-        android:text="TextView"
-        app:layout_constraintStart_toEndOf="@+id/button_inv_rocks_sell"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ImageButton
+            android:id="@+id/button_inv_sticks_buy"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:layout_constraintBottom_toBottomOf="@+id/image_inv_sticks_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.46"
+            app:layout_constraintStart_toStartOf="@+id/border_inv_sticks_buy_price"
+            app:layout_constraintTop_toTopOf="@+id/image_inv_sticks_background"
+            app:layout_constraintVertical_bias="0.903"
+            app:srcCompat="@drawable/buy_label" />
 
-    <Button
-        android:id="@+id/button_inv_rocks_decrSell"
-        android:layout_width="35dp"
-        android:layout_height="38dp"
-        android:text="-"
-        app:layout_constraintEnd_toStartOf="@+id/button_inv_rocks_buy"
-        app:layout_constraintTop_toBottomOf="@+id/text_inv_rocks_sellCnt" />
+        <ImageView
+            android:id="@+id/border_inv_sticks_buy_price"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:layout_constraintBottom_toBottomOf="@+id/image_inv_sticks_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toEndOf="@+id/image_inv_sticks_icon"
+            app:layout_constraintTop_toTopOf="@+id/image_inv_sticks_background"
+            app:layout_constraintVertical_bias="0.93"
+            app:srcCompat="@drawable/red_button1" />
 
-    <Button
-        android:id="@+id/button_inv_rocks_incrSell"
-        android:layout_width="35dp"
-        android:layout_height="38dp"
-        android:text="+"
-        app:layout_constraintBottom_toTopOf="@+id/text_inv_rocks_sellCnt"
-        app:layout_constraintEnd_toStartOf="@+id/button_inv_rocks_buy" />
+        <TextView
+            android:id="@+id/text_inv_sticks_buy_price"
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:background="@drawable/square_rounded_green"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            app:fontFamily="serif"
+            app:layout_constraintBottom_toBottomOf="@+id/border_inv_sticks_buy_price"
+            app:layout_constraintEnd_toStartOf="@+id/button_inv_sticks_buy"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintStart_toStartOf="@+id/border_inv_sticks_buy_price"
+            app:layout_constraintTop_toBottomOf="@+id/border_inv_sticks_sell_price"
+            app:layout_constraintVertical_bias="0.1" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/border_inv_sticks_sell_price"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            app:layout_constraintBottom_toBottomOf="@+id/image_inv_sticks_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toEndOf="@+id/image_inv_sticks_icon"
+            app:layout_constraintTop_toTopOf="@+id/image_inv_sticks_background"
+            app:layout_constraintVertical_bias="0.05"
+            app:srcCompat="@drawable/red_button1" />
+
+        <TextView
+            android:id="@+id/text_inv_sticks_sell_price"
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:background="@drawable/square_rounded_green"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold|italic"
+            app:fontFamily="serif"
+            app:layout_constraintBottom_toTopOf="@+id/border_inv_sticks_buy_price"
+            app:layout_constraintEnd_toStartOf="@+id/button_inv_sticks_sell"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintStart_toStartOf="@id/border_inv_sticks_sell_price"
+            app:layout_constraintTop_toTopOf="@+id/border_inv_sticks_sell_price"
+            app:layout_constraintVertical_bias="0.75" />
+
+        <Button
+            android:id="@+id/button_save_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_load_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Load"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_save_state" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
