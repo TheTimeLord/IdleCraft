@@ -1,11 +1,9 @@
 package com.example.idlecraft.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.idlecraft.MainActivity
@@ -30,11 +28,9 @@ class GatherFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_gather, container, false)
         act = activity as MainActivity
         val inv = act!!.inventory
-        val textSticks = view.text_gath_sticks
-        val progressBar = view.progress_gath_sticks
+        val textSticks = view.text_gath_rocks
+        val progressBar = view.progress_gath_rocks
         val sticksItem = inv.getItemByName("sticks")
-
-        view.module_sticks.visibility = View.INVISIBLE
 
         val textRocks = view.text_gath_rocks
         val progressBarRocks = view.progress_gath_rocks
@@ -71,7 +67,7 @@ class GatherFragment : Fragment() {
 
         // Called when the gather sticks button is clicked. It causes the progress bar to
         // start, and once finished, increments the amount of sticks that the player has.
-        view.button_gath_sticks.setOnClickListener {
+        view.button_gath_rocks.setOnClickListener {
             // TODO: Try to create the progress bar thread in the main activity so it persists
             // Ensure that gathering is disabled if the maximum of an item has already been
             // obtained or if gathering is already taking place.
