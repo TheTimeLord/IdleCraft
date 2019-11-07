@@ -34,6 +34,8 @@ class GatherFragment : Fragment() {
         val progressBar = view.progress_gath_sticks
         val sticksItem = inv.getItemByName("sticks")
 
+        view.module_sticks.visibility = View.INVISIBLE
+
         val textRocks = view.text_gath_rocks
         val progressBarRocks = view.progress_gath_rocks
         val rocksItem = inv.getItemByName("rocks")
