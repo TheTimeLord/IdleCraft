@@ -12,9 +12,11 @@ public class Item {
     private int reqAmount1;
     private int reqAmount2;
     private int reqAmount3;
-    private int sellvalue;
+    private int sellValue;
+    private int buyValue;
 
 
+    // Default Constructor
     public Item() {
         this.name = "Default";
         this.count = 0;
@@ -27,9 +29,10 @@ public class Item {
         this.reqAmount1 = 0;
         this.reqAmount2 = 0;
         this.reqAmount3 = 0;
-        this.sellvalue = 0;
+        this.sellValue = 0;
     }
 
+    // Class Constructor
     public Item(String name, int count, int max, int rate, boolean unlocked, String req1,
                 String req2, String req3, int reqAmount1, int reqAmount2, int reqAmount3,
                 int sellvalue) {
@@ -44,100 +47,68 @@ public class Item {
         this.reqAmount1 = reqAmount1;
         this.reqAmount2 = reqAmount2;
         this.reqAmount3 = reqAmount3;
-        this.sellvalue = sellvalue;
+        this.sellValue = sellvalue;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getCount() {
-        return count;
-    }
-
-    public int getMax() {
-        return max;
-    }
-
-    public int getRate() {
-        return rate;
-    }
-
-    public String getReq1() { return req1; }
-
-    public String getReq2() { return req2; }
-
-    public String getReq3() { return req3; }
-
-    public int getReqAmount1() { return reqAmount1; }
-
-    public int getReqAmount2() { return reqAmount2; }
-
-    public int getReqAmount3() { return reqAmount3; }
-
-    public int getSellvalue() { return sellvalue; }
 
     public boolean isUnlocked() {
         return unlocked;
     }
 
+    // Getters
+    public String getName() {
+        return name;
+    }
+    public int getCount()   { return count; }
+    public int getMax() { return max; }
+    public int getRate() {
+        return rate;
+    }
+    public String getReq1() { return req1; }
+    public String getReq2() { return req2; }
+    public String getReq3() { return req3; }
+    public int getReqAmount1() { return reqAmount1; }
+    public int getReqAmount2() { return reqAmount2; }
+    public int getReqAmount3() { return reqAmount3; }
+    public int getSellValue() { return sellValue; }
+    public int getBuyValue() { return buyValue; }
 
+    // Setters
     public void setName(String name) {
         this.name = name;
     }
-
     public void setCount(int count) {
         this.count = count;
     }
-
     public void setMax(int max) { this.max = max; }
-
     public void setRate(int rate) {
         this.rate = rate;
     }
-
     public void setUnlocked(boolean unlocked) {
         this.unlocked = unlocked;
     }
-
     public void setReq1(String req1) { this.req1 = req1; }
-
     public void setReq2(String req2) { this.req2 = req2; }
-
     public void setReq3(String req3) { this.req3 = req3; }
-
     public void setReqAmount1 (int reqAmount1) { this.reqAmount1 = reqAmount1; }
-
     public void setReqAmount2 (int reqAmount2) { this.reqAmount2 = reqAmount2; }
-
     public void setReqAmount3 (int reqAmount3) { this.reqAmount3 = reqAmount3; }
-
-    public void setSellvalue (int sellvalue) { this.sellvalue = sellvalue; }
+    public void setSellValue (int sellValue) { this.sellValue = sellValue; }
+    public void setBuyValue (int buyValue) { this.buyValue = buyValue; }
 
 
 
     public void increaseCount(int amount) {
-        if ((count + amount) >= max) {
-            count = max;
-        }
-        else {
-            count += amount;
-        }
+        if ((count + amount) >= max) count = max;
+        else count += amount;
     }
-
     public void decreaseCount(int amount) {
-        if ((count - amount) <= 0){
-            count = 0;
-        }
-        else {
-            count -= amount;
-        }
+        if ((count - amount) <= 0) count = 0;
+        else count -= amount;
     }
 
     public void increaseMax(int amount) {
         max += amount;
     }
-
     public void decreaseMax(int amount) {
         max -= amount;
     }
