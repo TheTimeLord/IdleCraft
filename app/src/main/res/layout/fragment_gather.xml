@@ -243,7 +243,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/border_button_gath_rocks"
                 app:layout_constraintStart_toStartOf="@+id/border_button_gath_rocks"
                 app:layout_constraintTop_toTopOf="@+id/border_button_gath_rocks"
-                app:srcCompat="@drawable/sticks" />
+                app:srcCompat="@drawable/rocks" />
 
             <ImageView
                 android:id="@+id/border_text_gath_rocks_quantity"
@@ -372,7 +372,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/border_button_gath_hide"
                 app:layout_constraintStart_toStartOf="@+id/border_button_gath_hide"
                 app:layout_constraintTop_toTopOf="@+id/border_button_gath_hide"
-                app:srcCompat="@drawable/sticks" />
+                app:srcCompat="@drawable/hide" />
 
             <ImageView
                 android:id="@+id/border_text_gath_hide_quantity"
@@ -502,7 +502,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/border_button_gath_clay"
                 app:layout_constraintStart_toStartOf="@+id/border_button_gath_clay"
                 app:layout_constraintTop_toTopOf="@+id/border_button_gath_clay"
-                app:srcCompat="@drawable/sticks" />
+                app:srcCompat="@drawable/clay" />
 
             <ImageView
                 android:id="@+id/border_text_gath_clay_quantity"
@@ -632,7 +632,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/border_button_gath_metal"
                 app:layout_constraintStart_toStartOf="@+id/border_button_gath_metal"
                 app:layout_constraintTop_toTopOf="@+id/border_button_gath_metal"
-                app:srcCompat="@drawable/sticks" />
+                app:srcCompat="@drawable/metal" />
 
             <ImageView
                 android:id="@+id/border_text_gath_metal_quantity"
@@ -762,7 +762,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/border_button_gath_oil"
                 app:layout_constraintStart_toStartOf="@+id/border_button_gath_oil"
                 app:layout_constraintTop_toTopOf="@+id/border_button_gath_oil"
-                app:srcCompat="@drawable/sticks" />
+                app:srcCompat="@drawable/paper" />
 
             <ImageView
                 android:id="@+id/border_text_gath_oil_quantity"
@@ -894,7 +894,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/border_button_gath_paper"
                 app:layout_constraintStart_toStartOf="@+id/border_button_gath_paper"
                 app:layout_constraintTop_toTopOf="@+id/border_button_gath_paper"
-                app:srcCompat="@drawable/sticks" />
+                app:srcCompat="@drawable/oil" />
 
             <ImageView
                 android:id="@+id/border_text_gath_paper_quantity"
