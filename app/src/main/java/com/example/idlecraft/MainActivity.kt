@@ -38,6 +38,13 @@ class MainActivity : AppCompatActivity() {
 
         initInventory()
         loadInv()
+
+        // Autosave thread
+        Thread(Runnable {
+            try { Thread.sleep(10000) }
+            catch (e: InterruptedException) { e.printStackTrace() }
+            saveInv()
+        }).start()
     }
 
     // Initialize items in the player's inventory.
