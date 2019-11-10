@@ -19,6 +19,7 @@ class CraftFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_craft, container, false)
         act = activity as MainActivity
+        act!!.saveInv()
         val inv = act!!.inventory
         val textSpear = view.text_craft_spear
         val textSpearCount = view.text_craft_spear_count
