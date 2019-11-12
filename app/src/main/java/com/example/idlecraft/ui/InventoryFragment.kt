@@ -1,7 +1,5 @@
 package com.example.idlecraft.ui
 
-import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,7 +17,7 @@ class InventoryFragment : Fragment() {
     // updateItemText: Update the TextView to display min/max quantity for an item and the
     // item's name.
     private fun updateItemText(text: TextView, item: Item) {
-        text.text = "  " + item.count.toString() + "/" + item.max.toString() + "\n  " + item.name
+        text.text = "  " + item.count.toString() + "/" + item.max.toString() + "\n " + item.name
     }
 
     // updateMoneyText: Update the TextView for money to newVal
@@ -43,44 +41,51 @@ class InventoryFragment : Fragment() {
         //==========================================================================================
         // Sticks Variables and Button Listeners
         //==========================================================================================
-
         val textSticks = view.text_inv_sticks_quan
         val sticksItem = inv.getItemByName("sticks")
         updateItemText(textSticks, sticksItem)
         updateMoneyText(view.text_inv_sticks_sell_price, sticksItem.sellValue)
         updateMoneyText(view.text_inv_sticks_buy_price, sticksItem.buyValue)
+
         var sticksTradeQuan = 1
-        view.text_inv_sticks_trade_quan.text = sticksTradeQuan.toString()
+        val textTradeQuan = view.text_inv_sticks_trade_amount
+        textTradeQuan.text = sticksTradeQuan.toString()
 
         // Sell Sticks Button
         view.button_inv_sticks_sell.setOnClickListener() {
-            if(sticksItem.count >= sticksTradeQuan) {
-                sticksItem.decreaseCount(sticksTradeQuan)
-                inv.increaseMoney(sticksItem.sellValue * sticksTradeQuan)
-                updateMoneyText(textMoney, inv.money)
-                updateItemText(textSticks, sticksItem)
-            }
+            var actualTradeQuan = sticksTradeQuan
+            // If attempting to sell more than we have, sell all we have instead.
+            if (sticksItem.count <= actualTradeQuan)
+                actualTradeQuan = sticksItem.count
+            sticksItem.decreaseCount(actualTradeQuan)
+            inv.increaseMoney(sticksItem.sellValue * actualTradeQuan)
+            updateMoneyText(textMoney, inv.money)
+            updateItemText(textSticks, sticksItem)
         }
         // Buy Sticks Button
         view.button_inv_sticks_buy.setOnClickListener() {
-            if(inv.money >= (sticksItem.buyValue * sticksTradeQuan)
-                         && (sticksItem.count + sticksTradeQuan) <= sticksItem.max) {
-                sticksItem.increaseCount(sticksTradeQuan)
-                inv.decreaseMoney(sticksItem.buyValue * sticksTradeQuan)
-                updateMoneyText(textMoney, inv.money)
-                updateItemText(textSticks, sticksItem)
-            }
+            var actualTradeQuan = sticksTradeQuan
+            // If attempting to buy more than we can afford, buy all that we can afford instead.
+            if (inv.money <= sticksItem.buyValue * actualTradeQuan)
+                actualTradeQuan = inv.money / sticksItem.buyValue
+            // If attempting to buy more than we can hold, buy all that we can hold instead.
+            if (sticksItem.count + actualTradeQuan >= sticksItem.max)
+                actualTradeQuan = sticksItem.max - sticksItem.count
+            sticksItem.increaseCount(actualTradeQuan)
+            inv.decreaseMoney(sticksItem.buyValue * actualTradeQuan)
+            updateMoneyText(textMoney, inv.money)
+            updateItemText(textSticks, sticksItem)
         }
 
         // Sticks Plus Button (increments the amount of sticks to buy/sell)
         view.button_inv_sticks_plus.setOnClickListener() {
-            sticksTradeQuan += 1
-            view.text_inv_sticks_trade_quan.text = sticksTradeQuan.toString()
+            if (sticksTradeQuan < sticksItem.max) sticksTradeQuan += 1
+            textTradeQuan.text = sticksTradeQuan.toString()
         }
         // Sticks Minus Button (decrements the amount of sticks to buy/sell)
         view.button_inv_sticks_minus.setOnClickListener() {
             if (sticksTradeQuan > 1) sticksTradeQuan -= 1
-            view.text_inv_sticks_trade_quan.text = sticksTradeQuan.toString()
+            textTradeQuan.text = sticksTradeQuan.toString()
         }
 
         return view
