@@ -16,7 +16,7 @@ class GatherFragment : Fragment() {
 
     // updateItemText: Update the TextView for an item to display its current count.
     private fun updateItemText(text: TextView, item : Item) {
-        text.text = item.count.toString()
+        text.text = item.count.toString() + "/" + item.max.toString()
     }
     // updateItemRateText: Update the TextView for an item to display its gathering rate.
     private fun updateItemRateText(text: TextView, item : Item) {
