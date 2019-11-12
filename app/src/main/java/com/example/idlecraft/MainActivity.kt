@@ -46,9 +46,9 @@ class MainActivity : AppCompatActivity() {
         val sticks = Item()
         sticks.name = "sticks"
         sticks.max = 10
-        sticks.sellValue = 3
+        sticks.sellValue = 1
         sticks.buyValue = 6
-        sticks.rate = 1
+        sticks.rate = 3
         inventory.addItem(sticks)
 
         // Create rocks item
