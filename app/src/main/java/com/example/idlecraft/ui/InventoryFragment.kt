@@ -32,14 +32,10 @@ class InventoryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        act = activity as MainActivity
-
-        // Setup preferences (for save/load state)
-        val prefs: SharedPreferences = act!!.getApplicationContext().getSharedPreferences("ICSave", 0)
-        val editor: SharedPreferences.Editor = prefs.edit()
-
         // General Inventory Setup
         val view = inflater.inflate(R.layout.fragment_inventory, container, false)
+        act = activity as MainActivity
+        act!!.saveInv()
         val inv = act!!.inventory
         val textMoney = view.text_inv_money
         updateMoneyText(textMoney, inv.money)
@@ -86,26 +82,6 @@ class InventoryFragment : Fragment() {
             if (sticksTradeQuan > 1) sticksTradeQuan -= 1
             view.text_inv_sticks_trade_quan.text = sticksTradeQuan.toString()
         }
-
-        view.button_save_state.setOnClickListener {
-            val iterator = inv.items.iterator()
-            iterator.forEach {
-                val keyName = "item_" + it.name
-                editor.putInt(keyName, it.count)
-            }
-            editor.putInt("money", inv.money)
-            editor.commit()
-        }
-
-        view.button_load_state.setOnClickListener {
-            val iterator = inv.items.iterator()
-            iterator.forEach {
-                val keyName = "item_" + it.name
-                it.count = prefs.getInt(keyName, -1)
-            }
-            inv.money = prefs.getInt("money", -1)
-        }
-
 
         return view
     }
