@@ -34,6 +34,7 @@ class GatherFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_gather, container, false)
         act = activity as MainActivity
+        act!!.saveInv()
         val inv = act!!.inventory
 
         // Sticks Item and UI setup
