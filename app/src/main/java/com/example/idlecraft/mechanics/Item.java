@@ -30,12 +30,13 @@ public class Item {
         this.reqAmount2 = 0;
         this.reqAmount3 = 0;
         this.sellValue = 0;
+        this.buyValue = 0;
     }
 
     // Class Constructor
     public Item(String name, int count, int max, int rate, boolean unlocked, String req1,
                 String req2, String req3, int reqAmount1, int reqAmount2, int reqAmount3,
-                int sellvalue) {
+                int sellValue, int buyValue) {
         this.name = name;
         this.count = count;
         this.max = max;
@@ -47,7 +48,8 @@ public class Item {
         this.reqAmount1 = reqAmount1;
         this.reqAmount2 = reqAmount2;
         this.reqAmount3 = reqAmount3;
-        this.sellValue = sellvalue;
+        this.sellValue = sellValue;
+        this.buyValue = buyValue;
     }
 
     public boolean isUnlocked() {
