@@ -56,7 +56,7 @@ class CraftFragment : Fragment() {
         val textSpear = view.text_craft_spear_count
         val progressBarSpear = view.progress_craft_spear
         val spearItem = inv.getItemByName("spear")
-        updateItemText(textSpear, spearItem)
+        //updateItemText(textSpear, spearItem)
 
         var spearCraftCount = 1
         val textSpearAmount = view.text_craft_spear_amount
@@ -84,10 +84,11 @@ class CraftFragment : Fragment() {
                 progressBarSpear.progress = 0     // Reset progress bar
                 inv.craftItem(spearItem, craftCount)
                 // runOnUiThread allows the thread to update UI objects
+                /*
                 activity?.runOnUiThread {
                     updateItemText(textSpear, spearItem)
                     updateReqText(textSpearReq1, textSpearReq2, textSpearReq3, spearItem)
-                }
+                } */
             }).start()
         }
 
@@ -101,6 +102,18 @@ class CraftFragment : Fragment() {
             if (spearCraftCount > 1) spearCraftCount -= 1
             textSpearAmount.text = spearCraftCount.toString()
         }
+
+        //==========================================================================================
+        // Thread to update text views
+        //==========================================================================================
+
+        //TODO: Fix this thread so that it does not cause crashes or program hang
+        Thread(Runnable {
+            while(true) {
+                updateItemText(textSpear, spearItem)
+                //updateReqText(textSpearReq1, textSpearReq2, textSpearReq3, spearItem)
+            }
+        }).start()
 
         return view
     }
