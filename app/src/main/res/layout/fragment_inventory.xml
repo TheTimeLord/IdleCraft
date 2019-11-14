@@ -7,7 +7,7 @@
     android:fillViewport="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/ConstraingLayout"
+        android:id="@+id/ConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -44,7 +44,7 @@
             android:layout_height="130dp"
             android:layout_marginTop="4dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.47"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/border_inv_money">
 
@@ -56,7 +56,7 @@
                 android:scaleY="1.15"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.04"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/inv_background" />
@@ -112,6 +112,7 @@
                 android:layout_width="76dp"
                 android:layout_height="76dp"
                 android:background="@drawable/rounded_button"
+                android:scaleType="center"
                 android:scaleX="1"
                 android:scaleY="1"
                 app:layout_constraintBottom_toBottomOf="@+id/border_inv_sticks_icon"
@@ -257,6 +258,2916 @@
                 app:layout_constraintStart_toStartOf="@+id/border_inv_sticks_trade_amount"
                 app:layout_constraintTop_toTopOf="@id/image_inv_sticks_background"
                 app:layout_constraintVertical_bias="0.714" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/module_rocks"
+            android:layout_width="409dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/module_sticks">
+
+            <ImageView
+                android:id="@+id/image_inv_rocks_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:saveEnabled="false"
+                android:scaleY="1.15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.38"
+                app:srcCompat="@drawable/inv_background" />
+
+            <ImageView
+                android:id="@+id/border_inv_rocks_quan"
+                android:layout_width="270dp"
+                android:layout_height="70dp"
+                android:scaleX="0.45"
+                android:scaleY="1.8"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_rocks_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_rocks_background"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_rocks_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_rocks_background"
+                app:srcCompat="@drawable/red_bar" />
+
+            <TextView
+                android:id="@+id/text_inv_rocks_quan"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="80dp"
+                android:layout_marginRight="80dp"
+                android:background="@drawable/rounded_rectangle_less"
+                android:ems="10"
+                android:gravity="bottom|center_horizontal"
+                android:inputType="none"
+                android:textAllCaps="false"
+                android:textSize="19sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_rocks_quan"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_rocks_quan"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_rocks_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_rocks_quan" />
+
+            <ImageView
+                android:id="@+id/border_inv_rocks_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_rocks_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_rocks_background"
+                app:layout_constraintHorizontal_bias="0.02"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_rocks_quan"
+                app:layout_constraintTop_toTopOf="@id/image_inv_rocks_background"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/red_circle" />
+
+            <ImageView
+                android:id="@+id/image_inv_rocks_icon"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/rounded_button"
+                android:scaleType="center"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_rocks_icon"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_rocks_icon"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_rocks_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_rocks_icon"
+                app:srcCompat="@drawable/rocks" />
+
+            <ImageButton
+                android:id="@+id/button_inv_rocks_buy"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_rocks_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_rocks_background"
+                app:layout_constraintHorizontal_bias="0.223"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_rocks_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_rocks_buy_price"
+                app:layout_constraintVertical_bias="0.7"
+                app:srcCompat="@drawable/buy_label" />
+
+            <ImageButton
+                android:id="@+id/button_inv_rocks_sell"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_rocks_sell_price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.462"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_rocks_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_rocks_sell_price"
+                app:layout_constraintVertical_bias="0.57"
+                app:srcCompat="@drawable/sell_label" />
+
+            <ImageView
+                android:id="@+id/border_inv_rocks_buy_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_rocks_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_rocks_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_rocks_background"
+                app:layout_constraintTop_toTopOf="@+id/image_inv_rocks_background"
+                app:layout_constraintVertical_bias="0.025"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_rocks_buy_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_rocks_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_rocks_buy_price"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_rocks_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_rocks_buy_price" />
+
+            <ImageView
+                android:id="@+id/border_inv_rocks_sell_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_rocks_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_rocks_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_rocks_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_rocks_background"
+                app:layout_constraintVertical_bias="0.86"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_rocks_sell_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_rocks_sell_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_rocks_sell_price"
+                app:layout_constraintHorizontal_bias="0.45"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_rocks_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_rocks_sell_price"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageView
+                android:id="@+id/border_inv_rocks_trade_amount"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_rocks_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_rocks_background"
+                app:layout_constraintHorizontal_bias="0.969"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_rocks_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_rocks_background"
+                app:layout_constraintVertical_bias="0.43"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_rocks_trade_amount"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_rocks_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_rocks_trade_amount"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_rocks_trade_amount"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_rocks_trade_amount" />
+
+            <ImageButton
+                android:id="@+id/button_inv_rocks_minus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/minus_button"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_rocks_background"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_rocks_trade_amount"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_rocks_trade_amount"
+                app:layout_constraintTop_toBottomOf="@+id/text_inv_rocks_trade_amount"
+                app:layout_constraintVertical_bias="0.25" />
+
+            <ImageButton
+                android:id="@+id/button_inv_rocks_plus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/plus_button"
+                app:layout_constraintBottom_toTopOf="@+id/text_inv_rocks_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_rocks_trade_amount"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_rocks_trade_amount"
+                app:layout_constraintTop_toTopOf="@id/image_inv_rocks_background"
+                app:layout_constraintVertical_bias="0.714" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/module_hide"
+            android:layout_width="409dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/module_rocks">
+
+            <ImageView
+                android:id="@+id/image_inv_hide_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:saveEnabled="false"
+                android:scaleY="1.15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.296"
+                app:srcCompat="@drawable/inv_background" />
+
+            <ImageView
+                android:id="@+id/border_inv_hide_quan"
+                android:layout_width="270dp"
+                android:layout_height="70dp"
+                android:scaleX="0.45"
+                android:scaleY="1.8"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_hide_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_hide_background"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_hide_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_hide_background"
+                app:srcCompat="@drawable/red_bar" />
+
+            <TextView
+                android:id="@+id/text_inv_hide_quan"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="80dp"
+                android:layout_marginRight="80dp"
+                android:background="@drawable/rounded_rectangle_less"
+                android:ems="10"
+                android:gravity="bottom|center_horizontal"
+                android:inputType="none"
+                android:textAllCaps="false"
+                android:textSize="19sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_hide_quan"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_hide_quan"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_hide_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_hide_quan" />
+
+            <ImageView
+                android:id="@+id/border_inv_hide_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_hide_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_hide_background"
+                app:layout_constraintHorizontal_bias="0.02"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_hide_quan"
+                app:layout_constraintTop_toTopOf="@id/image_inv_hide_background"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/red_circle" />
+
+            <ImageView
+                android:id="@+id/image_inv_hide_icon"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/rounded_button"
+                android:scaleType="center"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_hide_icon"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_hide_icon"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_hide_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_hide_icon"
+                app:srcCompat="@drawable/hide" />
+
+            <ImageButton
+                android:id="@+id/button_inv_hide_buy"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_hide_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_hide_background"
+                app:layout_constraintHorizontal_bias="0.223"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_hide_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_hide_buy_price"
+                app:layout_constraintVertical_bias="0.7"
+                app:srcCompat="@drawable/buy_label" />
+
+            <ImageButton
+                android:id="@+id/button_inv_hide_sell"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_hide_sell_price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.462"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_hide_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_hide_sell_price"
+                app:layout_constraintVertical_bias="0.57"
+                app:srcCompat="@drawable/sell_label" />
+
+            <ImageView
+                android:id="@+id/border_inv_hide_buy_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_hide_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_hide_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_hide_background"
+                app:layout_constraintTop_toTopOf="@+id/image_inv_hide_background"
+                app:layout_constraintVertical_bias="0.025"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_hide_buy_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_hide_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_hide_buy_price"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_hide_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_hide_buy_price" />
+
+            <ImageView
+                android:id="@+id/border_inv_hide_sell_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_hide_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_hide_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_hide_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_hide_background"
+                app:layout_constraintVertical_bias="0.86"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_hide_sell_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_hide_sell_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_hide_sell_price"
+                app:layout_constraintHorizontal_bias="0.45"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_hide_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_hide_sell_price"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageView
+                android:id="@+id/border_inv_hide_trade_amount"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_hide_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_hide_background"
+                app:layout_constraintHorizontal_bias="0.969"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_hide_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_hide_background"
+                app:layout_constraintVertical_bias="0.43"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_hide_trade_amount"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_hide_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_hide_trade_amount"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_hide_trade_amount"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_hide_trade_amount" />
+
+            <ImageButton
+                android:id="@+id/button_inv_hide_minus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/minus_button"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_hide_background"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_hide_trade_amount"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_hide_trade_amount"
+                app:layout_constraintTop_toBottomOf="@+id/text_inv_hide_trade_amount"
+                app:layout_constraintVertical_bias="0.25" />
+
+            <ImageButton
+                android:id="@+id/button_inv_hide_plus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/plus_button"
+                app:layout_constraintBottom_toTopOf="@+id/text_inv_hide_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_hide_trade_amount"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_hide_trade_amount"
+                app:layout_constraintTop_toTopOf="@id/image_inv_hide_background"
+                app:layout_constraintVertical_bias="0.714" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/module_clay"
+            android:layout_width="409dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/module_hide">
+
+            <ImageView
+                android:id="@+id/image_inv_clay_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:saveEnabled="false"
+                android:scaleY="1.15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.296"
+                app:srcCompat="@drawable/inv_background" />
+
+            <ImageView
+                android:id="@+id/border_inv_clay_quan"
+                android:layout_width="270dp"
+                android:layout_height="70dp"
+                android:scaleX="0.45"
+                android:scaleY="1.8"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_clay_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_clay_background"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_clay_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_clay_background"
+                app:srcCompat="@drawable/red_bar" />
+
+            <TextView
+                android:id="@+id/text_inv_clay_quan"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="80dp"
+                android:layout_marginRight="80dp"
+                android:background="@drawable/rounded_rectangle_less"
+                android:ems="10"
+                android:gravity="bottom|center_horizontal"
+                android:inputType="none"
+                android:textAllCaps="false"
+                android:textSize="19sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_clay_quan"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_clay_quan"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_clay_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_clay_quan" />
+
+            <ImageView
+                android:id="@+id/border_inv_clay_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_clay_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_clay_background"
+                app:layout_constraintHorizontal_bias="0.02"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_clay_quan"
+                app:layout_constraintTop_toTopOf="@id/image_inv_clay_background"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/red_circle" />
+
+            <ImageView
+                android:id="@+id/image_inv_clay_icon"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/rounded_button"
+                android:scaleType="center"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_clay_icon"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_clay_icon"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_clay_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_clay_icon"
+                app:srcCompat="@drawable/clay" />
+
+            <ImageButton
+                android:id="@+id/button_inv_clay_buy"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_clay_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_clay_background"
+                app:layout_constraintHorizontal_bias="0.223"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_clay_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_clay_buy_price"
+                app:layout_constraintVertical_bias="0.7"
+                app:srcCompat="@drawable/buy_label" />
+
+            <ImageButton
+                android:id="@+id/button_inv_clay_sell"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_clay_sell_price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.462"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_clay_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_clay_sell_price"
+                app:layout_constraintVertical_bias="0.57"
+                app:srcCompat="@drawable/sell_label" />
+
+            <ImageView
+                android:id="@+id/border_inv_clay_buy_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_clay_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_clay_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_clay_background"
+                app:layout_constraintTop_toTopOf="@+id/image_inv_clay_background"
+                app:layout_constraintVertical_bias="0.025"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_clay_buy_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_clay_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_clay_buy_price"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_clay_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_clay_buy_price" />
+
+            <ImageView
+                android:id="@+id/border_inv_clay_sell_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_clay_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_clay_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_clay_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_clay_background"
+                app:layout_constraintVertical_bias="0.86"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_clay_sell_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_clay_sell_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_clay_sell_price"
+                app:layout_constraintHorizontal_bias="0.45"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_clay_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_clay_sell_price"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageView
+                android:id="@+id/border_inv_clay_trade_amount"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_clay_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_clay_background"
+                app:layout_constraintHorizontal_bias="0.969"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_clay_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_clay_background"
+                app:layout_constraintVertical_bias="0.43"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_clay_trade_amount"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_clay_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_clay_trade_amount"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_clay_trade_amount"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_clay_trade_amount" />
+
+            <ImageButton
+                android:id="@+id/button_inv_clay_minus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/minus_button"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_clay_background"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_clay_trade_amount"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_clay_trade_amount"
+                app:layout_constraintTop_toBottomOf="@+id/text_inv_clay_trade_amount"
+                app:layout_constraintVertical_bias="0.25" />
+
+            <ImageButton
+                android:id="@+id/button_inv_clay_plus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/plus_button"
+                app:layout_constraintBottom_toTopOf="@+id/text_inv_clay_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_clay_trade_amount"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_clay_trade_amount"
+                app:layout_constraintTop_toTopOf="@id/image_inv_clay_background"
+                app:layout_constraintVertical_bias="0.714" />
+            
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/module_metal"
+            android:layout_width="409dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/module_clay">
+
+            <ImageView
+                android:id="@+id/image_inv_metal_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:saveEnabled="false"
+                android:scaleY="1.15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.296"
+                app:srcCompat="@drawable/inv_background" />
+
+            <ImageView
+                android:id="@+id/border_inv_metal_quan"
+                android:layout_width="270dp"
+                android:layout_height="70dp"
+                android:scaleX="0.45"
+                android:scaleY="1.8"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_metal_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_metal_background"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_metal_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_metal_background"
+                app:srcCompat="@drawable/red_bar" />
+
+            <TextView
+                android:id="@+id/text_inv_metal_quan"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="80dp"
+                android:layout_marginRight="80dp"
+                android:background="@drawable/rounded_rectangle_less"
+                android:ems="10"
+                android:gravity="bottom|center_horizontal"
+                android:inputType="none"
+                android:textAllCaps="false"
+                android:textSize="19sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_metal_quan"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_metal_quan"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_metal_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_metal_quan" />
+
+            <ImageView
+                android:id="@+id/border_inv_metal_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_metal_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_metal_background"
+                app:layout_constraintHorizontal_bias="0.02"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_metal_quan"
+                app:layout_constraintTop_toTopOf="@id/image_inv_metal_background"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/red_circle" />
+
+            <ImageView
+                android:id="@+id/image_inv_metal_icon"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/rounded_button"
+                android:scaleType="center"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_metal_icon"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_metal_icon"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_metal_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_metal_icon"
+                app:srcCompat="@drawable/metal" />
+
+            <ImageButton
+                android:id="@+id/button_inv_metal_buy"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_metal_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_metal_background"
+                app:layout_constraintHorizontal_bias="0.223"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_metal_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_metal_buy_price"
+                app:layout_constraintVertical_bias="0.7"
+                app:srcCompat="@drawable/buy_label" />
+
+            <ImageButton
+                android:id="@+id/button_inv_metal_sell"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_metal_sell_price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.462"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_metal_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_metal_sell_price"
+                app:layout_constraintVertical_bias="0.57"
+                app:srcCompat="@drawable/sell_label" />
+
+            <ImageView
+                android:id="@+id/border_inv_metal_buy_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_metal_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_metal_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_metal_background"
+                app:layout_constraintTop_toTopOf="@+id/image_inv_metal_background"
+                app:layout_constraintVertical_bias="0.025"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_metal_buy_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_metal_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_metal_buy_price"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_metal_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_metal_buy_price" />
+
+            <ImageView
+                android:id="@+id/border_inv_metal_sell_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_metal_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_metal_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_metal_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_metal_background"
+                app:layout_constraintVertical_bias="0.86"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_metal_sell_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_metal_sell_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_metal_sell_price"
+                app:layout_constraintHorizontal_bias="0.45"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_metal_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_metal_sell_price"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageView
+                android:id="@+id/border_inv_metal_trade_amount"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_metal_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_metal_background"
+                app:layout_constraintHorizontal_bias="0.969"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_metal_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_metal_background"
+                app:layout_constraintVertical_bias="0.43"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_metal_trade_amount"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_metal_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_metal_trade_amount"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_metal_trade_amount"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_metal_trade_amount" />
+
+            <ImageButton
+                android:id="@+id/button_inv_metal_minus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/minus_button"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_metal_background"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_metal_trade_amount"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_metal_trade_amount"
+                app:layout_constraintTop_toBottomOf="@+id/text_inv_metal_trade_amount"
+                app:layout_constraintVertical_bias="0.25" />
+
+            <ImageButton
+                android:id="@+id/button_inv_metal_plus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/plus_button"
+                app:layout_constraintBottom_toTopOf="@+id/text_inv_metal_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_metal_trade_amount"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_metal_trade_amount"
+                app:layout_constraintTop_toTopOf="@id/image_inv_metal_background"
+                app:layout_constraintVertical_bias="0.714" />
+            
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/module_oil"
+            android:layout_width="409dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/module_metal">
+
+            <ImageView
+                android:id="@+id/image_inv_oil_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:saveEnabled="false"
+                android:scaleY="1.15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.296"
+                app:srcCompat="@drawable/inv_background" />
+
+            <ImageView
+                android:id="@+id/border_inv_oil_quan"
+                android:layout_width="270dp"
+                android:layout_height="70dp"
+                android:scaleX="0.45"
+                android:scaleY="1.8"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_oil_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_oil_background"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_oil_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_oil_background"
+                app:srcCompat="@drawable/red_bar" />
+
+            <TextView
+                android:id="@+id/text_inv_oil_quan"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="80dp"
+                android:layout_marginRight="80dp"
+                android:background="@drawable/rounded_rectangle_less"
+                android:ems="10"
+                android:gravity="bottom|center_horizontal"
+                android:inputType="none"
+                android:textAllCaps="false"
+                android:textSize="19sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_oil_quan"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_oil_quan"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_oil_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_oil_quan" />
+
+            <ImageView
+                android:id="@+id/border_inv_oil_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_oil_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_oil_background"
+                app:layout_constraintHorizontal_bias="0.02"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_oil_quan"
+                app:layout_constraintTop_toTopOf="@id/image_inv_oil_background"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/red_circle" />
+
+            <ImageView
+                android:id="@+id/image_inv_oil_icon"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/rounded_button"
+                android:scaleType="center"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_oil_icon"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_oil_icon"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_oil_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_oil_icon"
+                app:srcCompat="@drawable/oil" />
+
+            <ImageButton
+                android:id="@+id/button_inv_oil_buy"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_oil_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_oil_background"
+                app:layout_constraintHorizontal_bias="0.223"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_oil_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_oil_buy_price"
+                app:layout_constraintVertical_bias="0.7"
+                app:srcCompat="@drawable/buy_label" />
+
+            <ImageButton
+                android:id="@+id/button_inv_oil_sell"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_oil_sell_price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.462"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_oil_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_oil_sell_price"
+                app:layout_constraintVertical_bias="0.57"
+                app:srcCompat="@drawable/sell_label" />
+
+            <ImageView
+                android:id="@+id/border_inv_oil_buy_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_oil_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_oil_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_oil_background"
+                app:layout_constraintTop_toTopOf="@+id/image_inv_oil_background"
+                app:layout_constraintVertical_bias="0.025"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_oil_buy_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_oil_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_oil_buy_price"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_oil_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_oil_buy_price" />
+
+            <ImageView
+                android:id="@+id/border_inv_oil_sell_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_oil_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_oil_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_oil_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_oil_background"
+                app:layout_constraintVertical_bias="0.86"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_oil_sell_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_oil_sell_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_oil_sell_price"
+                app:layout_constraintHorizontal_bias="0.45"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_oil_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_oil_sell_price"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageView
+                android:id="@+id/border_inv_oil_trade_amount"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_oil_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_oil_background"
+                app:layout_constraintHorizontal_bias="0.969"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_oil_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_oil_background"
+                app:layout_constraintVertical_bias="0.43"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_oil_trade_amount"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_oil_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_oil_trade_amount"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_oil_trade_amount"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_oil_trade_amount" />
+
+            <ImageButton
+                android:id="@+id/button_inv_oil_minus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/minus_button"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_oil_background"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_oil_trade_amount"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_oil_trade_amount"
+                app:layout_constraintTop_toBottomOf="@+id/text_inv_oil_trade_amount"
+                app:layout_constraintVertical_bias="0.25" />
+
+            <ImageButton
+                android:id="@+id/button_inv_oil_plus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/plus_button"
+                app:layout_constraintBottom_toTopOf="@+id/text_inv_oil_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_oil_trade_amount"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_oil_trade_amount"
+                app:layout_constraintTop_toTopOf="@id/image_inv_oil_background"
+                app:layout_constraintVertical_bias="0.714" />
+            
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/module_paper"
+            android:layout_width="409dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/module_oil">
+
+            <ImageView
+                android:id="@+id/image_inv_paper_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:saveEnabled="false"
+                android:scaleY="1.15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.296"
+                app:srcCompat="@drawable/inv_background" />
+
+            <ImageView
+                android:id="@+id/border_inv_paper_quan"
+                android:layout_width="270dp"
+                android:layout_height="70dp"
+                android:scaleX="0.45"
+                android:scaleY="1.8"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_paper_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_paper_background"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_paper_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_paper_background"
+                app:srcCompat="@drawable/red_bar" />
+
+            <TextView
+                android:id="@+id/text_inv_paper_quan"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="80dp"
+                android:layout_marginRight="80dp"
+                android:background="@drawable/rounded_rectangle_less"
+                android:ems="10"
+                android:gravity="bottom|center_horizontal"
+                android:inputType="none"
+                android:textAllCaps="false"
+                android:textSize="19sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_paper_quan"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_paper_quan"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_paper_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_paper_quan" />
+
+            <ImageView
+                android:id="@+id/border_inv_paper_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_paper_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_paper_background"
+                app:layout_constraintHorizontal_bias="0.02"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_paper_quan"
+                app:layout_constraintTop_toTopOf="@id/image_inv_paper_background"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/red_circle" />
+
+            <ImageView
+                android:id="@+id/image_inv_paper_icon"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/rounded_button"
+                android:scaleType="center"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_paper_icon"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_paper_icon"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_paper_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_paper_icon"
+                app:srcCompat="@drawable/paper" />
+
+            <ImageButton
+                android:id="@+id/button_inv_paper_buy"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_paper_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_paper_background"
+                app:layout_constraintHorizontal_bias="0.223"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_paper_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_paper_buy_price"
+                app:layout_constraintVertical_bias="0.7"
+                app:srcCompat="@drawable/buy_label" />
+
+            <ImageButton
+                android:id="@+id/button_inv_paper_sell"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_paper_sell_price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.462"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_paper_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_paper_sell_price"
+                app:layout_constraintVertical_bias="0.57"
+                app:srcCompat="@drawable/sell_label" />
+
+            <ImageView
+                android:id="@+id/border_inv_paper_buy_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_paper_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_paper_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_paper_background"
+                app:layout_constraintTop_toTopOf="@+id/image_inv_paper_background"
+                app:layout_constraintVertical_bias="0.025"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_paper_buy_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_paper_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_paper_buy_price"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_paper_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_paper_buy_price" />
+
+            <ImageView
+                android:id="@+id/border_inv_paper_sell_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_paper_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_paper_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_paper_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_paper_background"
+                app:layout_constraintVertical_bias="0.86"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_paper_sell_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_paper_sell_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_paper_sell_price"
+                app:layout_constraintHorizontal_bias="0.45"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_paper_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_paper_sell_price"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageView
+                android:id="@+id/border_inv_paper_trade_amount"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_paper_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_paper_background"
+                app:layout_constraintHorizontal_bias="0.969"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_paper_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_paper_background"
+                app:layout_constraintVertical_bias="0.43"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_paper_trade_amount"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_paper_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_paper_trade_amount"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_paper_trade_amount"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_paper_trade_amount" />
+
+            <ImageButton
+                android:id="@+id/button_inv_paper_minus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/minus_button"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_paper_background"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_paper_trade_amount"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_paper_trade_amount"
+                app:layout_constraintTop_toBottomOf="@+id/text_inv_paper_trade_amount"
+                app:layout_constraintVertical_bias="0.25" />
+
+            <ImageButton
+                android:id="@+id/button_inv_paper_plus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/plus_button"
+                app:layout_constraintBottom_toTopOf="@+id/text_inv_paper_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_paper_trade_amount"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_paper_trade_amount"
+                app:layout_constraintTop_toTopOf="@id/image_inv_paper_background"
+                app:layout_constraintVertical_bias="0.714" />
+            
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/module_spear"
+            android:layout_width="409dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/module_paper">
+
+            <ImageView
+                android:id="@+id/image_inv_spear_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:saveEnabled="false"
+                android:scaleY="1.15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.296"
+                app:srcCompat="@drawable/inv_background" />
+
+            <ImageView
+                android:id="@+id/border_inv_spear_quan"
+                android:layout_width="270dp"
+                android:layout_height="70dp"
+                android:scaleX="0.45"
+                android:scaleY="1.8"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_spear_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_spear_background"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_spear_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_spear_background"
+                app:srcCompat="@drawable/red_bar" />
+
+            <TextView
+                android:id="@+id/text_inv_spear_quan"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="80dp"
+                android:layout_marginRight="80dp"
+                android:background="@drawable/rounded_rectangle_less"
+                android:ems="10"
+                android:gravity="bottom|center_horizontal"
+                android:inputType="none"
+                android:textAllCaps="false"
+                android:textSize="19sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_spear_quan"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_spear_quan"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_spear_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_spear_quan" />
+
+            <ImageView
+                android:id="@+id/border_inv_spear_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_spear_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_spear_background"
+                app:layout_constraintHorizontal_bias="0.02"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_spear_quan"
+                app:layout_constraintTop_toTopOf="@id/image_inv_spear_background"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/red_circle" />
+
+            <ImageView
+                android:id="@+id/image_inv_spear_icon"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/rounded_button"
+                android:scaleType="center"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_spear_icon"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_spear_icon"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_spear_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_spear_icon"
+                app:srcCompat="@drawable/spear" />
+
+            <ImageButton
+                android:id="@+id/button_inv_spear_buy"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_spear_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_spear_background"
+                app:layout_constraintHorizontal_bias="0.223"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_spear_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_spear_buy_price"
+                app:layout_constraintVertical_bias="0.7"
+                app:srcCompat="@drawable/buy_label" />
+
+            <ImageButton
+                android:id="@+id/button_inv_spear_sell"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_spear_sell_price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.462"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_spear_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_spear_sell_price"
+                app:layout_constraintVertical_bias="0.57"
+                app:srcCompat="@drawable/sell_label" />
+
+            <ImageView
+                android:id="@+id/border_inv_spear_buy_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_spear_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_spear_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_spear_background"
+                app:layout_constraintTop_toTopOf="@+id/image_inv_spear_background"
+                app:layout_constraintVertical_bias="0.025"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_spear_buy_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_spear_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_spear_buy_price"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_spear_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_spear_buy_price" />
+
+            <ImageView
+                android:id="@+id/border_inv_spear_sell_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_spear_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_spear_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_spear_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_spear_background"
+                app:layout_constraintVertical_bias="0.86"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_spear_sell_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_spear_sell_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_spear_sell_price"
+                app:layout_constraintHorizontal_bias="0.45"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_spear_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_spear_sell_price"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageView
+                android:id="@+id/border_inv_spear_trade_amount"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_spear_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_spear_background"
+                app:layout_constraintHorizontal_bias="0.969"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_spear_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_spear_background"
+                app:layout_constraintVertical_bias="0.43"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_spear_trade_amount"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_spear_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_spear_trade_amount"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_spear_trade_amount"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_spear_trade_amount" />
+
+            <ImageButton
+                android:id="@+id/button_inv_spear_minus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/minus_button"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_spear_background"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_spear_trade_amount"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_spear_trade_amount"
+                app:layout_constraintTop_toBottomOf="@+id/text_inv_spear_trade_amount"
+                app:layout_constraintVertical_bias="0.25" />
+
+            <ImageButton
+                android:id="@+id/button_inv_spear_plus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/plus_button"
+                app:layout_constraintBottom_toTopOf="@+id/text_inv_spear_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_spear_trade_amount"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_spear_trade_amount"
+                app:layout_constraintTop_toTopOf="@id/image_inv_spear_background"
+                app:layout_constraintVertical_bias="0.714" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/module_sword"
+            android:layout_width="409dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/module_spear">
+
+            <ImageView
+                android:id="@+id/image_inv_sword_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:saveEnabled="false"
+                android:scaleY="1.15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.296"
+                app:srcCompat="@drawable/inv_background" />
+
+            <ImageView
+                android:id="@+id/border_inv_sword_quan"
+                android:layout_width="270dp"
+                android:layout_height="70dp"
+                android:scaleX="0.45"
+                android:scaleY="1.8"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_sword_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_sword_background"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_sword_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_sword_background"
+                app:srcCompat="@drawable/red_bar" />
+
+            <TextView
+                android:id="@+id/text_inv_sword_quan"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="80dp"
+                android:layout_marginRight="80dp"
+                android:background="@drawable/rounded_rectangle_less"
+                android:ems="10"
+                android:gravity="bottom|center_horizontal"
+                android:inputType="none"
+                android:textAllCaps="false"
+                android:textSize="19sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_sword_quan"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_sword_quan"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_sword_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_sword_quan" />
+
+            <ImageView
+                android:id="@+id/border_inv_sword_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_sword_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_sword_background"
+                app:layout_constraintHorizontal_bias="0.02"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_sword_quan"
+                app:layout_constraintTop_toTopOf="@id/image_inv_sword_background"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/red_circle" />
+
+            <ImageView
+                android:id="@+id/image_inv_sword_icon"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/rounded_button"
+                android:scaleType="center"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_sword_icon"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_sword_icon"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_sword_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_sword_icon"
+                app:srcCompat="@drawable/sword" />
+
+            <ImageButton
+                android:id="@+id/button_inv_sword_buy"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_sword_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_sword_background"
+                app:layout_constraintHorizontal_bias="0.223"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_sword_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_sword_buy_price"
+                app:layout_constraintVertical_bias="0.7"
+                app:srcCompat="@drawable/buy_label" />
+
+            <ImageButton
+                android:id="@+id/button_inv_sword_sell"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_sword_sell_price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.462"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_sword_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_sword_sell_price"
+                app:layout_constraintVertical_bias="0.57"
+                app:srcCompat="@drawable/sell_label" />
+
+            <ImageView
+                android:id="@+id/border_inv_sword_buy_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_sword_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_sword_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_sword_background"
+                app:layout_constraintTop_toTopOf="@+id/image_inv_sword_background"
+                app:layout_constraintVertical_bias="0.025"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_sword_buy_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_sword_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_sword_buy_price"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_sword_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_sword_buy_price" />
+
+            <ImageView
+                android:id="@+id/border_inv_sword_sell_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_sword_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_sword_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_sword_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_sword_background"
+                app:layout_constraintVertical_bias="0.86"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_sword_sell_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_sword_sell_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_sword_sell_price"
+                app:layout_constraintHorizontal_bias="0.45"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_sword_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_sword_sell_price"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageView
+                android:id="@+id/border_inv_sword_trade_amount"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_sword_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_sword_background"
+                app:layout_constraintHorizontal_bias="0.969"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_sword_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_sword_background"
+                app:layout_constraintVertical_bias="0.43"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_sword_trade_amount"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_sword_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_sword_trade_amount"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_sword_trade_amount"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_sword_trade_amount" />
+
+            <ImageButton
+                android:id="@+id/button_inv_sword_minus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/minus_button"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_sword_background"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_sword_trade_amount"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_sword_trade_amount"
+                app:layout_constraintTop_toBottomOf="@+id/text_inv_sword_trade_amount"
+                app:layout_constraintVertical_bias="0.25" />
+
+            <ImageButton
+                android:id="@+id/button_inv_sword_plus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/plus_button"
+                app:layout_constraintBottom_toTopOf="@+id/text_inv_sword_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_sword_trade_amount"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_sword_trade_amount"
+                app:layout_constraintTop_toTopOf="@id/image_inv_sword_background"
+                app:layout_constraintVertical_bias="0.714" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/module_brick"
+            android:layout_width="409dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/module_sword">
+
+            <ImageView
+                android:id="@+id/image_inv_brick_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:saveEnabled="false"
+                android:scaleY="1.15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.296"
+                app:srcCompat="@drawable/inv_background" />
+
+            <ImageView
+                android:id="@+id/border_inv_brick_quan"
+                android:layout_width="270dp"
+                android:layout_height="70dp"
+                android:scaleX="0.45"
+                android:scaleY="1.8"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_brick_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_brick_background"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_brick_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_brick_background"
+                app:srcCompat="@drawable/red_bar" />
+
+            <TextView
+                android:id="@+id/text_inv_brick_quan"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="80dp"
+                android:layout_marginRight="80dp"
+                android:background="@drawable/rounded_rectangle_less"
+                android:ems="10"
+                android:gravity="bottom|center_horizontal"
+                android:inputType="none"
+                android:textAllCaps="false"
+                android:textSize="19sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_brick_quan"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_brick_quan"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_brick_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_brick_quan" />
+
+            <ImageView
+                android:id="@+id/border_inv_brick_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_brick_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_brick_background"
+                app:layout_constraintHorizontal_bias="0.02"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_brick_quan"
+                app:layout_constraintTop_toTopOf="@id/image_inv_brick_background"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/red_circle" />
+
+            <ImageView
+                android:id="@+id/image_inv_brick_icon"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/rounded_button"
+                android:scaleType="center"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_brick_icon"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_brick_icon"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_brick_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_brick_icon"
+                app:srcCompat="@drawable/brick" />
+
+            <ImageButton
+                android:id="@+id/button_inv_brick_buy"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_brick_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_brick_background"
+                app:layout_constraintHorizontal_bias="0.223"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_brick_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_brick_buy_price"
+                app:layout_constraintVertical_bias="0.7"
+                app:srcCompat="@drawable/buy_label" />
+
+            <ImageButton
+                android:id="@+id/button_inv_brick_sell"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_brick_sell_price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.462"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_brick_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_brick_sell_price"
+                app:layout_constraintVertical_bias="0.57"
+                app:srcCompat="@drawable/sell_label" />
+
+            <ImageView
+                android:id="@+id/border_inv_brick_buy_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_brick_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_brick_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_brick_background"
+                app:layout_constraintTop_toTopOf="@+id/image_inv_brick_background"
+                app:layout_constraintVertical_bias="0.025"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_brick_buy_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_brick_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_brick_buy_price"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_brick_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_brick_buy_price" />
+
+            <ImageView
+                android:id="@+id/border_inv_brick_sell_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_brick_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_brick_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_brick_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_brick_background"
+                app:layout_constraintVertical_bias="0.86"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_brick_sell_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_brick_sell_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_brick_sell_price"
+                app:layout_constraintHorizontal_bias="0.45"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_brick_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_brick_sell_price"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageView
+                android:id="@+id/border_inv_brick_trade_amount"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_brick_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_brick_background"
+                app:layout_constraintHorizontal_bias="0.969"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_brick_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_brick_background"
+                app:layout_constraintVertical_bias="0.43"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_brick_trade_amount"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_brick_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_brick_trade_amount"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_brick_trade_amount"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_brick_trade_amount" />
+
+            <ImageButton
+                android:id="@+id/button_inv_brick_minus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/minus_button"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_brick_background"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_brick_trade_amount"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_brick_trade_amount"
+                app:layout_constraintTop_toBottomOf="@+id/text_inv_brick_trade_amount"
+                app:layout_constraintVertical_bias="0.25" />
+
+            <ImageButton
+                android:id="@+id/button_inv_brick_plus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/plus_button"
+                app:layout_constraintBottom_toTopOf="@+id/text_inv_brick_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_brick_trade_amount"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_brick_trade_amount"
+                app:layout_constraintTop_toTopOf="@id/image_inv_brick_background"
+                app:layout_constraintVertical_bias="0.714" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/module_house"
+            android:layout_width="409dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/module_brick">
+
+            <ImageView
+                android:id="@+id/image_inv_house_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:saveEnabled="false"
+                android:scaleY="1.15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.296"
+                app:srcCompat="@drawable/inv_background" />
+
+            <ImageView
+                android:id="@+id/border_inv_house_quan"
+                android:layout_width="270dp"
+                android:layout_height="70dp"
+                android:scaleX="0.45"
+                android:scaleY="1.8"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_house_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_house_background"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_house_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_house_background"
+                app:srcCompat="@drawable/red_bar" />
+
+            <TextView
+                android:id="@+id/text_inv_house_quan"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="80dp"
+                android:layout_marginRight="80dp"
+                android:background="@drawable/rounded_rectangle_less"
+                android:ems="10"
+                android:gravity="bottom|center_horizontal"
+                android:inputType="none"
+                android:textAllCaps="false"
+                android:textSize="19sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_house_quan"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_house_quan"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_house_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_house_quan" />
+
+            <ImageView
+                android:id="@+id/border_inv_house_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_house_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_house_background"
+                app:layout_constraintHorizontal_bias="0.02"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_house_quan"
+                app:layout_constraintTop_toTopOf="@id/image_inv_house_background"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/red_circle" />
+
+            <ImageView
+                android:id="@+id/image_inv_house_icon"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/rounded_button"
+                android:scaleType="center"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_house_icon"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_house_icon"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_house_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_house_icon"
+                app:srcCompat="@drawable/house" />
+
+            <ImageButton
+                android:id="@+id/button_inv_house_buy"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_house_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_house_background"
+                app:layout_constraintHorizontal_bias="0.223"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_house_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_house_buy_price"
+                app:layout_constraintVertical_bias="0.7"
+                app:srcCompat="@drawable/buy_label" />
+
+            <ImageButton
+                android:id="@+id/button_inv_house_sell"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_house_sell_price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.462"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_house_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_house_sell_price"
+                app:layout_constraintVertical_bias="0.57"
+                app:srcCompat="@drawable/sell_label" />
+
+            <ImageView
+                android:id="@+id/border_inv_house_buy_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_house_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_house_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_house_background"
+                app:layout_constraintTop_toTopOf="@+id/image_inv_house_background"
+                app:layout_constraintVertical_bias="0.025"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_house_buy_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_house_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_house_buy_price"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_house_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_house_buy_price" />
+
+            <ImageView
+                android:id="@+id/border_inv_house_sell_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_house_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_house_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_house_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_house_background"
+                app:layout_constraintVertical_bias="0.86"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_house_sell_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_house_sell_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_house_sell_price"
+                app:layout_constraintHorizontal_bias="0.45"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_house_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_house_sell_price"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageView
+                android:id="@+id/border_inv_house_trade_amount"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_house_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_house_background"
+                app:layout_constraintHorizontal_bias="0.969"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_house_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_house_background"
+                app:layout_constraintVertical_bias="0.43"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_house_trade_amount"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_house_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_house_trade_amount"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_house_trade_amount"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_house_trade_amount" />
+
+            <ImageButton
+                android:id="@+id/button_inv_house_minus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/minus_button"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_house_background"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_house_trade_amount"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_house_trade_amount"
+                app:layout_constraintTop_toBottomOf="@+id/text_inv_house_trade_amount"
+                app:layout_constraintVertical_bias="0.25" />
+
+            <ImageButton
+                android:id="@+id/button_inv_house_plus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/plus_button"
+                app:layout_constraintBottom_toTopOf="@+id/text_inv_house_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_house_trade_amount"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_house_trade_amount"
+                app:layout_constraintTop_toTopOf="@id/image_inv_house_background"
+                app:layout_constraintVertical_bias="0.714" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/module_castle"
+            android:layout_width="409dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/module_house">
+
+            <ImageView
+                android:id="@+id/image_inv_castle_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:saveEnabled="false"
+                android:scaleY="1.15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.296"
+                app:srcCompat="@drawable/inv_background" />
+
+            <ImageView
+                android:id="@+id/border_inv_castle_quan"
+                android:layout_width="270dp"
+                android:layout_height="70dp"
+                android:scaleX="0.45"
+                android:scaleY="1.8"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_castle_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_castle_background"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_castle_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_castle_background"
+                app:srcCompat="@drawable/red_bar" />
+
+            <TextView
+                android:id="@+id/text_inv_castle_quan"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="80dp"
+                android:layout_marginRight="80dp"
+                android:background="@drawable/rounded_rectangle_less"
+                android:ems="10"
+                android:gravity="bottom|center_horizontal"
+                android:inputType="none"
+                android:textAllCaps="false"
+                android:textSize="19sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_castle_quan"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_castle_quan"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_castle_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_castle_quan" />
+
+            <ImageView
+                android:id="@+id/border_inv_castle_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_castle_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_castle_background"
+                app:layout_constraintHorizontal_bias="0.02"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_castle_quan"
+                app:layout_constraintTop_toTopOf="@id/image_inv_castle_background"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/red_circle" />
+
+            <ImageView
+                android:id="@+id/image_inv_castle_icon"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/rounded_button"
+                android:scaleType="center"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_castle_icon"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_castle_icon"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_castle_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_castle_icon"
+                app:srcCompat="@drawable/castle" />
+
+            <ImageButton
+                android:id="@+id/button_inv_castle_buy"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_castle_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_castle_background"
+                app:layout_constraintHorizontal_bias="0.223"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_castle_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_castle_buy_price"
+                app:layout_constraintVertical_bias="0.7"
+                app:srcCompat="@drawable/buy_label" />
+
+            <ImageButton
+                android:id="@+id/button_inv_castle_sell"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_castle_sell_price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.462"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_castle_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_castle_sell_price"
+                app:layout_constraintVertical_bias="0.57"
+                app:srcCompat="@drawable/sell_label" />
+
+            <ImageView
+                android:id="@+id/border_inv_castle_buy_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_castle_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_castle_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_castle_background"
+                app:layout_constraintTop_toTopOf="@+id/image_inv_castle_background"
+                app:layout_constraintVertical_bias="0.025"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_castle_buy_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_castle_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_castle_buy_price"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_castle_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_castle_buy_price" />
+
+            <ImageView
+                android:id="@+id/border_inv_castle_sell_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_castle_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_castle_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_castle_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_castle_background"
+                app:layout_constraintVertical_bias="0.86"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_castle_sell_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_castle_sell_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_castle_sell_price"
+                app:layout_constraintHorizontal_bias="0.45"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_castle_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_castle_sell_price"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageView
+                android:id="@+id/border_inv_castle_trade_amount"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_castle_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_castle_background"
+                app:layout_constraintHorizontal_bias="0.969"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_castle_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_castle_background"
+                app:layout_constraintVertical_bias="0.43"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_castle_trade_amount"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_castle_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_castle_trade_amount"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_castle_trade_amount"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_castle_trade_amount" />
+
+            <ImageButton
+                android:id="@+id/button_inv_castle_minus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/minus_button"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_castle_background"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_castle_trade_amount"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_castle_trade_amount"
+                app:layout_constraintTop_toBottomOf="@+id/text_inv_castle_trade_amount"
+                app:layout_constraintVertical_bias="0.25" />
+
+            <ImageButton
+                android:id="@+id/button_inv_castle_plus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/plus_button"
+                app:layout_constraintBottom_toTopOf="@+id/text_inv_castle_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_castle_trade_amount"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_castle_trade_amount"
+                app:layout_constraintTop_toTopOf="@id/image_inv_castle_background"
+                app:layout_constraintVertical_bias="0.714" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/module_lamp"
+            android:layout_width="409dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/module_castle">
+
+            <ImageView
+                android:id="@+id/image_inv_lamp_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:saveEnabled="false"
+                android:scaleY="1.15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.296"
+                app:srcCompat="@drawable/inv_background" />
+
+            <ImageView
+                android:id="@+id/border_inv_lamp_quan"
+                android:layout_width="270dp"
+                android:layout_height="70dp"
+                android:scaleX="0.45"
+                android:scaleY="1.8"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_lamp_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_lamp_background"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_lamp_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_lamp_background"
+                app:srcCompat="@drawable/red_bar" />
+
+            <TextView
+                android:id="@+id/text_inv_lamp_quan"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="80dp"
+                android:layout_marginRight="80dp"
+                android:background="@drawable/rounded_rectangle_less"
+                android:ems="10"
+                android:gravity="bottom|center_horizontal"
+                android:inputType="none"
+                android:textAllCaps="false"
+                android:textSize="19sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_lamp_quan"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_lamp_quan"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_lamp_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_lamp_quan" />
+
+            <ImageView
+                android:id="@+id/border_inv_lamp_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_lamp_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_lamp_background"
+                app:layout_constraintHorizontal_bias="0.02"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_lamp_quan"
+                app:layout_constraintTop_toTopOf="@id/image_inv_lamp_background"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/red_circle" />
+
+            <ImageView
+                android:id="@+id/image_inv_lamp_icon"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/rounded_button"
+                android:scaleType="center"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_lamp_icon"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_lamp_icon"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_lamp_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_lamp_icon"
+                app:srcCompat="@drawable/lamp" />
+
+            <ImageButton
+                android:id="@+id/button_inv_lamp_buy"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_lamp_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_lamp_background"
+                app:layout_constraintHorizontal_bias="0.223"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_lamp_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_lamp_buy_price"
+                app:layout_constraintVertical_bias="0.7"
+                app:srcCompat="@drawable/buy_label" />
+
+            <ImageButton
+                android:id="@+id/button_inv_lamp_sell"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_lamp_sell_price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.462"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_lamp_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_lamp_sell_price"
+                app:layout_constraintVertical_bias="0.57"
+                app:srcCompat="@drawable/sell_label" />
+
+            <ImageView
+                android:id="@+id/border_inv_lamp_buy_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_lamp_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_lamp_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_lamp_background"
+                app:layout_constraintTop_toTopOf="@+id/image_inv_lamp_background"
+                app:layout_constraintVertical_bias="0.025"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_lamp_buy_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_lamp_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_lamp_buy_price"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_lamp_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_lamp_buy_price" />
+
+            <ImageView
+                android:id="@+id/border_inv_lamp_sell_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_lamp_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_lamp_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_lamp_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_lamp_background"
+                app:layout_constraintVertical_bias="0.86"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_lamp_sell_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_lamp_sell_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_lamp_sell_price"
+                app:layout_constraintHorizontal_bias="0.45"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_lamp_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_lamp_sell_price"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageView
+                android:id="@+id/border_inv_lamp_trade_amount"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_lamp_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_lamp_background"
+                app:layout_constraintHorizontal_bias="0.969"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_lamp_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_lamp_background"
+                app:layout_constraintVertical_bias="0.43"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_lamp_trade_amount"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_lamp_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_lamp_trade_amount"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_lamp_trade_amount"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_lamp_trade_amount" />
+
+            <ImageButton
+                android:id="@+id/button_inv_lamp_minus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/minus_button"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_lamp_background"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_lamp_trade_amount"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_lamp_trade_amount"
+                app:layout_constraintTop_toBottomOf="@+id/text_inv_lamp_trade_amount"
+                app:layout_constraintVertical_bias="0.25" />
+
+            <ImageButton
+                android:id="@+id/button_inv_lamp_plus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/plus_button"
+                app:layout_constraintBottom_toTopOf="@+id/text_inv_lamp_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_lamp_trade_amount"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_lamp_trade_amount"
+                app:layout_constraintTop_toTopOf="@id/image_inv_lamp_background"
+                app:layout_constraintVertical_bias="0.714" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/module_book"
+            android:layout_width="409dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/module_lamp">
+
+            <ImageView
+                android:id="@+id/image_inv_book_background"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:saveEnabled="false"
+                android:scaleY="1.15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.296"
+                app:srcCompat="@drawable/inv_background" />
+
+            <ImageView
+                android:id="@+id/border_inv_book_quan"
+                android:layout_width="270dp"
+                android:layout_height="70dp"
+                android:scaleX="0.45"
+                android:scaleY="1.8"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_book_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_book_background"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_book_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_book_background"
+                app:srcCompat="@drawable/red_bar" />
+
+            <TextView
+                android:id="@+id/text_inv_book_quan"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="80dp"
+                android:layout_marginRight="80dp"
+                android:background="@drawable/rounded_rectangle_less"
+                android:ems="10"
+                android:gravity="bottom|center_horizontal"
+                android:inputType="none"
+                android:textAllCaps="false"
+                android:textSize="19sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_book_quan"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_book_quan"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_book_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_book_quan" />
+
+            <ImageView
+                android:id="@+id/border_inv_book_icon"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_book_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_book_background"
+                app:layout_constraintHorizontal_bias="0.02"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_book_quan"
+                app:layout_constraintTop_toTopOf="@id/image_inv_book_background"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/red_circle" />
+
+            <ImageView
+                android:id="@+id/image_inv_book_icon"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/rounded_button"
+                android:scaleType="center"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_book_icon"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_book_icon"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_book_icon"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_book_icon"
+                app:srcCompat="@drawable/book" />
+
+            <ImageButton
+                android:id="@+id/button_inv_book_buy"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_book_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_book_background"
+                app:layout_constraintHorizontal_bias="0.223"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_book_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_book_buy_price"
+                app:layout_constraintVertical_bias="0.7"
+                app:srcCompat="@drawable/buy_label" />
+
+            <ImageButton
+                android:id="@+id/button_inv_book_sell"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleY="1.07"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_book_sell_price"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.462"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_book_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_book_sell_price"
+                app:layout_constraintVertical_bias="0.57"
+                app:srcCompat="@drawable/sell_label" />
+
+            <ImageView
+                android:id="@+id/border_inv_book_buy_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_book_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_book_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_book_background"
+                app:layout_constraintTop_toTopOf="@+id/image_inv_book_background"
+                app:layout_constraintVertical_bias="0.025"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_book_buy_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_book_buy_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_book_buy_price"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_book_buy_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_book_buy_price" />
+
+            <ImageView
+                android:id="@+id/border_inv_book_sell_price"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_book_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_book_background"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_book_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_book_background"
+                app:layout_constraintVertical_bias="0.86"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_book_sell_price"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_book_sell_price"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_book_sell_price"
+                app:layout_constraintHorizontal_bias="0.45"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_book_sell_price"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_book_sell_price"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageView
+                android:id="@+id/border_inv_book_trade_amount"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_book_background"
+                app:layout_constraintEnd_toEndOf="@+id/image_inv_book_background"
+                app:layout_constraintHorizontal_bias="0.969"
+                app:layout_constraintStart_toStartOf="@+id/image_inv_book_background"
+                app:layout_constraintTop_toTopOf="@id/image_inv_book_background"
+                app:layout_constraintVertical_bias="0.43"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_inv_book_trade_amount"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="7dp"
+                android:layout_marginBottom="6dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_inv_book_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_book_trade_amount"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_book_trade_amount"
+                app:layout_constraintTop_toTopOf="@+id/border_inv_book_trade_amount" />
+
+            <ImageButton
+                android:id="@+id/button_inv_book_minus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/minus_button"
+                app:layout_constraintBottom_toBottomOf="@+id/image_inv_book_background"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_book_trade_amount"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_book_trade_amount"
+                app:layout_constraintTop_toBottomOf="@+id/text_inv_book_trade_amount"
+                app:layout_constraintVertical_bias="0.25" />
+
+            <ImageButton
+                android:id="@+id/button_inv_book_plus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/plus_button"
+                app:layout_constraintBottom_toTopOf="@+id/text_inv_book_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_inv_book_trade_amount"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_inv_book_trade_amount"
+                app:layout_constraintTop_toTopOf="@id/image_inv_book_background"
+                app:layout_constraintVertical_bias="0.714" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/spacer"
+            android:layout_width="409dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/module_book">
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
