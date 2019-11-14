@@ -13,22 +13,22 @@ public class Inventory {
         this.money = 0;
 
         // Initialize gatherable items
-        Item sticks = new Item("sticks", 0, 10, 1, true, null, null, null, 0, 0, 0, 3, 6);
-        Item rocks = new Item("rocks", 0, 10, 1, true, null, null, null, 0, 0, 0, 3, 6);
-        Item hide = new Item("hide", 0, 10, 1, true, null, null, null, 0, 0, 0, 3, 6);
-        Item clay = new Item("clay", 0, 10, 1, true, null, null, null, 0, 0, 0, 3, 6);
-        Item metal = new Item("metal", 0, 10, 1, true, null, null, null, 0, 0, 0, 3, 6);
-        Item oil = new Item("oil", 0, 10, 1, true, null, null, null, 0, 0, 0, 3, 6);
-        Item paper = new Item("paper", 0, 10, 1, true, null, null, null, 0, 0, 0, 3, 6);
+        Item sticks = new Item("sticks", 0, 10, 1, true, null, null, null, 0, 0, 0, 3, 6, 1, 1);
+        Item rocks = new Item("rocks", 0, 10, 1, true, null, null, null, 0, 0, 0, 3, 6, 1, 1);
+        Item hide = new Item("hide", 0, 10, 1, true, null, null, null, 0, 0, 0, 3, 6, 1, 1);
+        Item clay = new Item("clay", 0, 10, 1, true, null, null, null, 0, 0, 0, 3, 6, 1, 1);
+        Item metal = new Item("metal", 0, 10, 1, true, null, null, null, 0, 0, 0, 3, 6, 1, 1);
+        Item oil = new Item("oil", 0, 10, 1, true, null, null, null, 0, 0, 0, 3, 6, 1, 1);
+        Item paper = new Item("paper", 0, 10, 1, true, null, null, null, 0, 0, 0, 3, 6, 1, 1);
 
         // Initialize craftable items
-        Item spear = new Item("spear", 0, 10, 1, true, "sticks", "rocks", null, 5, 5, 0, 3, 6);
-        Item sword = new Item("sword", 0, 10, 1, true, "sticks", "metal", null, 1, 1, 0, 3, 6);
-        Item brick = new Item("brick", 0, 10, 1, true, "clay", null, null, 2, 0, 0, 3, 6);
-        Item house = new Item("house", 0, 10, 1, true, "sticks", "brick", "hide", 4, 4, 2, 3, 6);
-        Item castle = new Item("castle", 0, 10, 1, true, "sticks", "rocks", "metal", 10, 50, 5, 3, 6);
-        Item lamp = new Item("lamp", 0, 10, 1, true, "metal", "oil", null, 1, 1, 0, 3, 6);
-        Item book = new Item("book", 0, 10, 1, true, "paper", null, null, 3, 0, 0, 3, 6);
+        Item spear = new Item("spear", 0, 10, 1, true, "sticks", "rocks", null, 5, 5, 0, 3, 6, 1, 1);
+        Item sword = new Item("sword", 0, 10, 1, true, "sticks", "metal", null, 1, 1, 0, 3, 6, 1, 1);
+        Item brick = new Item("brick", 0, 10, 1, true, "clay", null, null, 2, 0, 0, 3, 6, 1, 1);
+        Item house = new Item("house", 0, 10, 1, true, "sticks", "brick", "hide", 4, 4, 2, 3, 6, 1, 1);
+        Item castle = new Item("castle", 0, 10, 1, true, "sticks", "rocks", "metal", 10, 50, 5, 3, 6, 1, 1);
+        Item lamp = new Item("lamp", 0, 10, 1, true, "metal", "oil", null, 1, 1, 0, 3, 6, 1, 1);
+        Item book = new Item("book", 0, 10, 1, true, "paper", null, null, 3, 0, 0, 3, 6, 1, 1);
 
         this.addItem(sticks);
         this.addItem(rocks);
