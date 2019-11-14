@@ -12,16 +12,77 @@
         android:layout_height="match_parent">
 
         <include
-            android:id="@+id/include"
+            android:id="@+id/craft_spear_module"
+            android:layout_width="409dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="25dp"
             layout="@layout/craft_spear"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="16dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <include
+            android:id="@+id/craft_sword_module"
+            android:layout_width="409dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="25dp"
             layout="@layout/craft_sword"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/craft_spear_module" />
+
+        <include
+            android:id="@+id/craft_brick_module"
+            android:layout_width="409dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="25dp"
+            layout="@layout/craft_brick"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/craft_sword_module" />
+
+        <include
+            android:id="@+id/craft_house_module"
+            android:layout_width="409dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="25dp"
+            layout="@layout/craft_house"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/craft_brick_module" />
+
+        <include
+            android:id="@+id/craft_castle_module"
+            android:layout_width="409dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="25dp"
+            layout="@layout/craft_castle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/craft_house_module" />
+
+        <include
+            android:id="@+id/craft_lamp_module"
+            android:layout_width="409dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="25dp"
+            layout="@layout/craft_lamp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/craft_castle_module" />
+
+        <include
+            android:id="@+id/craft_book_module"
+            android:layout_width="409dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="100dp"
+            layout="@layout/craft_book"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/craft_lamp_module"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

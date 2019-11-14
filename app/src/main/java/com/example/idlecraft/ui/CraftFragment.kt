@@ -46,9 +46,6 @@ class CraftFragment : Fragment() {
         else req3.text = ""
     }
 
-    // startProgressBar: Create the thread to handle the progress bar for a craftable item
-//    private fun startProgressBar() {}
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -62,22 +59,22 @@ class CraftFragment : Fragment() {
         //==========================================================================================
         // Spear Variables and Button Listeners
         //==========================================================================================
-        val textSpear = view.text_craft_spear_count
-        val progressBarSpear = view.progress_craft_spear
+        val textSpear = view.findViewById<TextView>(R.id.text_craft_spear_count)
+        val progressBarSpear = view.findViewById<ProgressBar>(R.id.progress_craft_spear)
         val spearItem = inv.getItemByName("spear")
         updateItemText(textSpear, spearItem)
 
         var spearCraftCount = 1
-        val textSpearAmount = view.text_craft_spear_amount
+        val textSpearAmount = view.findViewById<TextView>(R.id.text_craft_spear_amount)
         textSpearAmount.text = spearCraftCount.toString()
 
-        val textSpearReq1 = view.text_craft_spear_req1
-        val textSpearReq2 = view.text_craft_spear_req2
-        val textSpearReq3 = view.text_craft_spear_req3
+        val textSpearReq1 = view.findViewById<TextView>(R.id.text_craft_spear_req1)
+        val textSpearReq2 = view.findViewById<TextView>(R.id.text_craft_spear_req2)
+        val textSpearReq3 = view.findViewById<TextView>(R.id.text_craft_spear_req3)
         updateReqText(textSpearReq1, textSpearReq2, textSpearReq3, spearItem)
 
 
-        view.button_craft_spear.setOnClickListener {
+        view.findViewById<ImageButton>(R.id.button_craft_spear).setOnClickListener {
             var craftCount = inv.howManyCanCraft(spearItem)
             if (spearCraftCount < craftCount) craftCount = spearCraftCount
             if (progressBarSpear.progress != 0 || spearItem.count >= spearItem.max || !inv.isCraftable(spearItem, craftCount))
@@ -101,12 +98,12 @@ class CraftFragment : Fragment() {
         }
 
         // Plus Button
-        view.button_craft_spear_plus.setOnClickListener {
+        view.findViewById<ImageButton>(R.id.button_craft_spear_plus).setOnClickListener {
             if (spearCraftCount < spearItem.max) spearCraftCount += 1
             textSpearAmount.text = spearCraftCount.toString()
         }
         // Minus Button
-        view.button_craft_spear_minus.setOnClickListener {
+        view.findViewById<ImageButton>(R.id.button_craft_spear_minus).setOnClickListener {
             if (spearCraftCount > 1) spearCraftCount -= 1
             textSpearAmount.text = spearCraftCount.toString()
         }

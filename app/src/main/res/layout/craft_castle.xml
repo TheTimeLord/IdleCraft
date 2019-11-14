@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/module_sword"
+    android:id="@+id/module_castle"
     android:layout_width="409dp"
     android:layout_height="160dp"
     app:layout_constraintBottom_toBottomOf="parent"
@@ -11,7 +11,7 @@
     app:layout_constraintTop_toTopOf="parent">
 
     <ImageView
-        android:id="@+id/image_craft_sword_background"
+        android:id="@+id/image_craft_castle_background"
         android:layout_width="380dp"
         android:layout_height="120dp"
         android:scaleY="1.35"
@@ -24,7 +24,7 @@
         app:srcCompat="@drawable/stone_wall" />
 
     <ImageView
-        android:id="@+id/border_craft_sword_reqs"
+        android:id="@+id/border_craft_castle_reqs"
         android:layout_width="300dp"
         android:layout_height="90dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,7 +36,7 @@
         app:srcCompat="@drawable/red_rect" />
 
     <TextView
-        android:id="@+id/text_craft_sword_req2"
+        android:id="@+id/text_craft_castle_req2"
         android:layout_width="192dp"
         android:layout_height="26dp"
         android:background="@drawable/rounded_rectangle"
@@ -48,14 +48,14 @@
         android:textStyle="bold|italic"
         android:typeface="sans"
         app:fontFamily="serif"
-        app:layout_constraintBottom_toBottomOf="@+id/border_craft_sword_reqs"
-        app:layout_constraintEnd_toEndOf="@+id/border_craft_sword_reqs"
+        app:layout_constraintBottom_toBottomOf="@+id/border_craft_castle_reqs"
+        app:layout_constraintEnd_toEndOf="@+id/border_craft_castle_reqs"
         app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="@+id/border_craft_sword_reqs"
-        app:layout_constraintTop_toTopOf="@+id/border_craft_sword_reqs" />
+        app:layout_constraintStart_toStartOf="@+id/border_craft_castle_reqs"
+        app:layout_constraintTop_toTopOf="@+id/border_craft_castle_reqs" />
 
     <TextView
-        android:id="@+id/text_craft_sword_req1"
+        android:id="@+id/text_craft_castle_req1"
         android:layout_width="192dp"
         android:layout_height="26dp"
         android:background="@drawable/rounded_rectangle"
@@ -67,15 +67,15 @@
         android:textStyle="bold|italic"
         android:typeface="sans"
         app:fontFamily="serif"
-        app:layout_constraintBottom_toBottomOf="@+id/border_craft_sword_reqs"
-        app:layout_constraintEnd_toEndOf="@+id/border_craft_sword_reqs"
+        app:layout_constraintBottom_toBottomOf="@+id/border_craft_castle_reqs"
+        app:layout_constraintEnd_toEndOf="@+id/border_craft_castle_reqs"
         app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="@+id/border_craft_sword_reqs"
-        app:layout_constraintTop_toTopOf="@+id/border_craft_sword_reqs"
+        app:layout_constraintStart_toStartOf="@+id/border_craft_castle_reqs"
+        app:layout_constraintTop_toTopOf="@+id/border_craft_castle_reqs"
         app:layout_constraintVertical_bias="0.109" />
 
     <TextView
-        android:id="@+id/text_craft_sword_req3"
+        android:id="@+id/text_craft_castle_req3"
         android:layout_width="192dp"
         android:layout_height="26dp"
         android:background="@drawable/rounded_rectangle"
@@ -87,28 +87,28 @@
         android:textStyle="bold|italic"
         android:typeface="sans"
         app:fontFamily="serif"
-        app:layout_constraintBottom_toBottomOf="@+id/border_craft_sword_reqs"
-        app:layout_constraintEnd_toEndOf="@+id/border_craft_sword_reqs"
+        app:layout_constraintBottom_toBottomOf="@+id/border_craft_castle_reqs"
+        app:layout_constraintEnd_toEndOf="@+id/border_craft_castle_reqs"
         app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="@+id/border_craft_sword_reqs"
-        app:layout_constraintTop_toTopOf="@+id/border_craft_sword_reqs"
+        app:layout_constraintStart_toStartOf="@+id/border_craft_castle_reqs"
+        app:layout_constraintTop_toTopOf="@+id/border_craft_castle_reqs"
         app:layout_constraintVertical_bias="0.906" />
 
     <ImageView
-        android:id="@+id/border_progress_craft_sword"
+        android:id="@+id/border_progress_craft_castle"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:scaleX="1"
-        app:layout_constraintBottom_toBottomOf="@+id/border_button_craft_sword"
-        app:layout_constraintEnd_toEndOf="@+id/image_craft_sword_background"
+        app:layout_constraintBottom_toBottomOf="@+id/border_button_craft_castle"
+        app:layout_constraintEnd_toEndOf="@+id/image_craft_castle_background"
         app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="@+id/border_button_craft_sword"
-        app:layout_constraintTop_toTopOf="@+id/border_button_craft_sword"
+        app:layout_constraintStart_toStartOf="@+id/border_button_craft_castle"
+        app:layout_constraintTop_toTopOf="@+id/border_button_craft_castle"
         app:layout_constraintVertical_bias="0.1"
         app:srcCompat="@drawable/red_bar" />
 
     <ProgressBar
-        android:id="@+id/progress_craft_sword"
+        android:id="@+id/progress_craft_castle"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="260dp"
         android:layout_height="25dp"
@@ -116,51 +116,51 @@
         android:foregroundGravity="fill_horizontal"
         android:progressDrawable="@drawable/progressbar"
         android:scaleY="1"
-        app:layout_constraintBottom_toBottomOf="@+id/border_progress_craft_sword"
-        app:layout_constraintEnd_toEndOf="@+id/border_progress_craft_sword"
-        app:layout_constraintStart_toStartOf="@+id/border_progress_craft_sword"
-        app:layout_constraintTop_toTopOf="@+id/border_progress_craft_sword" />
+        app:layout_constraintBottom_toBottomOf="@+id/border_progress_craft_castle"
+        app:layout_constraintEnd_toEndOf="@+id/border_progress_craft_castle"
+        app:layout_constraintStart_toStartOf="@+id/border_progress_craft_castle"
+        app:layout_constraintTop_toTopOf="@+id/border_progress_craft_castle" />
 
     <ImageView
-        android:id="@+id/border_button_craft_sword"
+        android:id="@+id/border_button_craft_castle"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/image_craft_sword_background"
+        app:layout_constraintEnd_toEndOf="@+id/image_craft_castle_background"
         app:layout_constraintHorizontal_bias="0.039"
-        app:layout_constraintStart_toStartOf="@+id/image_craft_sword_background"
+        app:layout_constraintStart_toStartOf="@+id/image_craft_castle_background"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.2"
         app:srcCompat="@drawable/red_circle" />
 
     <ImageButton
-        android:id="@+id/button_craft_sword"
+        android:id="@+id/button_craft_castle"
         android:layout_width="76dp"
         android:layout_height="76dp"
         android:background="@drawable/rounded_button"
         android:foreground="?android:attr/selectableItemBackground"
         android:scaleX="1"
         android:scaleY="1"
-        app:layout_constraintBottom_toBottomOf="@+id/border_button_craft_sword"
-        app:layout_constraintEnd_toEndOf="@+id/border_button_craft_sword"
-        app:layout_constraintStart_toStartOf="@+id/border_button_craft_sword"
-        app:layout_constraintTop_toTopOf="@+id/border_button_craft_sword"
-        app:srcCompat="@drawable/sword" />
+        app:layout_constraintBottom_toBottomOf="@+id/border_button_craft_castle"
+        app:layout_constraintEnd_toEndOf="@+id/border_button_craft_castle"
+        app:layout_constraintStart_toStartOf="@+id/border_button_craft_castle"
+        app:layout_constraintTop_toTopOf="@+id/border_button_craft_castle"
+        app:srcCompat="@drawable/castle" />
 
     <ImageView
-        android:id="@+id/border_craft_sword_amount"
+        android:id="@+id/border_craft_castle_amount"
         android:layout_width="53dp"
         android:layout_height="53dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/image_craft_sword_background"
+        app:layout_constraintEnd_toEndOf="@+id/image_craft_castle_background"
         app:layout_constraintHorizontal_bias="0.929"
-        app:layout_constraintStart_toStartOf="@+id/image_craft_sword_background"
+        app:layout_constraintStart_toStartOf="@+id/image_craft_castle_background"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.644"
         app:srcCompat="@drawable/red_button1" />
 
     <TextView
-        android:id="@+id/text_craft_sword_amount"
+        android:id="@+id/text_craft_castle_amount"
         android:layout_width="46dp"
         android:layout_height="40dp"
         android:background="@drawable/square_rounded_green"
@@ -168,62 +168,62 @@
         android:textSize="20sp"
         android:textStyle="bold|italic"
         app:fontFamily="serif"
-        app:layout_constraintBottom_toBottomOf="@+id/border_craft_sword_amount"
-        app:layout_constraintEnd_toEndOf="@+id/border_craft_sword_amount"
+        app:layout_constraintBottom_toBottomOf="@+id/border_craft_castle_amount"
+        app:layout_constraintEnd_toEndOf="@+id/border_craft_castle_amount"
         app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintStart_toStartOf="@+id/border_craft_sword_amount"
-        app:layout_constraintTop_toTopOf="@+id/border_craft_sword_amount" />
+        app:layout_constraintStart_toStartOf="@+id/border_craft_castle_amount"
+        app:layout_constraintTop_toTopOf="@+id/border_craft_castle_amount" />
 
     <ImageButton
-        android:id="@+id/button_craft_sword_plus"
+        android:id="@+id/button_craft_castle_plus"
         android:layout_width="53dp"
         android:layout_height="25dp"
         android:foreground="?android:attr/selectableItemBackground"
         android:src="@drawable/plus_button"
-        app:layout_constraintBottom_toBottomOf="@+id/border_craft_sword_amount"
-        app:layout_constraintEnd_toEndOf="@+id/border_craft_sword_amount"
+        app:layout_constraintBottom_toBottomOf="@+id/border_craft_castle_amount"
+        app:layout_constraintEnd_toEndOf="@+id/border_craft_castle_amount"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/border_craft_sword_amount"
+        app:layout_constraintStart_toStartOf="@+id/border_craft_castle_amount"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.515" />
 
     <ImageButton
-        android:id="@+id/button_craft_sword_minus"
+        android:id="@+id/button_craft_castle_minus"
         android:layout_width="53dp"
         android:layout_height="25dp"
         android:foreground="?android:attr/selectableItemBackground"
         android:src="@drawable/minus_button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/border_craft_sword_amount"
+        app:layout_constraintEnd_toEndOf="@+id/border_craft_castle_amount"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/border_craft_sword_amount"
-        app:layout_constraintTop_toTopOf="@+id/border_craft_sword_amount"
+        app:layout_constraintStart_toStartOf="@+id/border_craft_castle_amount"
+        app:layout_constraintTop_toTopOf="@+id/border_craft_castle_amount"
         app:layout_constraintVertical_bias="0.696" />
 
     <ImageView
-        android:id="@+id/border_craft_sword_count"
+        android:id="@+id/border_craft_castle_count"
         android:layout_width="70dp"
         android:layout_height="33dp"
         android:scaleY="1.55"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/border_button_craft_sword"
+        app:layout_constraintEnd_toEndOf="@+id/border_button_craft_castle"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/border_button_craft_sword"
-        app:layout_constraintTop_toTopOf="@+id/button_craft_sword"
+        app:layout_constraintStart_toStartOf="@+id/border_button_craft_castle"
+        app:layout_constraintTop_toTopOf="@+id/button_craft_castle"
         app:layout_constraintVertical_bias="0.71"
         app:srcCompat="@drawable/quantity_bar" />
 
     <TextView
-        android:id="@+id/text_craft_sword_count"
+        android:id="@+id/text_craft_castle_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="18sp"
         android:textStyle="bold|italic"
         app:fontFamily="serif"
-        app:layout_constraintBottom_toBottomOf="@+id/border_craft_sword_count"
-        app:layout_constraintEnd_toEndOf="@+id/border_craft_sword_count"
-        app:layout_constraintStart_toStartOf="@+id/border_craft_sword_count"
-        app:layout_constraintTop_toTopOf="@+id/border_craft_sword_count" />
+        app:layout_constraintBottom_toBottomOf="@+id/border_craft_castle_count"
+        app:layout_constraintEnd_toEndOf="@+id/border_craft_castle_count"
+        app:layout_constraintStart_toStartOf="@+id/border_craft_castle_count"
+        app:layout_constraintTop_toTopOf="@+id/border_craft_castle_count" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
