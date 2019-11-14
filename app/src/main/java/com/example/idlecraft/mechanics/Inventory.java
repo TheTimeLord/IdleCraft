@@ -11,6 +11,39 @@ public class Inventory {
     public Inventory() {
         this.items = new ArrayList<>();
         this.money = 0;
+
+        // Initialize gatherable items
+        Item sticks = new Item("sticks", 0, 10, 1, true, null, null, null, 0, 0, 0, 3, 6);
+        Item rocks = new Item("rocks", 0, 10, 1, true, null, null, null, 0, 0, 0, 3, 6);
+        Item hide = new Item("hide", 0, 10, 1, true, null, null, null, 0, 0, 0, 3, 6);
+        Item clay = new Item("clay", 0, 10, 1, true, null, null, null, 0, 0, 0, 3, 6);
+        Item metal = new Item("metal", 0, 10, 1, true, null, null, null, 0, 0, 0, 3, 6);
+        Item oil = new Item("oil", 0, 10, 1, true, null, null, null, 0, 0, 0, 3, 6);
+        Item paper = new Item("paper", 0, 10, 1, true, null, null, null, 0, 0, 0, 3, 6);
+
+        // Initialize craftable items
+        Item spear = new Item("spear", 0, 10, 1, true, "sticks", "rocks", null, 5, 5, 0, 3, 6);
+        Item sword = new Item("sword", 0, 10, 1, true, "sticks", "metal", null, 1, 1, 0, 3, 6);
+        Item brick = new Item("brick", 0, 10, 1, true, "clay", null, null, 2, 0, 0, 3, 6);
+        Item house = new Item("house", 0, 10, 1, true, "sticks", "brick", "hide", 4, 4, 2, 3, 6);
+        Item castle = new Item("castle", 0, 10, 1, true, "sticks", "rocks", "metal", 10, 50, 5, 3, 6);
+        Item lamp = new Item("lamp", 0, 10, 1, true, "metal", "oil", null, 1, 1, 0, 3, 6);
+        Item book = new Item("book", 0, 10, 1, true, "paper", null, null, 3, 0, 0, 3, 6);
+
+        this.addItem(sticks);
+        this.addItem(rocks);
+        this.addItem(hide);
+        this.addItem(clay);
+        this.addItem(metal);
+        this.addItem(oil);
+        this.addItem(paper);
+        this.addItem(spear);
+        this.addItem(sword);
+        this.addItem(brick);
+        this.addItem(house);
+        this.addItem(castle);
+        this.addItem(lamp);
+        this.addItem(book);
     }
 
     public List<Item> getItems() {
@@ -18,15 +51,11 @@ public class Inventory {
     }
 
     public Item getItemByName(String name) {
-        if (name == null) {
-            return null;
-        }
+        if (name == null) return null;
         Iterator<Item> i = this.items.iterator();
         while (i.hasNext()) {
             Item item = i.next();
-            if (item.getName() == name) {
-                return item;
-            }
+            if (item.getName() == name) return item;
         }
         return null;
     }
@@ -34,56 +63,62 @@ public class Inventory {
     public int getMoney() {
         return money;
     }
-
     public void setItems(List<Item> items) {
         this.items = items;
     }
-
     public void addItem(Item item) { this.items.add(item); }
-
     public void setMoney(int money) {
         this.money = money;
     }
-
     public void increaseMoney(int amount) {
         money += amount;
     }
-
     public void decreaseMoney(int amount) {
         money -= amount;
     }
 
-    public boolean isCraftable(String itemName, int amount) {
-        Item targetItem = this.getItemByName(itemName);
+
+    public boolean isCraftable(Item targetItem, int amount) {
+        if (amount == 0) return false;
         Item req1 = this.getItemByName(targetItem.getReq1());
         Item req2 = this.getItemByName(targetItem.getReq2());
         Item req3 = this.getItemByName(targetItem.getReq3());
 
         // requirements should be sequential, so if there is no reqN there should be no more reqs
-        if (req1 == null) {
-            return true;
-        }
-        if (req1.getCount() < (targetItem.getReqAmount1() * amount)) {
-            return false;
-        }
-        if (req2 == null) {
-            return true;
-        }
-        if (req2.getCount() < (targetItem.getReqAmount2() * amount)) {
-            return false;
-        }
-        if (req3 == null) {
-            return true;
-        }
-        if (req3.getCount() < (targetItem.getReqAmount3() * amount)) {
-            return false;
-        }
+        if (req1 == null) return true;
+        if (req1.getCount() < (targetItem.getReqAmount1() * amount)) return false;
+        if (req2 == null) return true;
+        if (req2.getCount() < (targetItem.getReqAmount2() * amount)) return false;
+        if (req3 == null) return true;
+        if (req3.getCount() < (targetItem.getReqAmount3() * amount)) return false;
         return true;
     }
 
-    public void craftItem(String itemName, int amount) {
-        if (this.isCraftable(itemName, amount)) {
-            Item targetItem = this.getItemByName(itemName);
+
+    public int howManyCanCraft(Item item) {
+        Item req1 = this.getItemByName(item.getReq1());
+        Item req2 = this.getItemByName(item.getReq2());
+        Item req3 = this.getItemByName(item.getReq3());
+
+        if (req1 != null) {
+            int numCraftableItems = req1.getCount() / item.getReqAmount1();
+
+            if (req2 != null) {
+                int num = req2.getCount() / item.getReqAmount2();
+                if (num < numCraftableItems) numCraftableItems = num;
+            }
+            if (req3 != null) {
+                int num = req3.getCount() / item.getReqAmount3();
+                if (num < numCraftableItems) numCraftableItems = num;
+            }
+            return numCraftableItems;
+        }
+        return 0;
+    }
+
+
+    public void craftItem(Item targetItem, int amount) {
+        if (this.isCraftable(targetItem, amount)) {
             Item req1 = this.getItemByName(targetItem.getReq1());
             Item req2 = this.getItemByName(targetItem.getReq2());
             Item req3 = this.getItemByName(targetItem.getReq3());

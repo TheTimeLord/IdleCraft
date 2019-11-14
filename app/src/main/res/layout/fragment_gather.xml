@@ -17,7 +17,6 @@
             android:layout_height="125dp"
             android:layout_marginTop="25dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -132,7 +131,7 @@
                 android:id="@+id/text_gath_sticks_quantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="22sp"
+                android:textSize="17sp"
                 android:textStyle="bold|italic"
                 app:fontFamily="serif"
                 app:layout_constraintBottom_toBottomOf="@+id/border_text_gath_sticks_quantity"
@@ -261,7 +260,7 @@
                 android:id="@+id/text_gath_rocks_quantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="22sp"
+                android:textSize="17sp"
                 android:textStyle="bold|italic"
                 app:fontFamily="serif"
                 app:layout_constraintBottom_toBottomOf="@+id/border_text_gath_rocks_quantity"
@@ -390,7 +389,7 @@
                 android:id="@+id/text_gath_hide_quantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="22sp"
+                android:textSize="17sp"
                 android:textStyle="bold|italic"
                 app:fontFamily="serif"
                 app:layout_constraintBottom_toBottomOf="@+id/border_text_gath_hide_quantity"
@@ -405,7 +404,6 @@
             android:layout_height="125dp"
             android:layout_marginTop="25dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/module_hide">
 
@@ -520,7 +518,7 @@
                 android:id="@+id/text_gath_clay_quantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="22sp"
+                android:textSize="17sp"
                 android:textStyle="bold|italic"
                 app:fontFamily="serif"
                 app:layout_constraintBottom_toBottomOf="@+id/border_text_gath_clay_quantity"
@@ -535,7 +533,6 @@
             android:layout_height="125dp"
             android:layout_marginTop="25dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/module_clay">
 
@@ -650,7 +647,7 @@
                 android:id="@+id/text_gath_metal_quantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="22sp"
+                android:textSize="17sp"
                 android:textStyle="bold|italic"
                 app:fontFamily="serif"
                 app:layout_constraintBottom_toBottomOf="@+id/border_text_gath_metal_quantity"
@@ -665,7 +662,6 @@
             android:layout_height="125dp"
             android:layout_marginTop="25dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/module_metal">
 
@@ -780,7 +776,7 @@
                 android:id="@+id/text_gath_oil_quantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="22sp"
+                android:textSize="17sp"
                 android:textStyle="bold|italic"
                 app:fontFamily="serif"
                 app:layout_constraintBottom_toBottomOf="@+id/border_text_gath_oil_quantity"
@@ -797,7 +793,6 @@
             android:layout_marginBottom="100dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/module_oil">
 
@@ -912,7 +907,7 @@
                 android:id="@+id/text_gath_paper_quantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="22sp"
+                android:textSize="17sp"
                 android:textStyle="bold|italic"
                 app:fontFamily="serif"
                 app:layout_constraintBottom_toBottomOf="@+id/border_text_gath_paper_quantity"
