@@ -1,16 +1,22 @@
 package com.example.idlecraft.ui
 
+import android.media.Image
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageButton
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.idlecraft.MainActivity
 import com.example.idlecraft.R
 import com.example.idlecraft.mechanics.Inventory
 import com.example.idlecraft.mechanics.Item
+import kotlinx.android.synthetic.main.craft_spear.view.*
 import kotlinx.android.synthetic.main.fragment_craft.view.*
+import org.w3c.dom.Text
 
 class CraftFragment : Fragment() {
     private var act: MainActivity? = null
@@ -53,22 +59,22 @@ class CraftFragment : Fragment() {
         //==========================================================================================
         // Spear Variables and Button Listeners
         //==========================================================================================
-        val textSpear = view.text_craft_spear_count
-        val progressBarSpear = view.progress_craft_spear
+        val textSpear = view.findViewById<TextView>(R.id.text_craft_spear_count)
+        val progressBarSpear = view.findViewById<ProgressBar>(R.id.progress_craft_spear)
         val spearItem = inv.getItemByName("spear")
         updateItemText(textSpear, spearItem)
 
         var spearCraftCount = 1
-        val textSpearAmount = view.text_craft_spear_amount
+        val textSpearAmount = view.findViewById<TextView>(R.id.text_craft_spear_amount)
         textSpearAmount.text = spearCraftCount.toString()
 
-        val textSpearReq1 = view.text_craft_spear_req1
-        val textSpearReq2 = view.text_craft_spear_req2
-        val textSpearReq3 = view.text_craft_spear_req3
+        val textSpearReq1 = view.findViewById<TextView>(R.id.text_craft_spear_req1)
+        val textSpearReq2 = view.findViewById<TextView>(R.id.text_craft_spear_req2)
+        val textSpearReq3 = view.findViewById<TextView>(R.id.text_craft_spear_req3)
         updateReqText(textSpearReq1, textSpearReq2, textSpearReq3, spearItem)
 
 
-        view.button_craft_spear.setOnClickListener {
+        view.findViewById<ImageButton>(R.id.button_craft_spear).setOnClickListener {
             var craftCount = inv.howManyCanCraft(spearItem)
             if (spearCraftCount < craftCount) craftCount = spearCraftCount
             if (progressBarSpear.progress != 0 || spearItem.count >= spearItem.max || !inv.isCraftable(spearItem, craftCount))
@@ -92,14 +98,326 @@ class CraftFragment : Fragment() {
         }
 
         // Plus Button
-        view.button_craft_spear_plus.setOnClickListener {
+        view.findViewById<ImageButton>(R.id.button_craft_spear_plus).setOnClickListener {
             if (spearCraftCount < spearItem.max) spearCraftCount += 1
             textSpearAmount.text = spearCraftCount.toString()
         }
         // Minus Button
-        view.button_craft_spear_minus.setOnClickListener {
+        view.findViewById<ImageButton>(R.id.button_craft_spear_minus).setOnClickListener {
             if (spearCraftCount > 1) spearCraftCount -= 1
             textSpearAmount.text = spearCraftCount.toString()
+        }
+
+        //==========================================================================================
+        // Sword Variables and Button Listeners
+        //==========================================================================================
+        val textSword = view.findViewById<TextView>(R.id.text_craft_sword_count)
+        val progressBarSword = view.findViewById<ProgressBar>(R.id.progress_craft_sword)
+        val swordItem = inv.getItemByName("sword")
+        updateItemText(textSword, swordItem)
+
+        var swordCraftCount = 1
+        val textSwordAmount = view.findViewById<TextView>(R.id.text_craft_sword_amount)
+        textSwordAmount.text = swordCraftCount.toString()
+
+        val textSwordReq1 = view.findViewById<TextView>(R.id.text_craft_sword_req1)
+        val textSwordReq2 = view.findViewById<TextView>(R.id.text_craft_sword_req2)
+        val textSwordReq3 = view.findViewById<TextView>(R.id.text_craft_sword_req3)
+        updateReqText(textSwordReq1, textSwordReq2, textSwordReq3, swordItem)
+
+
+        view.findViewById<ImageButton>(R.id.button_craft_sword).setOnClickListener {
+            var craftCount = inv.howManyCanCraft(swordItem)
+            if (swordCraftCount < craftCount) craftCount = swordCraftCount
+            if (progressBarSword.progress != 0 || swordItem.count >= swordItem.max || !inv.isCraftable(swordItem, craftCount))
+                return@setOnClickListener
+            Thread(Runnable {
+                var progress = 0
+                while (progress < progressBarSword.max) {
+                    progress += 1
+                    progressBarSword.progress = progress
+                    try { Thread.sleep(16) } // 3 seconds
+                    catch (e: InterruptedException) { e.printStackTrace() }
+                }
+                progressBarSword.progress = 0     // Reset progress bar
+                inv.craftItem(swordItem, craftCount)
+                // runOnUiThread allows the thread to update UI objects
+                activity?.runOnUiThread {
+                    updateItemText(textSword, swordItem)
+                    updateReqText(textSwordReq1, textSwordReq2, textSwordReq3, swordItem)
+                }
+            }).start()
+        }
+
+        // Plus Button
+        view.findViewById<ImageButton>(R.id.button_craft_sword_plus).setOnClickListener {
+            if (swordCraftCount < swordItem.max) swordCraftCount += 1
+            textSwordAmount.text = swordCraftCount.toString()
+        }
+        // Minus Button
+        view.findViewById<ImageButton>(R.id.button_craft_sword_minus).setOnClickListener {
+            if (swordCraftCount > 1) swordCraftCount -= 1
+            textSwordAmount.text = swordCraftCount.toString()
+        }
+
+        //==========================================================================================
+        // Brick Variables and Button Listeners
+        //==========================================================================================
+        val textBrick = view.findViewById<TextView>(R.id.text_craft_brick_count)
+        val progressBarBrick = view.findViewById<ProgressBar>(R.id.progress_craft_brick)
+        val brickItem = inv.getItemByName("brick")
+        updateItemText(textBrick, brickItem)
+
+        var brickCraftCount = 1
+        val textBrickAmount = view.findViewById<TextView>(R.id.text_craft_brick_amount)
+        textBrickAmount.text = brickCraftCount.toString()
+
+        val textBrickReq1 = view.findViewById<TextView>(R.id.text_craft_brick_req1)
+        val textBrickReq2 = view.findViewById<TextView>(R.id.text_craft_brick_req2)
+        val textBrickReq3 = view.findViewById<TextView>(R.id.text_craft_brick_req3)
+        updateReqText(textBrickReq1, textBrickReq2, textBrickReq3, brickItem)
+
+
+        view.findViewById<ImageButton>(R.id.button_craft_brick).setOnClickListener {
+            var craftCount = inv.howManyCanCraft(brickItem)
+            if (brickCraftCount < craftCount) craftCount = brickCraftCount
+            if (progressBarBrick.progress != 0 || brickItem.count >= brickItem.max || !inv.isCraftable(brickItem, craftCount))
+                return@setOnClickListener
+            Thread(Runnable {
+                var progress = 0
+                while (progress < progressBarBrick.max) {
+                    progress += 1
+                    progressBarBrick.progress = progress
+                    try { Thread.sleep(16) } // 3 seconds
+                    catch (e: InterruptedException) { e.printStackTrace() }
+                }
+                progressBarBrick.progress = 0     // Reset progress bar
+                inv.craftItem(brickItem, craftCount)
+                // runOnUiThread allows the thread to update UI objects
+                activity?.runOnUiThread {
+                    updateItemText(textBrick, brickItem)
+                    updateReqText(textBrickReq1, textBrickReq2, textBrickReq3, brickItem)
+                }
+            }).start()
+        }
+
+        // Plus Button
+        view.findViewById<ImageButton>(R.id.button_craft_brick_plus).setOnClickListener {
+            if (brickCraftCount < brickItem.max) brickCraftCount += 1
+            textBrickAmount.text = brickCraftCount.toString()
+        }
+        // Minus Button
+        view.findViewById<ImageButton>(R.id.button_craft_brick_minus).setOnClickListener {
+            if (brickCraftCount > 1) brickCraftCount -= 1
+            textBrickAmount.text = brickCraftCount.toString()
+        }
+
+        //==========================================================================================
+        // House Variables and Button Listeners
+        //==========================================================================================
+        val textHouse = view.findViewById<TextView>(R.id.text_craft_house_count)
+        val progressBarHouse = view.findViewById<ProgressBar>(R.id.progress_craft_house)
+        val houseItem = inv.getItemByName("house")
+        updateItemText(textHouse, houseItem)
+
+        var houseCraftCount = 1
+        val textHouseAmount = view.findViewById<TextView>(R.id.text_craft_house_amount)
+        textHouseAmount.text = houseCraftCount.toString()
+
+        val textHouseReq1 = view.findViewById<TextView>(R.id.text_craft_house_req1)
+        val textHouseReq2 = view.findViewById<TextView>(R.id.text_craft_house_req2)
+        val textHouseReq3 = view.findViewById<TextView>(R.id.text_craft_house_req3)
+        updateReqText(textHouseReq1, textHouseReq2, textHouseReq3, houseItem)
+
+
+        view.findViewById<ImageButton>(R.id.button_craft_house).setOnClickListener {
+            var craftCount = inv.howManyCanCraft(houseItem)
+            if (houseCraftCount < craftCount) craftCount = houseCraftCount
+            if (progressBarHouse.progress != 0 || houseItem.count >= houseItem.max || !inv.isCraftable(houseItem, craftCount))
+                return@setOnClickListener
+            Thread(Runnable {
+                var progress = 0
+                while (progress < progressBarHouse.max) {
+                    progress += 1
+                    progressBarHouse.progress = progress
+                    try { Thread.sleep(16) } // 3 seconds
+                    catch (e: InterruptedException) { e.printStackTrace() }
+                }
+                progressBarHouse.progress = 0     // Reset progress bar
+                inv.craftItem(houseItem, craftCount)
+                // runOnUiThread allows the thread to update UI objects
+                activity?.runOnUiThread {
+                    updateItemText(textHouse, houseItem)
+                    updateReqText(textHouseReq1, textHouseReq2, textHouseReq3, houseItem)
+                }
+            }).start()
+        }
+
+        // Plus Button
+        view.findViewById<ImageButton>(R.id.button_craft_house_plus).setOnClickListener {
+            if (houseCraftCount < houseItem.max) houseCraftCount += 1
+            textHouseAmount.text = houseCraftCount.toString()
+        }
+        // Minus Button
+        view.findViewById<ImageButton>(R.id.button_craft_house_minus).setOnClickListener {
+            if (houseCraftCount > 1) houseCraftCount -= 1
+            textHouseAmount.text = houseCraftCount.toString()
+        }
+
+        //==========================================================================================
+        // Castle Variables and Button Listeners
+        //==========================================================================================
+        val textCastle = view.findViewById<TextView>(R.id.text_craft_castle_count)
+        val progressBarCastle = view.findViewById<ProgressBar>(R.id.progress_craft_castle)
+        val castleItem = inv.getItemByName("castle")
+        updateItemText(textCastle, castleItem)
+
+        var castleCraftCount = 1
+        val textCastleAmount = view.findViewById<TextView>(R.id.text_craft_castle_amount)
+        textCastleAmount.text = castleCraftCount.toString()
+
+        val textCastleReq1 = view.findViewById<TextView>(R.id.text_craft_castle_req1)
+        val textCastleReq2 = view.findViewById<TextView>(R.id.text_craft_castle_req2)
+        val textCastleReq3 = view.findViewById<TextView>(R.id.text_craft_castle_req3)
+        updateReqText(textCastleReq1, textCastleReq2, textCastleReq3, castleItem)
+
+
+        view.findViewById<ImageButton>(R.id.button_craft_castle).setOnClickListener {
+            var craftCount = inv.howManyCanCraft(castleItem)
+            if (castleCraftCount < craftCount) craftCount = castleCraftCount
+            if (progressBarCastle.progress != 0 || castleItem.count >= castleItem.max || !inv.isCraftable(castleItem, craftCount))
+                return@setOnClickListener
+            Thread(Runnable {
+                var progress = 0
+                while (progress < progressBarCastle.max) {
+                    progress += 1
+                    progressBarCastle.progress = progress
+                    try { Thread.sleep(16) } // 3 seconds
+                    catch (e: InterruptedException) { e.printStackTrace() }
+                }
+                progressBarCastle.progress = 0     // Reset progress bar
+                inv.craftItem(castleItem, craftCount)
+                // runOnUiThread allows the thread to update UI objects
+                activity?.runOnUiThread {
+                    updateItemText(textCastle, castleItem)
+                    updateReqText(textCastleReq1, textCastleReq2, textCastleReq3, castleItem)
+                }
+            }).start()
+        }
+
+        // Plus Button
+        view.findViewById<ImageButton>(R.id.button_craft_castle_plus).setOnClickListener {
+            if (castleCraftCount < castleItem.max) castleCraftCount += 1
+            textCastleAmount.text = castleCraftCount.toString()
+        }
+        // Minus Button
+        view.findViewById<ImageButton>(R.id.button_craft_castle_minus).setOnClickListener {
+            if (castleCraftCount > 1) castleCraftCount -= 1
+            textCastleAmount.text = castleCraftCount.toString()
+        }
+
+        //==========================================================================================
+        // Lamp Variables and Button Listeners
+        //==========================================================================================
+        val textLamp = view.findViewById<TextView>(R.id.text_craft_lamp_count)
+        val progressBarLamp = view.findViewById<ProgressBar>(R.id.progress_craft_lamp)
+        val lampItem = inv.getItemByName("lamp")
+        updateItemText(textLamp, lampItem)
+
+        var lampCraftCount = 1
+        val textLampAmount = view.findViewById<TextView>(R.id.text_craft_lamp_amount)
+        textLampAmount.text = lampCraftCount.toString()
+
+        val textLampReq1 = view.findViewById<TextView>(R.id.text_craft_lamp_req1)
+        val textLampReq2 = view.findViewById<TextView>(R.id.text_craft_lamp_req2)
+        val textLampReq3 = view.findViewById<TextView>(R.id.text_craft_lamp_req3)
+        updateReqText(textLampReq1, textLampReq2, textLampReq3, lampItem)
+
+
+        view.findViewById<ImageButton>(R.id.button_craft_lamp).setOnClickListener {
+            var craftCount = inv.howManyCanCraft(lampItem)
+            if (lampCraftCount < craftCount) craftCount = lampCraftCount
+            if (progressBarLamp.progress != 0 || lampItem.count >= lampItem.max || !inv.isCraftable(lampItem, craftCount))
+                return@setOnClickListener
+            Thread(Runnable {
+                var progress = 0
+                while (progress < progressBarLamp.max) {
+                    progress += 1
+                    progressBarLamp.progress = progress
+                    try { Thread.sleep(16) } // 3 seconds
+                    catch (e: InterruptedException) { e.printStackTrace() }
+                }
+                progressBarLamp.progress = 0     // Reset progress bar
+                inv.craftItem(lampItem, craftCount)
+                // runOnUiThread allows the thread to update UI objects
+                activity?.runOnUiThread {
+                    updateItemText(textLamp, lampItem)
+                    updateReqText(textLampReq1, textLampReq2, textLampReq3, lampItem)
+                }
+            }).start()
+        }
+
+        // Plus Button
+        view.findViewById<ImageButton>(R.id.button_craft_lamp_plus).setOnClickListener {
+            if (lampCraftCount < lampItem.max) lampCraftCount += 1
+            textLampAmount.text = lampCraftCount.toString()
+        }
+        // Minus Button
+        view.findViewById<ImageButton>(R.id.button_craft_lamp_minus).setOnClickListener {
+            if (lampCraftCount > 1) lampCraftCount -= 1
+            textLampAmount.text = lampCraftCount.toString()
+        }
+
+        //==========================================================================================
+        // Book Variables and Button Listeners
+        //==========================================================================================
+        val textBook = view.findViewById<TextView>(R.id.text_craft_book_count)
+        val progressBarBook = view.findViewById<ProgressBar>(R.id.progress_craft_book)
+        val bookItem = inv.getItemByName("book")
+        updateItemText(textBook, bookItem)
+
+        var bookCraftCount = 1
+        val textBookAmount = view.findViewById<TextView>(R.id.text_craft_book_amount)
+        textBookAmount.text = bookCraftCount.toString()
+
+        val textBookReq1 = view.findViewById<TextView>(R.id.text_craft_book_req1)
+        val textBookReq2 = view.findViewById<TextView>(R.id.text_craft_book_req2)
+        val textBookReq3 = view.findViewById<TextView>(R.id.text_craft_book_req3)
+        updateReqText(textBookReq1, textBookReq2, textBookReq3, bookItem)
+
+
+        view.findViewById<ImageButton>(R.id.button_craft_book).setOnClickListener {
+            var craftCount = inv.howManyCanCraft(bookItem)
+            if (bookCraftCount < craftCount) craftCount = bookCraftCount
+            if (progressBarBook.progress != 0 || bookItem.count >= bookItem.max || !inv.isCraftable(bookItem, craftCount))
+                return@setOnClickListener
+            Thread(Runnable {
+                var progress = 0
+                while (progress < progressBarBook.max) {
+                    progress += 1
+                    progressBarBook.progress = progress
+                    try { Thread.sleep(16) } // 3 seconds
+                    catch (e: InterruptedException) { e.printStackTrace() }
+                }
+                progressBarBook.progress = 0     // Reset progress bar
+                inv.craftItem(bookItem, craftCount)
+                // runOnUiThread allows the thread to update UI objects
+                activity?.runOnUiThread {
+                    updateItemText(textBook, bookItem)
+                    updateReqText(textBookReq1, textBookReq2, textBookReq3, bookItem)
+                }
+            }).start()
+        }
+
+        // Plus Button
+        view.findViewById<ImageButton>(R.id.button_craft_book_plus).setOnClickListener {
+            if (bookCraftCount < bookItem.max) bookCraftCount += 1
+            textBookAmount.text = bookCraftCount.toString()
+        }
+        // Minus Button
+        view.findViewById<ImageButton>(R.id.button_craft_book_minus).setOnClickListener {
+            if (bookCraftCount > 1) bookCraftCount -= 1
+            textBookAmount.text = bookCraftCount.toString()
         }
 
         return view
