@@ -643,7 +643,7 @@ class InventoryFragment : Fragment() {
         //==========================================================================================
         // Constant thread to update all text values
         //==========================================================================================
-
+        /*
         Thread(Runnable {
             while(true) {
                 updateMoneyText(textMoney, inv.money)
@@ -703,9 +703,11 @@ class InventoryFragment : Fragment() {
                 updateItemText(textBook, bookItem)
                 updateMoneyText(view.text_inv_book_sell_price, bookItem.sellValue)
                 updateMoneyText(view.text_inv_book_buy_price, bookItem.buyValue)
+                try { Thread.sleep(3) }
+                catch (e: InterruptedException) { e.printStackTrace() }
             }
         }).start()
-
+        */
         return view
     }
 }
