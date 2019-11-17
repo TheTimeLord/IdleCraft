@@ -100,22 +100,27 @@ public class Item {
     public void setBuyRate (int buyRate) { this.buyRate = buyRate; }
     public void setIncInv (int incInv) {this.incInv = incInv; }
     public void setIncRate (int incRate) {this.incRate = incRate; }
-
     public boolean isUnlocked() { return unlocked; }
 
     public void increaseCount(int amount) {
         if ((count + amount) >= max) count = max;
+        else if (amount < 0) throw new UnsupportedOperationException("Cannot modify count by a negative amount");
         else count += amount;
     }
     public void decreaseCount(int amount) {
         if ((count - amount) <= 0) count = 0;
+        else if (amount < 0) throw new UnsupportedOperationException("Cannot modify count by a negative amount");
         else count -= amount;
     }
 
     public void increaseMax(int amount) {
-        max += amount;
+        if (amount >= 0) max += amount;
+        else if (amount < 0) throw new UnsupportedOperationException("Cannot modify max by a negative amount");
     }
+
     public void decreaseMax(int amount) {
-        max -= amount;
+        if (max - amount <= 0) max = 0;
+        else if (amount < 0) throw new UnsupportedOperationException("Cannot modify max by a negative amount");
+        else max -= amount;
     }
 }

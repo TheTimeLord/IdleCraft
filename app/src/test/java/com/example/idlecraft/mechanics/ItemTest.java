@@ -1,28 +1,23 @@
 package com.example.idlecraft.mechanics;
 
+import org.junit.Rule;
 import org.junit.Test;
-
+import org.junit.rules.ExpectedException;
 import static org.junit.Assert.*;
 
 public class ItemTest {
 
-    private Item slingshot = new Item("slingshot", 5, 20, 1, true, null, null, null, 0, 0, 0, 5, 10);
+    private Item testItem = new Item("slingshot", 5, 20, 1, true, null, null, null, 0, 0, 0, 5, 10, 1, 1, 1, 1);
+
+    @Rule
+    public ExpectedException exception = ExpectedException.none();
 
     @Test
     public void increaseCountUnderMax() {
         int input = 5;
         int expected = 10;
-        slingshot.increaseCount(input);
-        int output = slingshot.getCount();
-        assertEquals(expected, output);
-    }
-
-    @Test
-    public void increaseCountToMax() {
-        int input = 15;
-        int expected = 20;
-        slingshot.increaseCount(input);
-        int output = slingshot.getCount();
+        testItem.increaseCount(input);
+        int output = testItem.getCount();
         assertEquals(expected, output);
     }
 
@@ -30,8 +25,8 @@ public class ItemTest {
     public void increaseCountOverMax() {
         int input = 30;
         int expected = 20;
-        slingshot.increaseCount(input);
-        int output = slingshot.getCount();
+        testItem.increaseCount(input);
+        int output = testItem.getCount();
         assertEquals(expected, output);
     }
 
@@ -40,18 +35,26 @@ public class ItemTest {
         int input1 = 5;
         int input2 = 5;
         int expected = 15;
-        slingshot.increaseCount(input1);
-        slingshot.increaseCount(input2);
-        int output = slingshot.getCount();
+        testItem.increaseCount(input1);
+        testItem.increaseCount(input2);
+        int output = testItem.getCount();
         assertEquals(expected, output);
+    }
+
+    @Test
+    public void increaseCountByNegativeAmount() {
+        int input = -5;
+        exception.expect(UnsupportedOperationException.class);
+        exception.expectMessage("Cannot modify count by a negative amount");
+        testItem.increaseCount(input);
     }
 
     @Test
     public void decreaseCountUnderZero() {
         int input = 20;
         int expected = 0;
-        slingshot.decreaseCount(input);
-        int output = slingshot.getCount();
+        testItem.decreaseCount(input);
+        int output = testItem.getCount();
         assertEquals(expected, output);
     }
 
@@ -59,8 +62,8 @@ public class ItemTest {
     public void decreaseCountOverZero() {
         int input = 3;
         int expected = 2;
-        slingshot.decreaseCount(input);
-        int output = slingshot.getCount();
+        testItem.decreaseCount(input);
+        int output = testItem.getCount();
         assertEquals(expected, output);
     }
 
@@ -69,10 +72,18 @@ public class ItemTest {
         int input1 = 3;
         int input2 = 1;
         int expected = 1;
-        slingshot.decreaseCount(input1);
-        slingshot.decreaseCount(input2);
-        int output = slingshot.getCount();
+        testItem.decreaseCount(input1);
+        testItem.decreaseCount(input2);
+        int output = testItem.getCount();
         assertEquals(expected, output);
+    }
+
+    @Test
+    public void decreaseCountByNegativeAmount() {
+        int input = -5;
+        exception.expect(UnsupportedOperationException.class);
+        exception.expectMessage("Cannot modify count by a negative amount");
+        testItem.decreaseCount(input);
     }
 
     @Test
@@ -80,9 +91,9 @@ public class ItemTest {
         int input1 = 10;
         int input2 = 5;
         int expected = 10;
-        slingshot.increaseCount(input1);
-        slingshot.decreaseCount(input2);
-        int output = slingshot.getCount();
+        testItem.increaseCount(input1);
+        testItem.decreaseCount(input2);
+        int output = testItem.getCount();
         assertEquals(expected, output);
     }
 
@@ -90,17 +101,42 @@ public class ItemTest {
     public void increaseMax() {
         int input = 5;
         int expected = 25;
-        slingshot.increaseMax(input);
-        int output = slingshot.getMax();
+        testItem.increaseMax(input);
+        int output = testItem.getMax();
         assertEquals(expected, output);
     }
 
     @Test
-    public void decreaseMax() {
+    public void increaseMaxByNegativeAmount() {
+        int input = -5;
+        exception.expect(UnsupportedOperationException.class);
+        exception.expectMessage("Cannot modify max by a negative amount");
+        testItem.increaseMax(input);
+    }
+
+    @Test
+    public void decreaseMaxOverZero() {
         int input = 5;
         int expected = 15;
-        slingshot.decreaseMax(input);
-        int output = slingshot.getMax();
+        testItem.decreaseMax(input);
+        int output = testItem.getMax();
         assertEquals(expected, output);
+    }
+
+    @Test
+    public void decreaseMaxUnderZero() {
+        int input = 25;
+        int expected = 0;
+        testItem.decreaseMax(input);
+        int output = testItem.getMax();
+        assertEquals(expected, output);
+    }
+
+    @Test
+    public void decreaseMaxByNegativeAmount() {
+        int input = -5;
+        exception.expect(UnsupportedOperationException.class);
+        exception.expectMessage("Cannot modify max by a negative amount");
+        testItem.decreaseMax(input);
     }
 }
