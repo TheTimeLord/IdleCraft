@@ -1,11 +1,9 @@
 package com.example.idlecraft.ui
 
-import android.media.Image
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ProgressBar
 import android.widget.TextView
@@ -14,9 +12,6 @@ import com.example.idlecraft.MainActivity
 import com.example.idlecraft.R
 import com.example.idlecraft.mechanics.Inventory
 import com.example.idlecraft.mechanics.Item
-import kotlinx.android.synthetic.main.craft_spear.view.*
-import kotlinx.android.synthetic.main.fragment_craft.view.*
-import org.w3c.dom.Text
 
 class CraftFragment : Fragment() {
     private var act: MainActivity? = null
@@ -74,7 +69,7 @@ class CraftFragment : Fragment() {
         updateReqText(textSpearReq1, textSpearReq2, textSpearReq3, spearItem)
 
 
-        view.findViewById<ImageButton>(R.id.button_craft_spear).setOnClickListener {
+        view.findViewById<ImageButton>(R.id.image_shop_sticks).setOnClickListener {
             var craftCount = inv.howManyCanCraft(spearItem)
             if (spearCraftCount < craftCount) craftCount = spearCraftCount
             if (progressBarSpear.progress != 0 || spearItem.count >= spearItem.max || !inv.isCraftable(spearItem, craftCount))

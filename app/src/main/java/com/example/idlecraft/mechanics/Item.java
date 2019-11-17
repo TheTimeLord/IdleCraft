@@ -14,6 +14,8 @@ public class Item {
     private int reqAmount3;
     private int sellValue;
     private int buyValue;
+    private int buyMax;
+    private int buyRate;
 
 
     // Default Constructor
@@ -31,12 +33,14 @@ public class Item {
         this.reqAmount3 = 0;
         this.sellValue = 0;
         this.buyValue = 0;
+        this.buyMax = 0;
+        this.buyRate = 0;
     }
 
     // Class Constructor
     public Item(String name, int count, int max, int rate, boolean unlocked, String req1,
                 String req2, String req3, int reqAmount1, int reqAmount2, int reqAmount3,
-                int sellValue, int buyValue) {
+                int sellValue, int buyValue, int buyMax, int buyRate) {
         this.name = name;
         this.count = count;
         this.max = max;
@@ -50,6 +54,8 @@ public class Item {
         this.reqAmount3 = reqAmount3;
         this.sellValue = sellValue;
         this.buyValue = buyValue;
+        this.buyMax = buyMax;
+        this.buyRate = buyRate;
     }
 
     public boolean isUnlocked() {
@@ -73,6 +79,8 @@ public class Item {
     public int getReqAmount3() { return reqAmount3; }
     public int getSellValue() { return sellValue; }
     public int getBuyValue() { return buyValue; }
+    public int getBuyMax() { return buyMax; }
+    public int getBuyRate() { return buyRate; }
 
     // Setters
     public void setName(String name) {
@@ -96,7 +104,8 @@ public class Item {
     public void setReqAmount3 (int reqAmount3) { this.reqAmount3 = reqAmount3; }
     public void setSellValue (int sellValue) { this.sellValue = sellValue; }
     public void setBuyValue (int buyValue) { this.buyValue = buyValue; }
-
+    public void setBuyMax (int buyMax) { this.buyMax = buyMax; }
+    public void setBuyRate (int buyRate) { this.buyRate = buyRate; }
 
 
     public void increaseCount(int amount) {
