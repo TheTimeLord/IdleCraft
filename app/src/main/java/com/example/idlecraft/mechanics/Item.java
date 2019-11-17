@@ -16,6 +16,8 @@ public class Item {
     private int buyValue;
     private int buyMax;
     private int buyRate;
+    private int incInv;  // amount to increase inventory by
+    private int incRate; // amount to increase rate by
 
 
     // Default Constructor
@@ -35,12 +37,14 @@ public class Item {
         this.buyValue = 0;
         this.buyMax = 0;
         this.buyRate = 0;
+        this.incInv = 0;
+        this.incRate = 0;
     }
 
     // Class Constructor
     public Item(String name, int count, int max, int rate, boolean unlocked, String req1,
                 String req2, String req3, int reqAmount1, int reqAmount2, int reqAmount3,
-                int sellValue, int buyValue, int buyMax, int buyRate) {
+                int sellValue, int buyValue, int buyMax, int buyRate, int incInv, int incRate) {
         this.name = name;
         this.count = count;
         this.max = max;
@@ -56,21 +60,15 @@ public class Item {
         this.buyValue = buyValue;
         this.buyMax = buyMax;
         this.buyRate = buyRate;
-    }
-
-    public boolean isUnlocked() {
-        return unlocked;
+        this.incInv = incInv;
+        this.incRate = incRate;
     }
 
     // Getters
-    public String getName() {
-        return name;
-    }
-    public int getCount()   { return count; }
+    public String getName() { return name; }
+    public int getCount() { return count; }
     public int getMax() { return max; }
-    public int getRate() {
-        return rate;
-    }
+    public int getRate() { return rate; }
     public String getReq1() { return req1; }
     public String getReq2() { return req2; }
     public String getReq3() { return req3; }
@@ -81,21 +79,15 @@ public class Item {
     public int getBuyValue() { return buyValue; }
     public int getBuyMax() { return buyMax; }
     public int getBuyRate() { return buyRate; }
+    public int getIncInv() {return incInv; }
+    public int getIncRate() {return incRate; }
 
     // Setters
-    public void setName(String name) {
-        this.name = name;
-    }
-    public void setCount(int count) {
-        this.count = count;
-    }
+    public void setName(String name) { this.name = name; }
+    public void setCount(int count) { this.count = count; }
     public void setMax(int max) { this.max = max; }
-    public void setRate(int rate) {
-        this.rate = rate;
-    }
-    public void setUnlocked(boolean unlocked) {
-        this.unlocked = unlocked;
-    }
+    public void setRate(int rate) { this.rate = rate; }
+    public void setUnlocked(boolean unlocked) { this.unlocked = unlocked; }
     public void setReq1(String req1) { this.req1 = req1; }
     public void setReq2(String req2) { this.req2 = req2; }
     public void setReq3(String req3) { this.req3 = req3; }
@@ -106,7 +98,10 @@ public class Item {
     public void setBuyValue (int buyValue) { this.buyValue = buyValue; }
     public void setBuyMax (int buyMax) { this.buyMax = buyMax; }
     public void setBuyRate (int buyRate) { this.buyRate = buyRate; }
+    public void setIncInv (int incInv) {this.incInv = incInv; }
+    public void setIncRate (int incRate) {this.incRate = incRate; }
 
+    public boolean isUnlocked() { return unlocked; }
 
     public void increaseCount(int amount) {
         if ((count + amount) >= max) count = max;
