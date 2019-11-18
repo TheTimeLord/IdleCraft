@@ -37,6 +37,10 @@ class GatherFragment : Fragment() {
         act!!.saveInv()
         val inv = act!!.inventory
 
+        // Update Thread: activate Gathering
+        act!!.updateThreadCrafting = false
+        act!!.updateThreadInventory = false
+
         // Sticks Item and UI setup
         val textSticks = view.text_gath_sticks_quantity
         val textSticksRate = view.text_gath_sticks_rate
