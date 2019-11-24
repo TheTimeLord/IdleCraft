@@ -8,11 +8,13 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.idlecraft.MainActivity
 import com.example.idlecraft.R
+import com.example.idlecraft.mechanics.Inventory
 import com.example.idlecraft.mechanics.Item
 import kotlinx.android.synthetic.main.fragment_gather.view.*
 
 class GatherFragment : Fragment() {
     private var act: MainActivity? = null
+    private lateinit var inv: Inventory
 
     // updateItemText: Update the TextView for an item to display its current count.
     private fun updateItemText(text: TextView, item : Item) {
@@ -21,6 +23,16 @@ class GatherFragment : Fragment() {
     // updateItemRateText: Update the TextView for an item to display its gathering rate.
     private fun updateItemRateText(text: TextView, item : Item) {
         text.text = " x" + item.rate + " " + item.name
+    }
+
+    private fun setupGatherItemListeners(v: View, itemName: String) {
+        val item = inv.getItemByName(itemName)
+        val pkg = "com.example.idlecraft"
+
+        val itemQuantityString = "text_gath_${itemName}_quantity"
+        val itemRateString = "text_gath_${itemName}_rate"
+        val progressBarString = "progress_gath_${itemName}"
+        val gatherButtonString = "button_gath_${itemName}"
     }
 
     override fun onCreateView(
@@ -35,7 +47,7 @@ class GatherFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_gather, container, false)
         act = activity as MainActivity
         act!!.saveInv()
-        val inv = act!!.inventory
+        inv = act!!.inventory
 
         // Sticks Item and UI setup
         val textSticks = view.text_gath_sticks_quantity
