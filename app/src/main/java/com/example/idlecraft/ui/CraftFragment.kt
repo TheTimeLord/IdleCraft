@@ -54,7 +54,7 @@ class CraftFragment : Fragment() {
         // Update Thread: activate Crafting
         act!!.updateThreadCrafting = true
         act!!.updateThreadInventory = false
-        var invThread = act!!.updateThreadCrafting
+        var craftThread = act!!.updateThreadCrafting
 
         //==========================================================================================
         // Spear Variables and Button Listeners
@@ -62,7 +62,6 @@ class CraftFragment : Fragment() {
         val textSpear = view.findViewById<TextView>(R.id.text_craft_spear_count)
         val progressBarSpear = view.findViewById<ProgressBar>(R.id.progress_craft_spear)
         val spearItem = inv.getItemByName("spear")
-        updateItemText(textSpear, spearItem)
 
         var spearCraftCount = 1
         val textSpearAmount = view.findViewById<TextView>(R.id.text_craft_spear_amount)
@@ -71,7 +70,6 @@ class CraftFragment : Fragment() {
         val textSpearReq1 = view.findViewById<TextView>(R.id.text_craft_spear_req1)
         val textSpearReq2 = view.findViewById<TextView>(R.id.text_craft_spear_req2)
         val textSpearReq3 = view.findViewById<TextView>(R.id.text_craft_spear_req3)
-        updateReqText(textSpearReq1, textSpearReq2, textSpearReq3, spearItem)
 
 
         view.findViewById<ImageButton>(R.id.image_shop_sticks).setOnClickListener {
@@ -90,10 +88,6 @@ class CraftFragment : Fragment() {
                 progressBarSpear.progress = 0     // Reset progress bar
                 inv.craftItem(spearItem, craftCount)
                 // runOnUiThread allows the thread to update UI objects
-                activity?.runOnUiThread {
-                    updateItemText(textSpear, spearItem)
-                    updateReqText(textSpearReq1, textSpearReq2, textSpearReq3, spearItem)
-                }
             }).start()
         }
 
@@ -114,7 +108,6 @@ class CraftFragment : Fragment() {
         val textSword = view.findViewById<TextView>(R.id.text_craft_sword_count)
         val progressBarSword = view.findViewById<ProgressBar>(R.id.progress_craft_sword)
         val swordItem = inv.getItemByName("sword")
-        updateItemText(textSword, swordItem)
 
         var swordCraftCount = 1
         val textSwordAmount = view.findViewById<TextView>(R.id.text_craft_sword_amount)
@@ -123,7 +116,6 @@ class CraftFragment : Fragment() {
         val textSwordReq1 = view.findViewById<TextView>(R.id.text_craft_sword_req1)
         val textSwordReq2 = view.findViewById<TextView>(R.id.text_craft_sword_req2)
         val textSwordReq3 = view.findViewById<TextView>(R.id.text_craft_sword_req3)
-        updateReqText(textSwordReq1, textSwordReq2, textSwordReq3, swordItem)
 
 
         view.findViewById<ImageButton>(R.id.button_craft_sword).setOnClickListener {
@@ -142,10 +134,6 @@ class CraftFragment : Fragment() {
                 progressBarSword.progress = 0     // Reset progress bar
                 inv.craftItem(swordItem, craftCount)
                 // runOnUiThread allows the thread to update UI objects
-                activity?.runOnUiThread {
-                    updateItemText(textSword, swordItem)
-                    updateReqText(textSwordReq1, textSwordReq2, textSwordReq3, swordItem)
-                }
             }).start()
         }
 
@@ -166,7 +154,6 @@ class CraftFragment : Fragment() {
         val textBrick = view.findViewById<TextView>(R.id.text_craft_brick_count)
         val progressBarBrick = view.findViewById<ProgressBar>(R.id.progress_craft_brick)
         val brickItem = inv.getItemByName("brick")
-        updateItemText(textBrick, brickItem)
 
         var brickCraftCount = 1
         val textBrickAmount = view.findViewById<TextView>(R.id.text_craft_brick_amount)
@@ -175,7 +162,6 @@ class CraftFragment : Fragment() {
         val textBrickReq1 = view.findViewById<TextView>(R.id.text_craft_brick_req1)
         val textBrickReq2 = view.findViewById<TextView>(R.id.text_craft_brick_req2)
         val textBrickReq3 = view.findViewById<TextView>(R.id.text_craft_brick_req3)
-        updateReqText(textBrickReq1, textBrickReq2, textBrickReq3, brickItem)
 
 
         view.findViewById<ImageButton>(R.id.button_craft_brick).setOnClickListener {
@@ -194,10 +180,6 @@ class CraftFragment : Fragment() {
                 progressBarBrick.progress = 0     // Reset progress bar
                 inv.craftItem(brickItem, craftCount)
                 // runOnUiThread allows the thread to update UI objects
-                activity?.runOnUiThread {
-                    updateItemText(textBrick, brickItem)
-                    updateReqText(textBrickReq1, textBrickReq2, textBrickReq3, brickItem)
-                }
             }).start()
         }
 
@@ -218,7 +200,6 @@ class CraftFragment : Fragment() {
         val textHouse = view.findViewById<TextView>(R.id.text_craft_house_count)
         val progressBarHouse = view.findViewById<ProgressBar>(R.id.progress_craft_house)
         val houseItem = inv.getItemByName("house")
-        updateItemText(textHouse, houseItem)
 
         var houseCraftCount = 1
         val textHouseAmount = view.findViewById<TextView>(R.id.text_craft_house_amount)
@@ -227,7 +208,6 @@ class CraftFragment : Fragment() {
         val textHouseReq1 = view.findViewById<TextView>(R.id.text_craft_house_req1)
         val textHouseReq2 = view.findViewById<TextView>(R.id.text_craft_house_req2)
         val textHouseReq3 = view.findViewById<TextView>(R.id.text_craft_house_req3)
-        updateReqText(textHouseReq1, textHouseReq2, textHouseReq3, houseItem)
 
 
         view.findViewById<ImageButton>(R.id.button_craft_house).setOnClickListener {
@@ -246,10 +226,6 @@ class CraftFragment : Fragment() {
                 progressBarHouse.progress = 0     // Reset progress bar
                 inv.craftItem(houseItem, craftCount)
                 // runOnUiThread allows the thread to update UI objects
-                activity?.runOnUiThread {
-                    updateItemText(textHouse, houseItem)
-                    updateReqText(textHouseReq1, textHouseReq2, textHouseReq3, houseItem)
-                }
             }).start()
         }
 
@@ -270,7 +246,6 @@ class CraftFragment : Fragment() {
         val textCastle = view.findViewById<TextView>(R.id.text_craft_castle_count)
         val progressBarCastle = view.findViewById<ProgressBar>(R.id.progress_craft_castle)
         val castleItem = inv.getItemByName("castle")
-        updateItemText(textCastle, castleItem)
 
         var castleCraftCount = 1
         val textCastleAmount = view.findViewById<TextView>(R.id.text_craft_castle_amount)
@@ -279,7 +254,6 @@ class CraftFragment : Fragment() {
         val textCastleReq1 = view.findViewById<TextView>(R.id.text_craft_castle_req1)
         val textCastleReq2 = view.findViewById<TextView>(R.id.text_craft_castle_req2)
         val textCastleReq3 = view.findViewById<TextView>(R.id.text_craft_castle_req3)
-        updateReqText(textCastleReq1, textCastleReq2, textCastleReq3, castleItem)
 
 
         view.findViewById<ImageButton>(R.id.button_craft_castle).setOnClickListener {
@@ -298,10 +272,7 @@ class CraftFragment : Fragment() {
                 progressBarCastle.progress = 0     // Reset progress bar
                 inv.craftItem(castleItem, craftCount)
                 // runOnUiThread allows the thread to update UI objects
-                activity?.runOnUiThread {
-                    updateItemText(textCastle, castleItem)
-                    updateReqText(textCastleReq1, textCastleReq2, textCastleReq3, castleItem)
-                }
+
             }).start()
         }
 
@@ -322,7 +293,6 @@ class CraftFragment : Fragment() {
         val textLamp = view.findViewById<TextView>(R.id.text_craft_lamp_count)
         val progressBarLamp = view.findViewById<ProgressBar>(R.id.progress_craft_lamp)
         val lampItem = inv.getItemByName("lamp")
-        updateItemText(textLamp, lampItem)
 
         var lampCraftCount = 1
         val textLampAmount = view.findViewById<TextView>(R.id.text_craft_lamp_amount)
@@ -331,7 +301,6 @@ class CraftFragment : Fragment() {
         val textLampReq1 = view.findViewById<TextView>(R.id.text_craft_lamp_req1)
         val textLampReq2 = view.findViewById<TextView>(R.id.text_craft_lamp_req2)
         val textLampReq3 = view.findViewById<TextView>(R.id.text_craft_lamp_req3)
-        updateReqText(textLampReq1, textLampReq2, textLampReq3, lampItem)
 
 
         view.findViewById<ImageButton>(R.id.button_craft_lamp).setOnClickListener {
@@ -350,10 +319,6 @@ class CraftFragment : Fragment() {
                 progressBarLamp.progress = 0     // Reset progress bar
                 inv.craftItem(lampItem, craftCount)
                 // runOnUiThread allows the thread to update UI objects
-                activity?.runOnUiThread {
-                    updateItemText(textLamp, lampItem)
-                    updateReqText(textLampReq1, textLampReq2, textLampReq3, lampItem)
-                }
             }).start()
         }
 
@@ -374,7 +339,6 @@ class CraftFragment : Fragment() {
         val textBook = view.findViewById<TextView>(R.id.text_craft_book_count)
         val progressBarBook = view.findViewById<ProgressBar>(R.id.progress_craft_book)
         val bookItem = inv.getItemByName("book")
-        updateItemText(textBook, bookItem)
 
         var bookCraftCount = 1
         val textBookAmount = view.findViewById<TextView>(R.id.text_craft_book_amount)
@@ -383,7 +347,6 @@ class CraftFragment : Fragment() {
         val textBookReq1 = view.findViewById<TextView>(R.id.text_craft_book_req1)
         val textBookReq2 = view.findViewById<TextView>(R.id.text_craft_book_req2)
         val textBookReq3 = view.findViewById<TextView>(R.id.text_craft_book_req3)
-        updateReqText(textBookReq1, textBookReq2, textBookReq3, bookItem)
 
 
         view.findViewById<ImageButton>(R.id.button_craft_book).setOnClickListener {
@@ -402,10 +365,6 @@ class CraftFragment : Fragment() {
                 progressBarBook.progress = 0     // Reset progress bar
                 inv.craftItem(bookItem, craftCount)
                 // runOnUiThread allows the thread to update UI objects
-                activity?.runOnUiThread {
-                    updateItemText(textBook, bookItem)
-                    updateReqText(textBookReq1, textBookReq2, textBookReq3, bookItem)
-                }
             }).start()
         }
 
@@ -419,6 +378,41 @@ class CraftFragment : Fragment() {
             if (bookCraftCount > 1) bookCraftCount -= 1
             textBookAmount.text = bookCraftCount.toString()
         }
+
+        //==========================================================================================
+        // Constant thread to update all text values
+        //==========================================================================================
+        Thread(Runnable {
+
+            while (craftThread) {
+                Thread.sleep(25)
+                // constantly check to see if thread needs to stay alive
+                craftThread = act!!.updateThreadCrafting
+
+                activity?.runOnUiThread {
+                    updateItemText(textSpear, spearItem)
+                    updateReqText(textSpearReq1, textSpearReq2, textSpearReq3, spearItem)
+
+                    updateItemText(textSword, swordItem)
+                    updateReqText(textSwordReq1, textSwordReq2, textSwordReq3, swordItem)
+
+                    updateItemText(textBrick, brickItem)
+                    updateReqText(textBrickReq1, textBrickReq2, textBrickReq3, brickItem)
+
+                    updateItemText(textHouse, houseItem)
+                    updateReqText(textHouseReq1, textHouseReq2, textHouseReq3, houseItem)
+
+                    updateItemText(textCastle, castleItem)
+                    updateReqText(textCastleReq1, textCastleReq2, textCastleReq3, castleItem)
+
+                    updateItemText(textLamp, lampItem)
+                    updateReqText(textLampReq1, textLampReq2, textLampReq3, lampItem)
+
+                    updateReqText(textBookReq1, textBookReq2, textBookReq3, bookItem)
+                    updateItemText(textBook, bookItem)
+                }
+            }
+        }).start()
 
         return view
     }
