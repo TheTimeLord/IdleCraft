@@ -113,13 +113,10 @@ class CraftFragment : Fragment() {
         act!!.saveInv()
         inv = act!!.inventory
 
-        setupCraftItemListeners(view, "spear")
-        setupCraftItemListeners(view, "sword")
-        setupCraftItemListeners(view, "brick")
-        setupCraftItemListeners(view, "house")
-        setupCraftItemListeners(view, "castle")
-        setupCraftItemListeners(view, "lamp")
-        setupCraftItemListeners(view, "book")
+        var craftItems = arrayOf("spear", "sword", "brick", "house", "castle", "lamp", "book")
+        craftItems.forEach {
+            setupCraftItemListeners(view, it)
+        }
 
         return view
     }
