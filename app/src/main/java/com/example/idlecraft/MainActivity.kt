@@ -46,7 +46,6 @@ class MainActivity : AppCompatActivity() {
         }).start()
     }
 
-
     fun saveInv() {
         val prefs: SharedPreferences = applicationContext.getSharedPreferences("ICSave", 0)
         val editor: SharedPreferences.Editor = prefs.edit()
