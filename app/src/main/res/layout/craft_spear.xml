@@ -134,7 +134,7 @@
         app:srcCompat="@drawable/red_circle" />
 
     <ImageButton
-        android:id="@+id/image_shop_sticks"
+        android:id="@+id/button_craft_spear"
         android:layout_width="76dp"
         android:layout_height="76dp"
         android:background="@drawable/rounded_button"
@@ -209,7 +209,7 @@
         app:layout_constraintEnd_toEndOf="@+id/border_button_craft_spear"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/border_button_craft_spear"
-        app:layout_constraintTop_toTopOf="@+id/image_shop_sticks"
+        app:layout_constraintTop_toTopOf="@+id/button_craft_spear"
         app:layout_constraintVertical_bias="0.71"
         app:srcCompat="@drawable/quantity_bar" />
 
