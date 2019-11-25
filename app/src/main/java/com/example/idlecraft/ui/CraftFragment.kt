@@ -98,9 +98,8 @@ class CraftFragment : Fragment() {
             if (amount < amountToCraft) amountToCraft = amount
             if (progressBar.progress != 0 || item.count >= item.max || !inv.isCraftable(item, amountToCraft))
                 return@setOnClickListener
-            // Thread animates the progress bar. Changes are only made 'after' the progress bar
-            // finishes.
-            Thread(Runnable {
+
+            Thread(Runnable { // Thread animates progress bar
                 var progress = 0
                 while (progress < progressBar.max) {
                     progress += 1

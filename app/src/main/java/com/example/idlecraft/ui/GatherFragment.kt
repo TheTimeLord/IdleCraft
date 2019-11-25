@@ -14,6 +14,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.idlecraft.MainActivity
@@ -23,22 +25,83 @@ import com.example.idlecraft.mechanics.Item
 import kotlinx.android.synthetic.main.fragment_gather.view.*
 
 class GatherFragment : Fragment() {
+    // Private Member Fields
     private var act: MainActivity? = null
     private lateinit var inv: Inventory
 
-    // updateItemText: Update the TextView for an item to display its current count.
-    private fun updateItemText(text: TextView, item : Item) {
-        text.text = item.count.toString() + "/" + item.max.toString()
-    }
-    // updateItemRateText: Update the TextView for an item to display its gathering rate.
-    private fun updateItemRateText(text: TextView, item : Item) {
-        text.text = " x" + item.rate + " " + item.name
-    }
-
-    private fun setupGatherItemListeners(v:View, itemName: String) {
-
+    //==============================================================================================
+    // updateQuantityText: Update the TextView for an item to display its current count.
+    //==============================================================================================
+    private fun updateQuantityText(text: TextView, item : Item) {
+        val newText = "${item.count}/${item.max}"
+        text.text = newText
     }
 
+    //==============================================================================================
+    // updateRateText: Update the TextView for an item to display its gathering rate.
+    //==============================================================================================
+    private fun updateRateText(text: TextView, item : Item) {
+        val newText = " x${item.rate} ${item.name}"
+        text.text = newText
+    }
+
+    //==============================================================================================
+    // setupGatherItemListeners: This procedure sets up and references all UI elements in the
+    // gathering fragment for a particular item given its item name as a string. The UI elements are
+    // named in a uniform fashion so that they can be easily referenced in such fashion. This
+    // essentially eliminates redundancy in the code.
+    //==============================================================================================
+    private fun setupGatherItemListeners(v: View, itemName: String) {
+        val item = inv.getItemByName(itemName)
+        val pkg = "com.example.idlecraft"
+
+        // Declare strings to reference a set of UI elements for an item
+        val quantityStr    = "text_gath_${itemName}_quantity"
+        val rateStr        = "text_gath_${itemName}_rate"
+        val progressBarStr = "progress_gath_${itemName}"
+        val gathButtonStr  = "button_gath_${itemName}"
+
+        // Use the UI strings to reference each UI element
+        val itemQuantity   = v.findViewById<TextView>(resources.getIdentifier(quantityStr, "id", pkg))
+        val itemRate       = v.findViewById<TextView>(resources.getIdentifier(rateStr, "id", pkg))
+        val progressBar    = v.findViewById<ProgressBar>(resources.getIdentifier(progressBarStr, "id", pkg))
+        val gathButton     = v.findViewById<ImageButton>(resources.getIdentifier(gathButtonStr, "id", pkg))
+
+        // Update the UI with current values upon entering the fragment
+        updateQuantityText(itemQuantity, item)
+        updateRateText(itemRate, item)
+
+        // Called when a gathering button is clicked. A thread animates a progress bar, and once the
+        // progress bar is filled, the item is incremented by the gathering rate for this item.
+        // An item's quantity cannot exceed its max quantity.
+        gathButton.setOnClickListener {
+            if (progressBar.progress != 0 || item.count >= item.max)
+                return@setOnClickListener
+
+            Thread(Runnable { // Thread animates the progress bar
+                var progress = 0
+                while (progress < progressBar.max) {
+                    progress += 1
+                    progressBar.progress = progress
+                    try { Thread.sleep(6) }
+                    catch (e: InterruptedException) { e.printStackTrace() }
+                }
+                progressBar.progress = 0  // Reset progress bar
+                item.count += item.rate   // Increment number of sticks
+                if (item.count > item.max) item.count = item.max
+                // runOnUiThread allows the thread to update UI objects
+                activity?.runOnUiThread {
+                    updateQuantityText(itemQuantity, item)
+                }
+            }).start()
+        }
+    }
+
+    //==============================================================================================
+    // onCreateView: Called upon fragment creation. It sets up a reference to the global inventory
+    // object, then sets up button listeners by calling setupGatherItemListeners for each crafting
+    // item.
+    //==============================================================================================
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -49,233 +112,10 @@ class GatherFragment : Fragment() {
         act!!.saveInv()
         inv = act!!.inventory
 
-
-
+        val craftItems = arrayOf("sticks", "rocks", "hide", "clay", "metal", "oil", "paper");
+        craftItems.forEach {
+            setupGatherItemListeners(view, it)
+        }
         return view
     }
 }
-
-
-        /*//==========================================================================================
-        // Item and UI setup
-        //==========================================================================================
-        val view = inflater.inflate(R.layout.fragment_gather, container, false)
-        act = activity as MainActivity
-        act!!.saveInv()
-        val inv = act!!.inventory
-
-        // Sticks Item and UI setup
-        val textSticks = view.text_gath_sticks_quantity
-        val textSticksRate = view.text_gath_sticks_rate
-        val progressBar = view.progress_gath_sticks
-        val sticksItem = inv.getItemByName("sticks")
-        updateItemText(textSticks, sticksItem)
-        updateItemRateText(textSticksRate, sticksItem)
-
-        // Rocks Item and UI setup
-        val textRocks = view.text_gath_rocks_quantity
-        val textRocksRate = view.text_gath_rocks_rate
-        val progressBarRocks = view.progress_gath_rocks
-        val rocksItem = inv.getItemByName("rocks")
-        updateItemText(textRocks, rocksItem)
-        updateItemRateText(textRocksRate, rocksItem)
-
-        // Hide Item and UI setup
-        val textHide = view.text_gath_hide_quantity
-        val textHideRate = view.text_gath_hide_rate
-        val progressBarHide = view.progress_gath_hide
-        val hideItem = inv.getItemByName("hide")
-        updateItemText(textHide, hideItem)
-        updateItemRateText(textHideRate, hideItem)
-
-        // Clay Item and UI setup
-        val textClay = view.text_gath_clay_quantity
-        val textClayRate = view.text_gath_clay_rate
-        val progressBarClay = view.progress_gath_clay
-        val clayItem = inv.getItemByName("clay")
-        updateItemText(textClay, clayItem)
-        updateItemRateText(textClayRate, clayItem)
-
-        // Metal Item and UI setup
-        val textMetal = view.text_gath_metal_quantity
-        val textMetalRate = view.text_gath_metal_rate
-        val progressBarMetal = view.progress_gath_metal
-        val metalItem = inv.getItemByName("metal")
-        updateItemText(textMetal, metalItem)
-        updateItemRateText(textMetalRate, metalItem)
-
-        // Oil Item and UI setup
-        val textOil = view.text_gath_oil_quantity
-        val textOilRate = view.text_gath_oil_rate
-        val progressBarOil = view.progress_gath_oil
-        val oilItem = inv.getItemByName("oil")
-        updateItemText(textOil, oilItem)
-        updateItemRateText(textOilRate, oilItem)
-
-        // Paper Item and UI setup
-        val textPaper = view.text_gath_paper_quantity
-        val textPaperRate = view.text_gath_paper_rate
-        val progressBarPaper = view.progress_gath_paper
-        val paperItem = inv.getItemByName("paper")
-        updateItemText(textPaper, paperItem)
-        updateItemRateText(textPaperRate, paperItem)
-
-
-        //==========================================================================================
-        // UI Event Listeners
-        //==========================================================================================
-
-        // Sticks gathering button listener
-        view.button_gath_sticks.setOnClickListener {
-            if (progressBar.progress != 0 || sticksItem.count >= sticksItem.max)
-                return@setOnClickListener
-
-            // Create a thread that animates the item's progress bar, then increments the
-            // item's count.
-            Thread(Runnable {
-                var progress = 0
-                while (progress < progressBar.max) {
-                    progress += 1
-                    progressBar.progress = progress
-                    try { Thread.sleep(6) }
-                    catch (e: InterruptedException) { e.printStackTrace() }
-                }
-                progressBar.progress = 0              // Reset progress bar
-                sticksItem.count += sticksItem.rate   // Increment number of sticks
-                if (sticksItem.count > sticksItem.max) sticksItem.count = sticksItem.max
-
-                // runOnUiThread allows the thread to update UI objects
-                activity?.runOnUiThread {
-                    updateItemText(textSticks, sticksItem)
-                }
-            }).start()
-        }
-
-        // Rocks gathering button listener
-        view.button_gath_rocks.setOnClickListener {
-            if (progressBarRocks.progress != 0 || rocksItem.count >= rocksItem.max)
-                return@setOnClickListener
-            Thread(Runnable {
-                var progress = 0
-                while (progress < progressBarRocks.max) {
-                    progress += 1
-                    progressBarRocks.progress = progress
-                    try { Thread.sleep(9) }
-                    catch (e: InterruptedException) { e.printStackTrace() }
-                }
-                progressBarRocks.progress = 0
-                rocksItem.count += rocksItem.rate
-                if (rocksItem.count > rocksItem.max) rocksItem.count = rocksItem.max
-                activity?.runOnUiThread {
-                    updateItemText(textRocks, rocksItem)
-                }
-            }).start()
-        }
-
-        // Hide gathering button listener
-        view.button_gath_hide.setOnClickListener {
-            if (progressBarHide.progress != 0 || hideItem.count >= hideItem.max)
-                return@setOnClickListener
-            Thread(Runnable {
-                var progress = 0
-                while (progress < progressBarHide.max) {
-                    progress += 1
-                    progressBarHide.progress = progress
-                    try { Thread.sleep(12) }
-                    catch (e: InterruptedException) { e.printStackTrace() }
-                }
-                progressBarHide.progress = 0
-                hideItem.count += hideItem.rate
-                if (hideItem.count > hideItem.max) hideItem.count = hideItem.max
-                activity?.runOnUiThread {
-                    updateItemText(textHide, hideItem)
-                }
-            }).start()
-        }
-
-        // Clay gathering button listener
-        view.button_gath_clay.setOnClickListener {
-            if (progressBarClay.progress != 0 || clayItem.count >= clayItem.max)
-                return@setOnClickListener
-            Thread(Runnable {
-                var progress = 0
-                while (progress < progressBarClay.max) {
-                    progress += 1
-                    progressBarClay.progress = progress
-                    try { Thread.sleep(15) }
-                    catch (e: InterruptedException) { e.printStackTrace() }
-                }
-                progressBarClay.progress = 0
-                clayItem.count += clayItem.rate
-                if (clayItem.count > clayItem.max) clayItem.count = clayItem.max
-                activity?.runOnUiThread {
-                    updateItemText(textClay, clayItem)
-                }
-            }).start()
-        }
-
-        // Metal gathering button listener
-        view.button_gath_metal.setOnClickListener {
-            if (progressBarMetal.progress != 0 || metalItem.count >= metalItem.max)
-                return@setOnClickListener
-            Thread(Runnable {
-                var progress = 0
-                while (progress < progressBarMetal.max) {
-                    progress += 1
-                    progressBarMetal.progress = progress
-                    try { Thread.sleep(18) }
-                    catch (e: InterruptedException) { e.printStackTrace() }
-                }
-                progressBarMetal.progress = 0
-                metalItem.count += metalItem.rate
-                if (metalItem.count > metalItem.max) metalItem.count = metalItem.max
-                activity?.runOnUiThread {
-                    updateItemText(textMetal, metalItem)
-                }
-            }).start()
-        }
-
-        // Oil gathering button listener
-        view.button_gath_oil.setOnClickListener {
-            if (progressBarOil.progress != 0 || oilItem.count >= oilItem.max)
-                return@setOnClickListener
-            Thread(Runnable {
-                var progress = 0
-                while (progress < progressBarOil.max) {
-                    progress += 1
-                    progressBarOil.progress = progress
-                    try { Thread.sleep(21) }
-                    catch (e: InterruptedException) { e.printStackTrace() }
-                }
-                progressBarOil.progress = 0
-                oilItem.count += oilItem.rate
-                if (oilItem.count > oilItem.max) oilItem.count = oilItem.max
-                activity?.runOnUiThread {
-                    updateItemText(textOil, oilItem)
-                }
-            }).start()
-        }
-
-        // Paper gathering button listener
-        view.button_gath_paper.setOnClickListener {
-            if (progressBarPaper.progress != 0 || paperItem.count >= paperItem.max)
-                return@setOnClickListener
-            Thread(Runnable {
-                var progress = 0
-                while (progress < progressBarPaper.max) {
-                    progress += 1
-                    progressBarPaper.progress = progress
-                    try { Thread.sleep(24) }
-                    catch (e: InterruptedException) { e.printStackTrace() }
-                }
-                progressBarPaper.progress = 0
-                paperItem.count += paperItem.rate
-                if (paperItem.count > paperItem.max) paperItem.count = paperItem.max
-                activity?.runOnUiThread {
-                    updateItemText(textPaper, paperItem)
-                }
-            }).start()
-        }
-        return view
-    }
-}*/
