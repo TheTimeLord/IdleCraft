@@ -174,7 +174,6 @@ class CraftFragment : Fragment() {
                         val craftReq3 = view.findViewById<TextView>(resources.getIdentifier(craftReqStr + "3", "id", pkg))
                         updateItemText(itemCount, item)
                         updateReqText(craftReq1, craftReq2, craftReq3, item)
-
                     }
                 }
 
@@ -183,7 +182,7 @@ class CraftFragment : Fragment() {
                 craftThread = act!!.updateThreadCrafting
             }
         }).start()
-
+        
         return view
     }
 }
