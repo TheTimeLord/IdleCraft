@@ -103,7 +103,7 @@ class CraftFragment : Fragment() {
                 while (progress < progressBar.max) {
                     progress += 1
                     progressBar.progress = progress
-                    try { Thread.sleep(16) } // 3 seconds
+                    try { Thread.sleep(21) }
                     catch (e: InterruptedException) { e.printStackTrace() }
                 }
                 progressBar.progress = 0     // Reset progress bar
@@ -143,6 +143,7 @@ class CraftFragment : Fragment() {
         act!!.saveInv()
         inv = act!!.inventory
 
+        // Setup UI elements and button listeners
         val craftItems = arrayOf("spear", "sword", "brick", "house", "castle", "lamp", "book")
         craftItems.forEach {
             setupCraftItemListeners(view, it)
@@ -153,21 +154,20 @@ class CraftFragment : Fragment() {
         act!!.updateThreadInventory = false
         var craftThread = act!!.updateThreadCrafting
 
-        //==========================================================================================
-        // Constant thread to update all text values
-        //==========================================================================================
+        // Thread constantly updates all crafting TextViews to reflect the player's inventory
+        // while this fragment is open. This is needed because inventory values are constantly
+        // changing and updating.
         Thread(Runnable {
             while (craftThread) {
                 activity?.runOnUiThread {
                     craftItems.forEach {
-                        // Get the item object from the inventory
                         val item = inv.getItemByName(it)
 
                         // Declare strings to reference a set of UI elements for an item
                         val countStr    = "text_craft_${it}_count"
                         val craftReqStr = "text_craft_${it}_req"
 
-                        // Use the UI strings to reference each UI element
+                        // Use the UI strings to reference each UI element then update them
                         val itemCount = view.findViewById<TextView>(resources.getIdentifier(countStr, "id", pkg))
                         val craftReq1 = view.findViewById<TextView>(resources.getIdentifier(craftReqStr + "1", "id", pkg))
                         val craftReq2 = view.findViewById<TextView>(resources.getIdentifier(craftReqStr + "2", "id", pkg))
@@ -176,13 +176,11 @@ class CraftFragment : Fragment() {
                         updateReqText(craftReq1, craftReq2, craftReq3, item)
                     }
                 }
-
+                // Sleep and constantly check to see if thread needs to stay alive
                 Thread.sleep(25)
-                // constantly check to see if thread needs to stay alive
                 craftThread = act!!.updateThreadCrafting
             }
         }).start()
-        
         return view
     }
 }

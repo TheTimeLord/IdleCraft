@@ -27,6 +27,7 @@ class GatherFragment : Fragment() {
     // Private Member Fields
     private var act: MainActivity? = null
     private lateinit var inv: Inventory
+    private val pkg = "com.example.idlecraft"
 
     //==============================================================================================
     // updateQuantityText: Update the TextView for an item to display its current count.
@@ -52,7 +53,6 @@ class GatherFragment : Fragment() {
     //==============================================================================================
     private fun setupGatherItemListeners(v: View, itemName: String) {
         val item = inv.getItemByName(itemName)
-        val pkg = "com.example.idlecraft"
 
         // Declare strings to reference a set of UI elements for an item
         val quantityStr    = "text_gath_${itemName}_quantity"
@@ -82,7 +82,7 @@ class GatherFragment : Fragment() {
                 while (progress < progressBar.max) {
                     progress += 1
                     progressBar.progress = progress
-                    try { Thread.sleep(6) }
+                    try { Thread.sleep(21) }
                     catch (e: InterruptedException) { e.printStackTrace() }
                 }
                 progressBar.progress = 0  // Reset progress bar
@@ -98,7 +98,7 @@ class GatherFragment : Fragment() {
 
     //==============================================================================================
     // onCreateView: Called upon fragment creation. It sets up a reference to the global inventory
-    // object, then sets up button listeners by calling setupGatherItemListeners for each crafting
+    // object, then sets up button listeners by calling setupGatherItemListeners for each gathering
     // item.
     //==============================================================================================
     override fun onCreateView(
@@ -111,14 +111,15 @@ class GatherFragment : Fragment() {
         act!!.saveInv()
         inv = act!!.inventory
 
-        // Update Thread: activate Shop
-        act!!.updateThreadCrafting = false
-        act!!.updateThreadInventory = false
-
+        // Setup UI elements and button listeners
         val gathItems = arrayOf("sticks", "rocks", "hide", "clay", "metal", "oil", "paper")
         gathItems.forEach {
             setupGatherItemListeners(view, it)
         }
+
+        // Update Thread: activate Shop
+        act!!.updateThreadCrafting = false
+        act!!.updateThreadInventory = false
 
         return view
     }
