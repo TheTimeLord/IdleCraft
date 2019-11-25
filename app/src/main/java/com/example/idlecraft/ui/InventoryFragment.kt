@@ -10,6 +10,7 @@ import com.example.idlecraft.R
 import com.example.idlecraft.MainActivity
 import com.example.idlecraft.mechanics.Item
 import kotlinx.android.synthetic.main.fragment_inventory.view.*
+import java.security.KeyStore
 
 class InventoryFragment : Fragment() {
     private var act: MainActivity? = null
@@ -37,6 +38,11 @@ class InventoryFragment : Fragment() {
         val inv = act!!.inventory
         val textMoney = view.text_inv_money
         updateMoneyText(textMoney, inv.money)
+
+        // Update Thread: activate Inventory
+        act!!.updateThreadCrafting = false
+        act!!.updateThreadInventory = true
+        var invThread = act!!.updateThreadInventory
 
         //==========================================================================================
         // Sticks Variables and Button Listeners
@@ -643,9 +649,13 @@ class InventoryFragment : Fragment() {
         //==========================================================================================
         // Constant thread to update all text values
         //==========================================================================================
-        /*
+
         Thread(Runnable {
-            while(true) {
+            Thread.sleep(25)
+            while(invThread) {
+                // constantly check to see if thread needs to stay alive
+                invThread = act!!.updateThreadInventory
+
                 updateMoneyText(textMoney, inv.money)
                 
                 updateItemText(textSticks, sticksItem)
@@ -707,7 +717,7 @@ class InventoryFragment : Fragment() {
                 catch (e: InterruptedException) { e.printStackTrace() }
             }
         }).start()
-        */
+
         return view
     }
 }

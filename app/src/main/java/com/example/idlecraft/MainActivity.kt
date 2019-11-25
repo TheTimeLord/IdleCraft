@@ -19,6 +19,8 @@ import kotlinx.android.synthetic.main.fragment_gather.view.*
 class MainActivity : AppCompatActivity() {
 
     var inventory = Inventory()
+    var updateThreadInventory: Boolean = false
+    var updateThreadCrafting: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,8 +31,8 @@ class MainActivity : AppCompatActivity() {
         // top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_gather,  R.id.navigation_craft,
-                R.id.navigation_shop,    R.id.navigation_inventory
+                R.id.navigation_gather, R.id.navigation_craft,
+                R.id.navigation_shop, R.id.navigation_inventory
             )
         )
         //  setupActionBarWithNavController(navController, appBarConfiguration)
@@ -40,8 +42,11 @@ class MainActivity : AppCompatActivity() {
 
         // Autosave thread
         Thread(Runnable {
-            try { Thread.sleep(10000) }
-            catch (e: InterruptedException) { e.printStackTrace() }
+            try {
+                Thread.sleep(10000)
+            } catch (e: InterruptedException) {
+                e.printStackTrace()
+            }
             saveInv()
         }).start()
     }

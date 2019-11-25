@@ -147,6 +147,42 @@ class CraftFragment : Fragment() {
         craftItems.forEach {
             setupCraftItemListeners(view, it)
         }
+
+        //==========================================================================================
+        // Constant thread to update all text values
+        //==========================================================================================
+        Thread(Runnable {
+
+            while (craftThread) {
+                Thread.sleep(25)
+                // constantly check to see if thread needs to stay alive
+                craftThread = act!!.updateThreadCrafting
+
+                activity?.runOnUiThread {
+                    updateItemText(textSpear, spearItem)
+                    updateReqText(textSpearReq1, textSpearReq2, textSpearReq3, spearItem)
+
+                    updateItemText(textSword, swordItem)
+                    updateReqText(textSwordReq1, textSwordReq2, textSwordReq3, swordItem)
+
+                    updateItemText(textBrick, brickItem)
+                    updateReqText(textBrickReq1, textBrickReq2, textBrickReq3, brickItem)
+
+                    updateItemText(textHouse, houseItem)
+                    updateReqText(textHouseReq1, textHouseReq2, textHouseReq3, houseItem)
+
+                    updateItemText(textCastle, castleItem)
+                    updateReqText(textCastleReq1, textCastleReq2, textCastleReq3, castleItem)
+
+                    updateItemText(textLamp, lampItem)
+                    updateReqText(textLampReq1, textLampReq2, textLampReq3, lampItem)
+
+                    updateReqText(textBookReq1, textBookReq2, textBookReq3, bookItem)
+                    updateItemText(textBook, bookItem)
+                }
+            }
+        }).start()
+
         return view
     }
 }
