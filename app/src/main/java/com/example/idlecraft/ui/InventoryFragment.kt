@@ -33,14 +33,16 @@ class InventoryFragment : Fragment() {
     // updateQuantityText: Update the TextView for an item to display its current count.
     //==============================================================================================
     private fun updateQuantityText(text: TextView, item: Item) {
-        text.text = "  " + item.count.toString() + "/" + item.max.toString() + "\n " + item.name
+        val newText = "  ${item.count}/${item.max}\n${item.name}"
+        text.text = newText
     }
 
     //==============================================================================================
     // updateMoneyText: Update a TextView so it represents the format $<integer>
     //==============================================================================================
     private fun updateMoneyText(textMoney: TextView, money: Int) {
-        textMoney.text = "$" + money.toString()
+        val newText = "$${money}"
+        textMoney.text = newText
     }
 
     //==============================================================================================
