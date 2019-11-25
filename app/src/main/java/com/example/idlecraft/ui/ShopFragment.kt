@@ -53,6 +53,9 @@ class ShopFragment : Fragment() {
         val textMoney = view.text_shop_money
         updateMoneyText(textMoney, inv.money)
 
+        // Update Thread: activate Shop
+        act!!.updateThreadCrafting = false
+        act!!.updateThreadInventory = false
 
         //==========================================================================================
         // Sticks Shop Variables and Button Listeners

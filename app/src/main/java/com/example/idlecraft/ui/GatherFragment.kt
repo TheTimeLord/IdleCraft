@@ -22,7 +22,6 @@ import com.example.idlecraft.MainActivity
 import com.example.idlecraft.R
 import com.example.idlecraft.mechanics.Inventory
 import com.example.idlecraft.mechanics.Item
-import kotlinx.android.synthetic.main.fragment_gather.view.*
 
 class GatherFragment : Fragment() {
     // Private Member Fields
@@ -112,8 +111,8 @@ class GatherFragment : Fragment() {
         act!!.saveInv()
         inv = act!!.inventory
 
-        val craftItems = arrayOf("sticks", "rocks", "hide", "clay", "metal", "oil", "paper");
-        craftItems.forEach {
+        val gathItems = arrayOf("sticks", "rocks", "hide", "clay", "metal", "oil", "paper")
+        gathItems.forEach {
             setupGatherItemListeners(view, it)
         }
         return view
