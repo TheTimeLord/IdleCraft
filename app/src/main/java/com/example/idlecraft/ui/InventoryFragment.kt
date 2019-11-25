@@ -1,3 +1,13 @@
+//==================================================================================================
+// InventoryFragment.kt
+//
+// Authors: Brian Andrus, Eduardo Zamora, Nathan Lakritz, Saar Sayfan, Travis Kerns
+//
+// Description: This file contains the implementation of a fragment that contains functionality
+// for in-game inventory. The fragment is created upon opening and destroyed upon closing. A
+// number of button listeners are setup that interact with the underlying data structure that
+// contains all player data: Inventory.
+//==================================================================================================
 package com.example.idlecraft.ui
 
 import android.os.Bundle
@@ -19,6 +29,7 @@ class InventoryFragment : Fragment() {
     // Private Member Fields
     private var act: MainActivity? = null
     private lateinit var inv: Inventory
+    private val pkg = "com.example.idlecraft"
 
     //==============================================================================================
     // updateQuantityText: Update the TextView for an item to display its current count.
@@ -44,7 +55,6 @@ class InventoryFragment : Fragment() {
     //==============================================================================================
     private fun setupInvItemListeners(v: View, itemName: String) {
         val item = inv.getItemByName(itemName)
-        val pkg = "com.example.idlecraft"
         val money = v.text_inv_money
         var tradeQuan = 1
 
@@ -137,89 +147,46 @@ class InventoryFragment : Fragment() {
         val textMoney = view.text_inv_money
         updateMoneyText(textMoney, inv.money)
 
-        // Update Thread: activate Inventory
-        act!!.updateThreadCrafting = false
-        act!!.updateThreadInventory = true
-        var invThread = act!!.updateThreadInventory
-
+        // Setup UI elements and button listeners
         val invItems = arrayOf("sticks", "rocks", "hide", "clay", "metal", "oil", "paper",
             "spear", "sword", "brick", "house", "castle", "lamp", "book")
         invItems.forEach {
             setupInvItemListeners(view, it)
         }
 
-        //==========================================================================================
-        // Constant thread to update all text values
-        //==========================================================================================
+        // Update Thread: activate Inventory
+        act!!.updateThreadCrafting = false
+        act!!.updateThreadInventory = true
+        var invThread = act!!.updateThreadInventory
 
+        // Thread constantly updates all inventory TextViews to reflect the player's inventory
+        // while this fragment is open. This is needed because inventory values are constantly
+        // changing and updating.
         Thread(Runnable {
-            Thread.sleep(25)
             while(invThread) {
-                // constantly check to see if thread needs to stay alive
+                invItems.forEach {
+                    val item = inv.getItemByName(it)
+                    updateMoneyText(textMoney, inv.money)
+
+                    // Declare strings to reference a set of UI elements for an item
+                    val quantityStr     = "text_inv_${it}_quan"
+                    val buyPriceStr     = "text_inv_${it}_buy_price"
+                    val sellPriceStr    = "text_inv_${it}_sell_price"
+
+                    // Use the UI strings to reference each UI element then update them
+                    val itemQuantity    = view.findViewById<TextView>(resources.getIdentifier(quantityStr, "id", pkg))
+                    val itemBuyPrice    = view.findViewById<TextView>(resources.getIdentifier(buyPriceStr, "id", pkg))
+                    val itemSellPrice   = view.findViewById<TextView>(resources.getIdentifier(sellPriceStr, "id", pkg))
+                    updateQuantityText(itemQuantity, item)
+                    updateMoneyText(itemSellPrice, item.sellValue)
+                    updateMoneyText(itemBuyPrice, item.buyValue)
+                    updateMoneyText(textMoney, inv.money)
+                }
+                // Sleep and constantly check to see if thread needs to stay alive
+                Thread.sleep(25)
                 invThread = act!!.updateThreadInventory
-
-                updateMoneyText(textMoney, inv.money)
-
-                updateItemText(textSticks, sticksItem)
-                updateMoneyText(view.text_inv_sticks_sell_price, sticksItem.sellValue)
-                updateMoneyText(view.text_inv_sticks_buy_price, sticksItem.buyValue)
-
-                updateItemText(textRocks, rocksItem)
-                updateMoneyText(view.text_inv_rocks_sell_price, rocksItem.sellValue)
-                updateMoneyText(view.text_inv_rocks_buy_price, rocksItem.buyValue)
-
-                updateItemText(textHide, hideItem)
-                updateMoneyText(view.text_inv_hide_sell_price, hideItem.sellValue)
-                updateMoneyText(view.text_inv_hide_buy_price, hideItem.buyValue)
-
-                updateItemText(textClay, clayItem)
-                updateMoneyText(view.text_inv_clay_sell_price, clayItem.sellValue)
-                updateMoneyText(view.text_inv_clay_buy_price, clayItem.buyValue)
-
-                updateItemText(textMetal, metalItem)
-                updateMoneyText(view.text_inv_metal_sell_price, metalItem.sellValue)
-                updateMoneyText(view.text_inv_metal_buy_price, metalItem.buyValue)
-
-                updateItemText(textOil, oilItem)
-                updateMoneyText(view.text_inv_oil_sell_price, oilItem.sellValue)
-                updateMoneyText(view.text_inv_oil_buy_price, oilItem.buyValue)
-
-                updateItemText(textPaper, paperItem)
-                updateMoneyText(view.text_inv_paper_sell_price, paperItem.sellValue)
-                updateMoneyText(view.text_inv_paper_buy_price, paperItem.buyValue)
-
-                updateItemText(textSpear, spearItem)
-                updateMoneyText(view.text_inv_spear_sell_price, spearItem.sellValue)
-                updateMoneyText(view.text_inv_spear_buy_price, spearItem.buyValue)
-
-                updateItemText(textSword, swordItem)
-                updateMoneyText(view.text_inv_sword_sell_price, swordItem.sellValue)
-                updateMoneyText(view.text_inv_sword_buy_price, swordItem.buyValue)
-
-                updateItemText(textBrick, brickItem)
-                updateMoneyText(view.text_inv_brick_sell_price, brickItem.sellValue)
-                updateMoneyText(view.text_inv_brick_buy_price, brickItem.buyValue)
-
-                updateItemText(textHouse, houseItem)
-                updateMoneyText(view.text_inv_house_sell_price, houseItem.sellValue)
-                updateMoneyText(view.text_inv_house_buy_price, houseItem.buyValue)
-
-                updateItemText(textCastle, castleItem)
-                updateMoneyText(view.text_inv_castle_sell_price, castleItem.sellValue)
-                updateMoneyText(view.text_inv_castle_buy_price, castleItem.buyValue)
-
-                updateItemText(textLamp, lampItem)
-                updateMoneyText(view.text_inv_lamp_sell_price, lampItem.sellValue)
-                updateMoneyText(view.text_inv_lamp_buy_price, lampItem.buyValue)
-
-                updateItemText(textBook, bookItem)
-                updateMoneyText(view.text_inv_book_sell_price, bookItem.sellValue)
-                updateMoneyText(view.text_inv_book_buy_price, bookItem.buyValue)
-                try { Thread.sleep(3) }
-                catch (e: InterruptedException) { e.printStackTrace() }
             }
         }).start()
-
         return view
     }
 }

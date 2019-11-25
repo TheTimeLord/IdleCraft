@@ -21,14 +21,13 @@ import com.example.idlecraft.MainActivity
 import com.example.idlecraft.R
 import com.example.idlecraft.mechanics.Inventory
 import com.example.idlecraft.mechanics.Item
-import kotlinx.android.synthetic.main.fragment_inventory.view.*
-import kotlinx.android.synthetic.main.fragment_shop.*
 import kotlinx.android.synthetic.main.fragment_shop.view.*
 
 class ShopFragment : Fragment() {
     // Private Member Fields
     private var act: MainActivity? = null
     private lateinit var inv: Inventory
+    private val pkg = "com.example.idlecraft"
 
     //==============================================================================================
     // TextView Updating Procedures
@@ -66,7 +65,6 @@ class ShopFragment : Fragment() {
     //==============================================================================================
     private fun setupShopItemListeners(v: View, itemName: String) {
         val item = inv.getItemByName(itemName)
-        val pkg = "com.example.idlecraft"
         val money = v.text_shop_money
         var tradeAmount = 1
 
@@ -163,26 +161,16 @@ class ShopFragment : Fragment() {
         val textMoney = view.text_shop_money
         updateMoneyText(textMoney, inv.money)
 
-        // Update Thread: activate Shop
-        act!!.updateThreadCrafting = false
-        act!!.updateThreadInventory = false
-
-        //==========================================================================================
-        // Sticks Shop Variables and Button Listeners
-        //==========================================================================================
-        val textSticksMax = view.text_shop_sticks_inv
-        val textSticksRate = view.text_shop_sticks_rate
-        val textSticksInvPrice = view.text_shop_sticks_inv_price
-        val textSticksRatePrice = view.text_shop_sticks_rate_price
-        val sticksItem = inv.getItemByName("sticks")
-        val textSticksTradeAmount = view.text_shop_sticks_trade_amount
-        val textSticksInvInc = view.text_shop_sticks_inv_increase
-        val textSticksRateInc = view.text_shop_sticks_rate_increase
-
+        // Setup UI elements and button listeners
         val shopItems = arrayOf("sticks")
         shopItems.forEach {
             setupShopItemListeners(view, it)
         }
+
+        // Update Thread: activate Shop
+        act!!.updateThreadCrafting = false
+        act!!.updateThreadInventory = false
+
         return view
     }
 }
