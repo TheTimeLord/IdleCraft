@@ -111,6 +111,10 @@ class GatherFragment : Fragment() {
         act!!.saveInv()
         inv = act!!.inventory
 
+        // Update Thread: activate Shop
+        act!!.updateThreadCrafting = false
+        act!!.updateThreadInventory = false
+
         val gathItems = arrayOf("sticks", "rocks", "hide", "clay", "metal", "oil", "paper")
         gathItems.forEach {
             setupGatherItemListeners(view, it)

@@ -10,7 +10,6 @@
 //==================================================================================================
 package com.example.idlecraft.ui
 
-import android.media.Image
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -28,6 +27,7 @@ class CraftFragment : Fragment() {
     // Private Member Fields
     private var act: MainActivity? = null
     private lateinit var inv: Inventory
+    private val pkg = "com.example.idlecraft"
 
     //==============================================================================================
     // updateItemText: Update the TextView for an item to display its current count.
@@ -63,7 +63,6 @@ class CraftFragment : Fragment() {
     //==============================================================================================
     private fun setupCraftItemListeners(v: View, itemName: String) {
         val item = inv.getItemByName(itemName)
-        val pkg = "com.example.idlecraft"
         var amount = 1
 
         // Declare strings to reference a set of UI elements for an item
@@ -148,6 +147,42 @@ class CraftFragment : Fragment() {
         craftItems.forEach {
             setupCraftItemListeners(view, it)
         }
+
+        // Update Thread: activate Crafting
+        act!!.updateThreadCrafting = true
+        act!!.updateThreadInventory = false
+        var craftThread = act!!.updateThreadCrafting
+
+        //==========================================================================================
+        // Constant thread to update all text values
+        //==========================================================================================
+        Thread(Runnable {
+            while (craftThread) {
+                activity?.runOnUiThread {
+                    craftItems.forEach {
+                        // Get the item object from the inventory
+                        val item = inv.getItemByName(it)
+
+                        // Declare strings to reference a set of UI elements for an item
+                        val countStr    = "text_craft_${it}_count"
+                        val craftReqStr = "text_craft_${it}_req"
+
+                        // Use the UI strings to reference each UI element
+                        val itemCount = view.findViewById<TextView>(resources.getIdentifier(countStr, "id", pkg))
+                        val craftReq1 = view.findViewById<TextView>(resources.getIdentifier(craftReqStr + "1", "id", pkg))
+                        val craftReq2 = view.findViewById<TextView>(resources.getIdentifier(craftReqStr + "2", "id", pkg))
+                        val craftReq3 = view.findViewById<TextView>(resources.getIdentifier(craftReqStr + "3", "id", pkg))
+                        updateItemText(itemCount, item)
+                        updateReqText(craftReq1, craftReq2, craftReq3, item)
+                    }
+                }
+
+                Thread.sleep(25)
+                // constantly check to see if thread needs to stay alive
+                craftThread = act!!.updateThreadCrafting
+            }
+        }).start()
+        
         return view
     }
 }

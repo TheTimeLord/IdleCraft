@@ -158,11 +158,26 @@ class ShopFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_shop, container, false)
         act = activity as MainActivity
         act!!.saveInv()
+        act = activity as MainActivity
         inv = act!!.inventory
+        val textMoney = view.text_shop_money
+        updateMoneyText(textMoney, inv.money)
 
-        /*/ Update Thread: activate Shop
+        // Update Thread: activate Shop
         act!!.updateThreadCrafting = false
-        act!!.updateThreadInventory = false*/
+        act!!.updateThreadInventory = false
+
+        //==========================================================================================
+        // Sticks Shop Variables and Button Listeners
+        //==========================================================================================
+        val textSticksMax = view.text_shop_sticks_inv
+        val textSticksRate = view.text_shop_sticks_rate
+        val textSticksInvPrice = view.text_shop_sticks_inv_price
+        val textSticksRatePrice = view.text_shop_sticks_rate_price
+        val sticksItem = inv.getItemByName("sticks")
+        val textSticksTradeAmount = view.text_shop_sticks_trade_amount
+        val textSticksInvInc = view.text_shop_sticks_inv_increase
+        val textSticksRateInc = view.text_shop_sticks_rate_increase
 
         val shopItems = arrayOf("sticks")
         shopItems.forEach {
