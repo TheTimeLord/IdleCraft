@@ -1,6 +1,6 @@
 # IdleCraft
-<pre>Project Owner: Brian Andrus</pre>  
-<pre>Developers:    Brian Andrus, Eduardo Zamora, Saar Sayfan, Travis Kerns, Nathan Lakritz</pre>  
+Project Owner: Brian Andrus  
+Developers:    Brian Andrus, Eduardo Zamora, Saar Sayfan, Travis Kerns, Nathan Lakritz   
 
 # Table of Contents
 Documentation: docs  
