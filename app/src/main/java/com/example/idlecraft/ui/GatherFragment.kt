@@ -1,3 +1,13 @@
+//==================================================================================================
+// GatherFragment.kt
+//
+// Authors: Brian Andrus, Eduardo Zamora, Nathan Lakritz, Saar Sayfan, Travis Kerns
+//
+// Description: This file contains the implementation of a fragment that contains functionality
+// for in-game gathering. The fragment is created upon opening and destroyed upon closing. A
+// number of button listeners are setup that interact with the underlying data structure that
+// contains all player data: Inventory.
+//==================================================================================================
 package com.example.idlecraft.ui
 
 import android.os.Bundle
@@ -8,11 +18,13 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.idlecraft.MainActivity
 import com.example.idlecraft.R
+import com.example.idlecraft.mechanics.Inventory
 import com.example.idlecraft.mechanics.Item
 import kotlinx.android.synthetic.main.fragment_gather.view.*
 
 class GatherFragment : Fragment() {
     private var act: MainActivity? = null
+    private lateinit var inv: Inventory
 
     // updateItemText: Update the TextView for an item to display its current count.
     private fun updateItemText(text: TextView, item : Item) {
@@ -23,15 +35,30 @@ class GatherFragment : Fragment() {
         text.text = " x" + item.rate + " " + item.name
     }
 
+    private fun setupGatherItemListeners(v:View, itemName: String) {
+
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        //==========================================================================================
+        val view = inflater.inflate(R.layout.fragment_gather, container, false)
+        act = activity as MainActivity
+        act!!.saveInv()
+        inv = act!!.inventory
+
+
+
+        return view
+    }
+}
+
+
+        /*//==========================================================================================
         // Item and UI setup
         //==========================================================================================
-
         val view = inflater.inflate(R.layout.fragment_gather, container, false)
         act = activity as MainActivity
         act!!.saveInv()
@@ -251,4 +278,4 @@ class GatherFragment : Fragment() {
         }
         return view
     }
-}
+}*/

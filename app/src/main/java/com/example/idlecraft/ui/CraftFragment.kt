@@ -1,3 +1,13 @@
+//==================================================================================================
+// CraftFragment.kt
+//
+// Authors: Brian Andrus, Eduardo Zamora, Nathan Lakritz, Saar Sayfan, Travis Kerns
+//
+// Description: This file contains the implementation of a fragment that contains functionality
+// for in-game crafting. The fragment is created upon opening and destroyed upon closing. A
+// number of button listeners are setup that interact with the underlying data structure that
+// contains all player data: Inventory.
+//==================================================================================================
 package com.example.idlecraft.ui
 
 import android.media.Image
@@ -15,63 +25,81 @@ import com.example.idlecraft.mechanics.Inventory
 import com.example.idlecraft.mechanics.Item
 
 class CraftFragment : Fragment() {
+    // Private Member Fields
     private var act: MainActivity? = null
     private lateinit var inv: Inventory
 
+    //==============================================================================================
     // updateItemText: Update the TextView for an item to display its current count.
+    //==============================================================================================
     private fun updateItemText(text: TextView, item : Item) {
-        text.text = item.count.toString() + "/" + item.max.toString() + "\n" + item.name
+        val newText = "${item.count}/${item.max}\n${item.name}"
+        text.text = newText
     }
 
+    //==============================================================================================
     // updateReqText: Update all requirement TextViews for a craftable item
+    //==============================================================================================
     private fun updateReqText(req1: TextView, req2: TextView, req3: TextView, item: Item) {
         val reqItem1 = inv.getItemByName(item.req1)
         val reqItem2 = inv.getItemByName(item.req2)
         val reqItem3 = inv.getItemByName(item.req3)
 
-        if (item.req1 != null)
-            req1.text = reqItem1.count.toString() + "/" + item.reqAmount1.toString() + " " + item.req1
+        if (item.req1 != null) req1.text = "${reqItem1.count}/${item.reqAmount1} ${item.req1}"
         else req1.text = ""
 
-        if (item.req2 != null)
-            req2.text = reqItem2.count.toString() + "/" + item.reqAmount2.toString() + " " + item.req2
+        if (item.req2 != null) req2.text = "${reqItem2.count}/${item.reqAmount2} ${item.req2}"
         else req2.text = ""
 
-        if (item.req3 != null)
-            req3.text = reqItem3.count.toString() + "/" + item.reqAmount3.toString()  + " " + item.req3
+        if (item.req3 != null) req3.text = "${reqItem3.count}/${item.reqAmount3} ${item.req3}"
         else req3.text = ""
     }
 
-    private fun setupCraftItemListeners(v:View, itemName: String) {
+    //==============================================================================================
+    // setupCraftItemListeners: This procedure sets up and references all UI elements in the
+    // crafting fragment for a particular item given its item name as a string. The UI elements are
+    // named in a uniform fashion so that they can be easily referenced in such fashion. This
+    // essentially eliminates redundancy in the code.
+    //==============================================================================================
+    private fun setupCraftItemListeners(v: View, itemName: String) {
         val item = inv.getItemByName(itemName)
         val pkg = "com.example.idlecraft"
         var amount = 1
 
-        val countString = "text_craft_${itemName}_count"
-        val progressBarString = "progress_craft_${itemName}"
-        val craftAmountString = "text_craft_${itemName}_amount"
-        val craftReqString = "text_craft_${itemName}_req"
-        val craftButtonString = "button_craft_${itemName}"
+        // Declare strings to reference a set of UI elements for an item
+        val countStr       = "text_craft_${itemName}_count"
+        val progressBarStr = "progress_craft_${itemName}"
+        val craftAmountStr = "text_craft_${itemName}_amount"
+        val craftReqStr    = "text_craft_${itemName}_req"
+        val craftButtonStr = "button_craft_${itemName}"
 
-        val itemCount = v!!.findViewById<TextView>(resources.getIdentifier(countString, "id", pkg))
-        val progressBar = v!!.findViewById<ProgressBar>(resources.getIdentifier(progressBarString, "id", pkg))
-        val craftAmount = v!!.findViewById<TextView>(resources.getIdentifier(craftAmountString, "id", pkg))
-        val craftReq1 = v!!.findViewById<TextView>(resources.getIdentifier(craftReqString + "1", "id", pkg))
-        val craftReq2 = v!!.findViewById<TextView>(resources.getIdentifier(craftReqString + "2", "id", pkg))
-        val craftReq3 = v!!.findViewById<TextView>(resources.getIdentifier(craftReqString + "3", "id", pkg))
-        val craftButton = v!!.findViewById<ImageButton>(resources.getIdentifier(craftButtonString, "id", pkg))
-        val amountPlusButton = v!!.findViewById<ImageButton>(resources.getIdentifier(craftButtonString + "_plus", "id", pkg))
-        val amountMinusButton = v!!.findViewById<ImageButton>(resources.getIdentifier(craftButtonString + "_minus", "id", pkg))
+        // Use the UI strings to reference each UI element
+        val itemCount         = v.findViewById<TextView>(resources.getIdentifier(countStr, "id", pkg))
+        val progressBar       = v.findViewById<ProgressBar>(resources.getIdentifier(progressBarStr, "id", pkg))
+        val craftAmount       = v.findViewById<TextView>(resources.getIdentifier(craftAmountStr, "id", pkg))
+        val craftReq1         = v.findViewById<TextView>(resources.getIdentifier(craftReqStr + "1", "id", pkg))
+        val craftReq2         = v.findViewById<TextView>(resources.getIdentifier(craftReqStr + "2", "id", pkg))
+        val craftReq3         = v.findViewById<TextView>(resources.getIdentifier(craftReqStr + "3", "id", pkg))
+        val craftButton       = v.findViewById<ImageButton>(resources.getIdentifier(craftButtonStr, "id", pkg))
+        val amountPlusButton  = v.findViewById<ImageButton>(resources.getIdentifier(craftButtonStr + "_plus", "id", pkg))
+        val amountMinusButton = v.findViewById<ImageButton>(resources.getIdentifier(craftButtonStr + "_minus", "id", pkg))
 
+        // Update the UI with current values upon entering the fragment
         craftAmount.text = amount.toString()
         updateItemText(itemCount, item)
         updateReqText(craftReq1, craftReq2, craftReq3, item)
 
+        // Called when a crafting button is clicked. It ensures that the player has the required
+        // crafting materials required. If the player does not have enough materials to craft
+        // the desired amount, the "max" items that they can craft will be crafted instead. This
+        // button also uses a thread to animate a progress bar.
         craftButton.setOnClickListener {
             var amountToCraft = inv.howManyCanCraft(item)
             if (amount < amountToCraft) amountToCraft = amount
             if (progressBar.progress != 0 || item.count >= item.max || !inv.isCraftable(item, amountToCraft))
                 return@setOnClickListener
+            // Thread animates the progress bar. Changes are only made 'after' the progress bar
+            // finishes.
             Thread(Runnable {
                 var progress = 0
                 while (progress < progressBar.max) {
@@ -90,19 +118,23 @@ class CraftFragment : Fragment() {
             }).start()
         }
 
-        // Plus Button
+        // The plus button allows a player to craft more items at a time.
         amountPlusButton.setOnClickListener {
             if (amount < item.max) amount += 1
             craftAmount.text = amount.toString()
         }
-        // Minus Button
+        // The minus button allows a player to craft less items at a time.
         amountMinusButton.setOnClickListener {
             if (amount > 1) amount -= 1
             craftAmount.text = amount.toString()
         }
-
     }
 
+    //==============================================================================================
+    // onCreateView: Called upon fragment creation. It sets up a reference to the global inventory
+    // object, then sets up button listeners by calling setupCraftItemListeners for each crafting
+    // item.
+    //==============================================================================================
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -113,11 +145,10 @@ class CraftFragment : Fragment() {
         act!!.saveInv()
         inv = act!!.inventory
 
-        var craftItems = arrayOf("spear", "sword", "brick", "house", "castle", "lamp", "book")
+        val craftItems = arrayOf("spear", "sword", "brick", "house", "castle", "lamp", "book")
         craftItems.forEach {
             setupCraftItemListeners(view, it)
         }
-
         return view
     }
 }
