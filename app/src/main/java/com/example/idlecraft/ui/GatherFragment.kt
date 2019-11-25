@@ -99,7 +99,7 @@ class GatherFragment : Fragment() {
 
     //==============================================================================================
     // onCreateView: Called upon fragment creation. It sets up a reference to the global inventory
-    // object, then sets up button listeners by calling setupGatherItemListeners for each crafting
+    // object, then sets up button listeners by calling setupGatherItemListeners for each gathering
     // item.
     //==============================================================================================
     override fun onCreateView(
