@@ -156,13 +156,12 @@ class ShopFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_shop, container, false)
         act = activity as MainActivity
         act!!.saveInv()
-        act = activity as MainActivity
         inv = act!!.inventory
         val textMoney = view.text_shop_money
         updateMoneyText(textMoney, inv.money)
 
         // Setup UI elements and button listeners
-        val shopItems = arrayOf("sticks")
+        val shopItems = arrayOf("sticks", "rocks", "hide", "clay", "metal", "oil", "paper")
         shopItems.forEach {
             setupShopItemListeners(view, it)
         }
