@@ -4,7 +4,7 @@ public class Item {
     private String name;
     private int count; // number of item owned
     private int max;
-    private int rate; // automation rate based on workers
+    private int rate; // gathering rate
     private boolean unlocked; // determines whether or not the item is available to the user
     private String req1; // crafting requirement
     private String req2;
@@ -16,7 +16,7 @@ public class Item {
     private int buyValue;
     private int buyMax;
     private int buyRate;
-    private int incInv;  // amount to increase inventory by
+    private int incInv;  // amount to increase max inventory by
     private int incRate; // amount to increase rate by
 
 
