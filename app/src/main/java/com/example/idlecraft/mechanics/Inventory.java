@@ -8,6 +8,7 @@ public class Inventory {
     private List<Item> items;
     private int money;
 
+    // Class Constructor
     public Inventory() {
         this.items = new ArrayList<>();
         this.money = 0;

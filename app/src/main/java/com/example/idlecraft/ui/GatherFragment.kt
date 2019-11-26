@@ -79,10 +79,13 @@ class GatherFragment : Fragment() {
 
             Thread(Runnable { // Thread animates the progress bar
                 var progress = 0
+                // Gathering speed must be divided by progressBar.max(100) because the thread
+                // sleeps 100 times per while loop iteration.
+                val progressBarSpeed = act!!.gatheringSpeed / progressBar.max
                 while (progress < progressBar.max) {
                     progress += 1
                     progressBar.progress = progress
-                    try { Thread.sleep(21) }
+                    try { Thread.sleep(progressBarSpeed) }
                     catch (e: InterruptedException) { e.printStackTrace() }
                 }
                 progressBar.progress = 0  // Reset progress bar
