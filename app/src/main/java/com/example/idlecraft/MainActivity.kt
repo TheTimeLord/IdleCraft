@@ -107,11 +107,29 @@ class MainActivity : AppCompatActivity() {
     }
 
     //==============================================================================================
+    // setProgress: Sets the progress for a ProgressBar view component.
+    //==============================================================================================
+    private fun setProgress(progress: Int, itemName: String, fragmentName: String) {
+        val rootView = window.decorView
+
+        val progressBar = rootView.findViewById<ProgressBar>(
+            resources.getIdentifier(
+                "progress_${fragmentName}_${itemName}",
+                "id",
+                "com.example.idlecraft"
+            )
+        )
+        if (progressBar != null) {
+            progressBar.progress = progress
+        }
+
+    }
+
+    //==============================================================================================
     // autoGather: Starts a thread to automate gathering for upgraded items.
     //==============================================================================================
     private fun autoGather() {
         var progress = 0
-        val rootView = window.decorView
 
         // Thread automates item gathering for gathering items that have been upgraded. In other
         // words, automated gathering won't take place unless the Rate for an item is greater than 1.
@@ -126,17 +144,8 @@ class MainActivity : AppCompatActivity() {
                     if (it.rate > 1) {
                         // update progress bar to reflect progress if it exists in the view
                         runOnUiThread {
-                            val progressBar = rootView.findViewById<ProgressBar>(
-                                resources.getIdentifier(
-                                    "progress_gath_${it.name}",
-                                    "id",
-                                    "com.example.idlecraft"
-                                )
-                            )
-                            if (progressBar != null) {
-                                // if the item is at max count, leave progress at 100
-                                progressBar.progress = if (it.count < it.max) progress else 100
-                            }
+                            // if the item is at max count, leave progress at 100
+                            setProgress(if (it.count < it.max) progress else 100, it.name, "gath")
                         }
 
                         // update inventory at 100%
@@ -146,6 +155,32 @@ class MainActivity : AppCompatActivity() {
                         }
                     }
                 }
+            }
+        }).start()
+    }
+
+    //==============================================================================================
+    // startGatherProgress: Starts a thread to handle the gathering of an item and the animation
+    //                      of the progress bar.
+    //==============================================================================================
+    fun startGatherProgress(itemName: String) {
+        val item = inventory.getItemByName(itemName)
+
+        Thread(Runnable {
+            for (progress in 1..100) {
+                runOnUiThread {
+                    setProgress(progress, itemName, "gath")
+                }
+                try { Thread.sleep(gatheringSpeed / 100) }
+                catch (e: InterruptedException) { e.printStackTrace() }
+            }
+            if (item.count + item.rate <= item.max) {
+                item.increaseCount(item.rate)
+            } else {
+                item.count = item.max
+            }
+            runOnUiThread {
+                setProgress(0, itemName, "gath")
             }
         }).start()
     }

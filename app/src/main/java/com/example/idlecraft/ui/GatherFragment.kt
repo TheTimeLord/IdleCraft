@@ -77,25 +77,7 @@ class GatherFragment : Fragment() {
             if (progressBar.progress != 0 || item.count >= item.max)
                 return@setOnClickListener
 
-            Thread(Runnable { // Thread animates the progress bar
-                var progress = 0
-                // Gathering speed must be divided by progressBar.max(100) because the thread
-                // sleeps 100 times per while loop iteration.
-                val progressBarSpeed = act!!.gatheringSpeed / progressBar.max
-                while (progress < progressBar.max) {
-                    progress += 1
-                    progressBar.progress = progress
-                    try { Thread.sleep(progressBarSpeed) }
-                    catch (e: InterruptedException) { e.printStackTrace() }
-                }
-                progressBar.progress = 0  // Reset progress bar
-                item.count += item.rate   // Increment number of sticks
-                if (item.count > item.max) item.count = item.max
-                // runOnUiThread allows the thread to update UI objects
-                activity?.runOnUiThread {
-                    updateQuantityText(itemQuantity, item)
-                }
-            }).start()
+            act!!.startGatherProgress(itemName)
         }
     }
 
