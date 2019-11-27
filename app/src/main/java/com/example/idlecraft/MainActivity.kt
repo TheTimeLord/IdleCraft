@@ -160,27 +160,29 @@ class MainActivity : AppCompatActivity() {
     }
 
     //==============================================================================================
-    // startGatherProgress: Starts a thread to handle the gathering of an item and the animation
-    //                      of the progress bar.
+    // startGatherProgress: Starts a thread to handle the gathering/crafting of an item and the
+    //                      animation of the progress bar.
     //==============================================================================================
-    fun startGatherProgress(itemName: String) {
+    fun startProgress(itemName: String, fragmentName: String, amount: Int) {
         val item = inventory.getItemByName(itemName)
 
         Thread(Runnable {
-            for (progress in 1..100) {
-                runOnUiThread {
-                    setProgress(progress, itemName, "gath")
+            for (i in 1..amount) {
+                for (progress in 1..100) {
+                    runOnUiThread {
+                        setProgress(progress, itemName, fragmentName)
+                    }
+                    try { Thread.sleep(gatheringSpeed / 100) }
+                    catch (e: InterruptedException) { e.printStackTrace() }
                 }
-                try { Thread.sleep(gatheringSpeed / 100) }
-                catch (e: InterruptedException) { e.printStackTrace() }
-            }
-            if (item.count + item.rate <= item.max) {
-                item.increaseCount(item.rate)
-            } else {
-                item.count = item.max
+                if (item.count + item.rate <= item.max) {
+                    item.increaseCount(item.rate)
+                } else {
+                    item.count = item.max
+                }
             }
             runOnUiThread {
-                setProgress(0, itemName, "gath")
+                setProgress(0, itemName, fragmentName)
             }
         }).start()
     }

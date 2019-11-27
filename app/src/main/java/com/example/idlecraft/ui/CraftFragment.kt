@@ -98,22 +98,7 @@ class CraftFragment : Fragment() {
             if (progressBar.progress != 0 || item.count >= item.max || !inv.isCraftable(item, amountToCraft))
                 return@setOnClickListener
 
-            Thread(Runnable { // Thread animates progress bar
-                var progress = 0
-                while (progress < progressBar.max) {
-                    progress += 1
-                    progressBar.progress = progress
-                    try { Thread.sleep(21) }
-                    catch (e: InterruptedException) { e.printStackTrace() }
-                }
-                progressBar.progress = 0     // Reset progress bar
-                inv.craftItem(item, amountToCraft)
-                // runOnUiThread allows the thread to update UI objects
-                activity?.runOnUiThread {
-                    updateItemText(itemCount, item)
-                    updateReqText(craftReq1, craftReq2, craftReq3, item)
-                }
-            }).start()
+            act!!.startProgress(itemName, "craft", amountToCraft)
         }
 
         // The plus button allows a player to craft more items at a time.

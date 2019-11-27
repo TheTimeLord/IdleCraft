@@ -77,7 +77,7 @@ class GatherFragment : Fragment() {
             if (progressBar.progress != 0 || item.count >= item.max)
                 return@setOnClickListener
 
-            act!!.startGatherProgress(itemName)
+            act!!.startProgress(itemName, "gath", 1)
         }
     }
 
