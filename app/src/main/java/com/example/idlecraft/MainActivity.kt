@@ -15,6 +15,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
+import android.widget.ProgressBar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -58,18 +59,7 @@ class MainActivity : AppCompatActivity() {
             saveInv()
         }).start()
 
-        // Thread automates item gathering for gathering items that have been upgraded. In other
-        // words, automated gathering won't take place unless the Rate for an item is greater than 1.
-        Thread(Runnable {
-            while (true) {
-                try { Thread.sleep(gatheringSpeed) }
-                catch (e: InterruptedException) { e.printStackTrace() }
-                inventory.items.forEach {
-                    if (it.rate > 1) it.count += it.rate
-                    if (it.count > it.max) it.count = it.max
-                }
-            }
-        }).start()
+        autoGather()
     }
 
     //==============================================================================================
@@ -114,5 +104,49 @@ class MainActivity : AppCompatActivity() {
         }
         editor.putInt("money", inventory.money)
         editor.commit()
+    }
+
+    //==============================================================================================
+    // autoGather: Starts a thread to automate gathering for upgraded items.
+    //==============================================================================================
+    private fun autoGather() {
+        var progress = 0
+        val rootView = window.decorView
+
+        // Thread automates item gathering for gathering items that have been upgraded. In other
+        // words, automated gathering won't take place unless the Rate for an item is greater than 1.
+        Thread(Runnable {
+            while (true) {
+                try { Thread.sleep(gatheringSpeed / 100) }
+                catch (e: InterruptedException) { e.printStackTrace() }
+                progress += 1
+                if (progress > 100) progress = 0
+
+                inventory.items.forEach {
+                    if (it.rate > 1) {
+                        // update progress bar to reflect progress if it exists in the view
+                        runOnUiThread {
+                            val progressBar = rootView.findViewById<ProgressBar>(
+                                resources.getIdentifier(
+                                    "progress_gath_${it.name}",
+                                    "id",
+                                    "com.example.idlecraft"
+                                )
+                            )
+                            if (progressBar != null) {
+                                // if the item is at max count, leave progress at 100
+                                progressBar.progress = if (it.count < it.max) progress else 100
+                            }
+                        }
+
+                        // update inventory at 100%
+                        if (progress == 100) {
+                            val newCount = it.count + it.rate
+                            it.count = if (newCount > it.max) it.max else newCount
+                        }
+                    }
+                }
+            }
+        }).start()
     }
 }
