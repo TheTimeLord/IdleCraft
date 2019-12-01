@@ -166,9 +166,7 @@ class ShopFragment : Fragment() {
             setupShopItemListeners(view, it)
         }
 
-        // Update Thread: activate Shop
-        act!!.updateThreadCrafting = false
-        act!!.updateThreadInventory = false
+        act!!.currentFragment = "shop"
 
         return view
     }

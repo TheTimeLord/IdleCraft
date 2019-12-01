@@ -41,7 +41,7 @@ class GatherFragment : Fragment() {
     // updateRateText: Update the TextView for an item to display its gathering rate.
     //==============================================================================================
     private fun updateRateText(text: TextView, item : Item) {
-        val newText = " x${item.rate} ${item.name}"
+        val newText = " x${if (item.rate < 1) 1 else item.rate} ${item.name}"
         text.text = newText
     }
 
@@ -103,8 +103,34 @@ class GatherFragment : Fragment() {
         }
 
         // Update Thread: activate Shop
-        act!!.updateThreadCrafting = false
-        act!!.updateThreadInventory = false
+        act!!.currentFragment = "gather"
+
+        // Thread constantly updates all gathering TextViews to reflect the player's inventory
+        // while this fragment is open. This is needed because inventory values are constantly
+        // changing and updating.
+        Thread(Runnable {
+            while(act!!.currentFragment == "gather") {
+                gathItems.forEach {
+                    val item = inv.getItemByName(it)
+
+                    // Declare strings to reference a set of UI elements for an item
+                    val quantityStr     = "text_gath_${it}_quantity"
+                    val rateStr         = "text_gath_${it}_rate"
+
+                    // Use the UI strings to reference each UI element then update them
+                    val itemQuantity   = view.findViewById<TextView>(resources.getIdentifier(quantityStr, "id", pkg))
+                    val itemRate       = view.findViewById<TextView>(resources.getIdentifier(rateStr, "id", pkg))
+
+                    // Update the quantity and rate TextViews
+                    act!!.runOnUiThread {
+                        updateQuantityText(itemQuantity, item)
+                        updateRateText(itemRate, item)
+                    }
+                }
+                // Sleep and constantly check to see if thread needs to stay alive
+                Thread.sleep(25)
+            }
+        }).start()
 
         return view
     }

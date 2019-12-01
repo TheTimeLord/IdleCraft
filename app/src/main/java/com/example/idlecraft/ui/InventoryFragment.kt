@@ -155,15 +155,13 @@ class InventoryFragment : Fragment() {
         }
 
         // Update Thread: activate Inventory
-        act!!.updateThreadCrafting = false
-        act!!.updateThreadInventory = true
-        var invThread = act!!.updateThreadInventory
+        act!!.currentFragment = "inventory"
 
         // Thread constantly updates all inventory TextViews to reflect the player's inventory
         // while this fragment is open. This is needed because inventory values are constantly
         // changing and updating.
         Thread(Runnable {
-            while(invThread) {
+            while(act!!.currentFragment == "inventory") {
                 invItems.forEach {
                     val item = inv.getItemByName(it)
                     updateMoneyText(textMoney, inv.money)
@@ -184,7 +182,6 @@ class InventoryFragment : Fragment() {
                 }
                 // Sleep and constantly check to see if thread needs to stay alive
                 Thread.sleep(25)
-                invThread = act!!.updateThreadInventory
             }
         }).start()
         return view

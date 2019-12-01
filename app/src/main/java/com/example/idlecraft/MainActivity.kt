@@ -30,8 +30,7 @@ import kotlinx.android.synthetic.main.fragment_gather.view.*
 class MainActivity : AppCompatActivity() {
     // Member Fields
     var inventory = Inventory()
-    var updateThreadInventory: Boolean = false
-    var updateThreadCrafting: Boolean = false
+    var currentFragment: String = ""
     val gatheringSpeed: Long = 2500
     val autosaveSpeed: Long = 10000
 
@@ -138,14 +137,13 @@ class MainActivity : AppCompatActivity() {
                 try { Thread.sleep(gatheringSpeed / 100) }
                 catch (e: InterruptedException) { e.printStackTrace() }
                 progress += 1
-                if (progress > 100) progress = 0
+                if (progress > 100) progress = 1
 
                 inventory.items.forEach {
                     if (it.rate > 1) {
                         // update progress bar to reflect progress if it exists in the view
                         runOnUiThread {
-                            // if the item is at max count, leave progress at 100
-                            setProgress(if (it.count < it.max) progress else 100, it.name, "gath")
+                            setProgress(if (it.count >= it.max) 0 else progress, it.name, "gath")
                         }
 
                         // update inventory at 100%
