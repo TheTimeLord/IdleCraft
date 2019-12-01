@@ -15,7 +15,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.idlecraft.R
@@ -23,7 +22,6 @@ import com.example.idlecraft.MainActivity
 import com.example.idlecraft.mechanics.Inventory
 import com.example.idlecraft.mechanics.Item
 import kotlinx.android.synthetic.main.fragment_inventory.view.*
-import java.security.KeyStore
 
 class InventoryFragment : Fragment() {
     // Private Member Fields
