@@ -15,7 +15,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
-import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.idlecraft.R
@@ -23,7 +22,6 @@ import com.example.idlecraft.MainActivity
 import com.example.idlecraft.mechanics.Inventory
 import com.example.idlecraft.mechanics.Item
 import kotlinx.android.synthetic.main.fragment_inventory.view.*
-import java.security.KeyStore
 
 class InventoryFragment : Fragment() {
     // Private Member Fields
@@ -155,15 +153,13 @@ class InventoryFragment : Fragment() {
         }
 
         // Update Thread: activate Inventory
-        act!!.updateThreadCrafting = false
-        act!!.updateThreadInventory = true
-        var invThread = act!!.updateThreadInventory
+        act!!.currentFragment = "inventory"
 
         // Thread constantly updates all inventory TextViews to reflect the player's inventory
         // while this fragment is open. This is needed because inventory values are constantly
         // changing and updating.
         Thread(Runnable {
-            while(invThread) {
+            while(act!!.currentFragment == "inventory") {
                 invItems.forEach {
                     val item = inv.getItemByName(it)
                     updateMoneyText(textMoney, inv.money)
@@ -184,7 +180,6 @@ class InventoryFragment : Fragment() {
                 }
                 // Sleep and constantly check to see if thread needs to stay alive
                 Thread.sleep(25)
-                invThread = act!!.updateThreadInventory
             }
         }).start()
         return view

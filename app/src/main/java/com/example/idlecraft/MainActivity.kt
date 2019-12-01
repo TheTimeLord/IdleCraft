@@ -12,25 +12,18 @@ package com.example.idlecraft
 
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import android.widget.Button
+import android.widget.ProgressBar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.idlecraft.mechanics.Inventory
-import com.example.idlecraft.mechanics.Item
-import kotlinx.android.synthetic.main.fragment_gather.view.*
 
 class MainActivity : AppCompatActivity() {
     // Member Fields
     var inventory = Inventory()
-    var updateThreadInventory: Boolean = false
-    var updateThreadCrafting: Boolean = false
+    var currentFragment: String = ""
     val gatheringSpeed: Long = 2500
     val autosaveSpeed: Long = 10000
 
@@ -58,18 +51,7 @@ class MainActivity : AppCompatActivity() {
             saveInv()
         }).start()
 
-        // Thread automates item gathering for gathering items that have been upgraded. In other
-        // words, automated gathering won't take place unless the Rate for an item is greater than 1.
-        Thread(Runnable {
-            while (true) {
-                try { Thread.sleep(gatheringSpeed) }
-                catch (e: InterruptedException) { e.printStackTrace() }
-                inventory.items.forEach {
-                    if (it.rate > 1) it.count += it.rate
-                    if (it.count > it.max) it.count = it.max
-                }
-            }
-        }).start()
+        autoGather()
     }
 
     //==============================================================================================
@@ -114,5 +96,85 @@ class MainActivity : AppCompatActivity() {
         }
         editor.putInt("money", inventory.money)
         editor.commit()
+    }
+
+    //==============================================================================================
+    // setProgress: Sets the progress for a ProgressBar view component.
+    //==============================================================================================
+    private fun setProgress(progress: Int, itemName: String, fragmentName: String) {
+        val rootView = window.decorView
+
+        val progressBar = rootView.findViewById<ProgressBar>(
+            resources.getIdentifier(
+                "progress_${fragmentName}_${itemName}",
+                "id",
+                "com.example.idlecraft"
+            )
+        )
+        if (progressBar != null) {
+            progressBar.progress = progress
+        }
+
+    }
+
+    //==============================================================================================
+    // autoGather: Starts a thread to automate gathering for upgraded items.
+    //==============================================================================================
+    private fun autoGather() {
+        var progress = 0
+
+        // Thread automates item gathering for gathering items that have been upgraded. In other
+        // words, automated gathering won't take place unless the Rate for an item is greater than 1.
+        Thread(Runnable {
+            while (true) {
+                try { Thread.sleep(gatheringSpeed / 100) }
+                catch (e: InterruptedException) { e.printStackTrace() }
+                progress += 1
+                if (progress > 100) progress = 1
+
+                inventory.items.forEach {
+                    if (it.rate > 1) {
+                        // update progress bar to reflect progress if it exists in the view
+                        runOnUiThread {
+                            setProgress(if (it.count >= it.max) 0 else progress, it.name, "gath")
+                        }
+
+                        // update inventory at 100%
+                        if (progress == 100) {
+                            val newCount = it.count + it.rate
+                            it.count = if (newCount > it.max) it.max else newCount
+                        }
+                    }
+                }
+            }
+        }).start()
+    }
+
+    //==============================================================================================
+    // startGatherProgress: Starts a thread to handle the gathering/crafting of an item and the
+    //                      animation of the progress bar.
+    //==============================================================================================
+    fun startProgress(itemName: String, fragmentName: String, amount: Int) {
+        val item = inventory.getItemByName(itemName)
+
+        Thread(Runnable {
+            for (i in 1..amount) {
+                for (progress in 1..100) {
+                    runOnUiThread {
+                        setProgress(progress, itemName, fragmentName)
+                    }
+                    try { Thread.sleep(gatheringSpeed / 100) }
+                    catch (e: InterruptedException) { e.printStackTrace() }
+                }
+                if (item.count + item.rate <= item.max) {
+                    item.increaseCount(item.rate)
+                } else {
+                    item.count = item.max
+                }
+            }
+            runOnUiThread {
+                setProgress(0, itemName, fragmentName)
+            }
+        }).start()
     }
 }
