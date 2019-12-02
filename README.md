@@ -6,7 +6,7 @@ Developers:    Brian Andrus, Eduardo Zamora, Saar Sayfan, Travis Kerns, Nathan L
 Documentation: docs  
 Source Code:   app/src/main/java/  
 XML Code:      app/src/main/res/  
-Unit Tests:    app/src/test/java/tests/
+Unit Tests:    app/src/test/java/tests/  
 Scrum Board:   https://app.clubhouse.io/invite-link/5da2a383-5de7-4312-9e49-f1bf2cd55bc8
 
 # Description
