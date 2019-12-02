@@ -2,22 +2,22 @@ package com.example.idlecraft.mechanics;
 
 public class Item {
     private String name;
-    private int count; // number of item owned
-    private int max;
-    private int rate; // gathering rate
+    private int count;        // number of item owned
+    private int max;          // max inventory space
+    private int rate;         // gathering rate
     private boolean unlocked; // determines whether or not the item is available to the user
-    private String req1; // crafting requirement
-    private String req2;
-    private String req3;
-    private int reqAmount1;
-    private int reqAmount2;
-    private int reqAmount3;
+    private String req1;      // crafting requirement 1
+    private String req2;      // crafting requirement 2
+    private String req3;      // crafting requirement 3
+    private int reqAmount1;   // crafting requirement amount 1
+    private int reqAmount2;   // crafting requirement amount 2
+    private int reqAmount3;   // crafting requirement amount 3
     private int sellValue;
     private int buyValue;
-    private int buyMax;
-    private int buyRate;
-    private int incInv;  // amount to increase max inventory by
-    private int incRate; // amount to increase rate by
+    private int buyMax;       // cost of upgrading max inventory space
+    private int buyRate;      // cost of upgrading rate
+    private int incInv;       // amount to increase max inventory by
+    private int incRate;      // amount to increase rate by
 
 
     // Default Constructor
