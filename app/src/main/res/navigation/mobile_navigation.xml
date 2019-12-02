@@ -7,25 +7,25 @@
 
     <fragment
         android:id="@+id/navigation_gather"
-        android:name="com.example.idlecraft.ui.GatherFragment"
+        android:name="gameplay.GatherFragment"
         android:label="@string/title_gather"
         tools:layout="@layout/fragment_gather" />
 
     <fragment
         android:id="@+id/navigation_craft"
-        android:name="com.example.idlecraft.ui.CraftFragment"
+        android:name="gameplay.CraftFragment"
         android:label="@string/title_craft"
         tools:layout="@layout/fragment_craft" />
 
     <fragment
         android:id="@+id/navigation_shop"
-        android:name="com.example.idlecraft.ui.ShopFragment"
+        android:name="gameplay.ShopFragment"
         android:label="@string/title_shop"
         tools:layout="@layout/fragment_shop" />
 
     <fragment
         android:id="@+id/navigation_inventory"
-        android:name="com.example.idlecraft.ui.InventoryFragment"
+        android:name="gameplay.InventoryFragment"
         android:label="@string/title_inventory"
         tools:layout="@layout/fragment_inventory" />
 </navigation>
