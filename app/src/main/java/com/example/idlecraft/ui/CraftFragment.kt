@@ -123,8 +123,10 @@ class CraftFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_craft, container, false)
         act = activity as MainActivity
+        // set currentFragment to empty string before view is inflated
+        act!!.currentFragment = ""
+        val view = inflater.inflate(R.layout.fragment_craft, container, false)
         act!!.saveInv()
         inv = act!!.inventory
 
@@ -134,7 +136,6 @@ class CraftFragment : Fragment() {
             setupCraftItemListeners(view, it)
         }
 
-        // Update Thread: activate Crafting
         act!!.currentFragment = "craft"
 
         // Thread constantly updates all crafting TextViews to reflect the player's inventory

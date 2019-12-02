@@ -138,8 +138,10 @@ class InventoryFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_inventory, container, false)
         act = activity as MainActivity
+        // set currentFragment to empty string before view is inflated
+        act!!.currentFragment = ""
+        val view = inflater.inflate(R.layout.fragment_inventory, container, false)
         act!!.saveInv()
         inv = act!!.inventory
         val textMoney = view.text_inv_money
@@ -152,7 +154,6 @@ class InventoryFragment : Fragment() {
             setupInvItemListeners(view, it)
         }
 
-        // Update Thread: activate Inventory
         act!!.currentFragment = "inventory"
 
         // Thread constantly updates all inventory TextViews to reflect the player's inventory
