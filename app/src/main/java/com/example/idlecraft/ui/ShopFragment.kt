@@ -153,8 +153,10 @@ class ShopFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_shop, container, false)
         act = activity as MainActivity
+        // set currentFragment to empty string before view is inflated
+        act!!.currentFragment = ""
+        val view = inflater.inflate(R.layout.fragment_shop, container, false)
         act!!.saveInv()
         inv = act!!.inventory
         val textMoney = view.text_shop_money

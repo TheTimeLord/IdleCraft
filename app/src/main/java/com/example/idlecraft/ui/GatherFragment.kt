@@ -91,8 +91,10 @@ class GatherFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_gather, container, false)
         act = activity as MainActivity
+        // set currentFragment to empty string before view is inflated
+        act!!.currentFragment = ""
+        val view = inflater.inflate(R.layout.fragment_gather, container, false)
         act!!.saveInv()
         inv = act!!.inventory
 
@@ -102,7 +104,6 @@ class GatherFragment : Fragment() {
             setupGatherItemListeners(view, it)
         }
 
-        // Update Thread: activate Shop
         act!!.currentFragment = "gather"
 
         // Thread constantly updates all gathering TextViews to reflect the player's inventory
