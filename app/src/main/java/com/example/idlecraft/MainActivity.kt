@@ -159,6 +159,26 @@ class MainActivity : AppCompatActivity() {
 
         Thread(Runnable {
             for (i in 1..amount) {
+                // calculate how many items can be gathered/crafted without exceeding item max
+                var itemInc = item.rate
+                if (item.max - item.count < item.rate) {
+                    itemInc = item.max - item.count
+                }
+
+                // consume crafting materials if item is crafted
+                if (fragmentName == "craft") {
+                    val numCanCraft = inventory.howManyCanCraft(item)
+                    if (numCanCraft < itemInc) itemInc = numCanCraft
+
+                    val reqItem1 = inventory.getItemByName(item.req1)
+                    val reqItem2 = inventory.getItemByName(item.req2)
+                    val reqItem3 = inventory.getItemByName(item.req3)
+
+                    if (reqItem1 != null) reqItem1.decreaseCount(item.reqAmount1 * itemInc)
+                    if (reqItem2 != null) reqItem2.decreaseCount(item.reqAmount2 * itemInc)
+                    if (reqItem3 != null) reqItem3.decreaseCount(item.reqAmount3 * itemInc)
+                }
+
                 for (progress in 1..100) {
                     runOnUiThread {
                         setProgress(progress, itemName, fragmentName)
@@ -166,11 +186,9 @@ class MainActivity : AppCompatActivity() {
                     try { Thread.sleep(gatheringSpeed / 100) }
                     catch (e: InterruptedException) { e.printStackTrace() }
                 }
-                if (item.count + item.rate <= item.max) {
-                    item.increaseCount(item.rate)
-                } else {
-                    item.count = item.max
-                }
+
+                // increase item count in inventory
+                item.increaseCount(itemInc)
             }
             runOnUiThread {
                 setProgress(0, itemName, fragmentName)

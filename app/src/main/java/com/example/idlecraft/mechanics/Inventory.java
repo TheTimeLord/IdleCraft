@@ -86,6 +86,9 @@ public class Inventory {
                 int num = req3.getCount() / item.getReqAmount3();
                 if (num < numCraftableItems) numCraftableItems = num;
             }
+            if (item.getMax() < item.getCount() + numCraftableItems) {
+                numCraftableItems = item.getMax() - item.getCount();
+            }
             return numCraftableItems;
         }
         return 0;
