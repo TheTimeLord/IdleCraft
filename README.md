@@ -16,7 +16,7 @@ IdleCraft is a mobile Android game developed with Android Studio, Kotlin, and Ja
 # User Installation Manual
 IdleCraft does not currently have a deployment outlet. To play IdleCraft, do the following steps in order.  
   1) Download android studio.  
-  2) On android studio's navbar, navigate to VCS->Git->Clone, and clone this repo into android studio.  
+  2) On android studio's navbar, navigate to VCS->Git->Clone, and clone this Github repo into android studio.  
   3) To play on an android emulator, set up a virtual device when building and running.  
   4) To play on a physical android device, connect it to your machine via USB. Note: USB developer settings must be enabled on your   
      android device in order to do so.  
