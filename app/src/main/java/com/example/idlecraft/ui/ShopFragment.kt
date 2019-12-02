@@ -115,18 +115,25 @@ class ShopFragment : Fragment() {
             updateMoneyText(money, inv.money)
         }
 
-        // Buy Rate Button: Increases the amount gathered of an item.
-        buyRateButton.setOnClickListener {
-            // If attempting to buy more than we have money for, buy all we can instead.
-            var actualTradeAmount = tradeAmount
-            if (item.buyRate * tradeAmount >= inv.money)
-                actualTradeAmount = inv.money / item.buyRate
+        // Differentiate between gathered materials and craftables for buy rate button
+        when (item.req1) {
+            null -> {
+                // Buy Rate Button: Increases the amount gathered of an item.
+                buyRateButton.setOnClickListener {
+                    // If attempting to buy more than we have money for, buy all we can instead.
+                    var actualTradeAmount = tradeAmount
+                    if (item.buyRate * tradeAmount >= inv.money)
+                        actualTradeAmount = inv.money / item.buyRate
 
-            item.rate += item.incRate * actualTradeAmount
-            updateRateText(rateAmount, item)
-            inv.money -= item.buyRate * actualTradeAmount
-            updateMoneyText(money, inv.money)
+                    item.rate += item.incRate * actualTradeAmount
+                    updateRateText(rateAmount, item)
+                    inv.money -= item.buyRate * actualTradeAmount
+                    updateMoneyText(money, inv.money)
+                }
+            }
+            else -> {}
         }
+
 
         // Plus Button: increments the trade quantity.
         plusButton.setOnClickListener {
