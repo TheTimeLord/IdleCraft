@@ -161,7 +161,8 @@ class ShopFragment : Fragment() {
         updateMoneyText(textMoney, inv.money)
 
         // Setup UI elements and button listeners
-        val shopItems = arrayOf("sticks", "rocks", "hide", "clay", "metal", "oil", "paper")
+        val shopItems = arrayOf("sticks", "rocks", "hide", "clay", "metal", "oil", "paper","spear",
+                                "sword", "brick", "house", "castle", "lamp", "book")
         shopItems.forEach {
             setupShopItemListeners(view, it)
         }
