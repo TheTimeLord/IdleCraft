@@ -1586,8 +1586,7 @@
             android:id="@+id/module_paper"
             android:layout_width="409dp"
             android:layout_height="170dp"
-            android:layout_marginBottom="80dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/module_spear"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/module_oil">
@@ -1826,6 +1825,1813 @@
 
             <ImageButton
                 android:id="@+id/button_shop_paper_buy_rate"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleX="0.82"
+                android:scaleY="0.82"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.67"
+                app:srcCompat="@drawable/buy_label" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/module_spear"
+            android:layout_width="409dp"
+            android:layout_height="170dp"
+            app:layout_constraintBottom_toTopOf="@id/module_sword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/module_paper">
+
+            <ImageView
+                android:id="@+id/image_shop_spear_background"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:scaleY="1.3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.482"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.512"
+                app:srcCompat="@drawable/stone_wall" />
+
+            <ImageView
+                android:id="@+id/border_shop_spear_inv"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginRight="36dp"
+                android:scaleY="1.6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_spear"
+                app:layout_constraintTop_toTopOf="@+id/image_shop_spear_background"
+                app:layout_constraintVertical_bias="0.165"
+                app:srcCompat="@drawable/red_bar" />
+
+            <ImageView
+                android:id="@+id/border_shop_spear_rate"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginRight="36dp"
+                android:scaleY="1.6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_spear"
+                app:layout_constraintTop_toTopOf="@+id/image_shop_spear_background"
+                app:layout_constraintVertical_bias="0.733"
+                app:srcCompat="@drawable/red_bar" />
+
+            <TextView
+                android:id="@+id/text_shop_spear_inv"
+                android:layout_width="230dp"
+                android:layout_height="25dp"
+                android:background="@drawable/rounded_yellow"
+                android:gravity="bottom|left"
+                android:inputType="none"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:layout_constraintBottom_toBottomOf="@+id/border_shop_spear_inv"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_spear_inv"
+                app:layout_constraintHorizontal_bias="0.36"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_spear"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.38" />
+
+            <TextView
+                android:id="@+id/text_shop_spear_rate"
+                android:layout_width="230dp"
+                android:layout_height="25dp"
+                android:background="@drawable/rounded_yellow"
+                android:gravity="bottom|left"
+                android:inputType="none"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_spear_rate"
+                app:layout_constraintHorizontal_bias="0.36"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_spear"
+                app:layout_constraintTop_toTopOf="@+id/border_shop_spear_rate"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageView
+                android:id="@+id/border_image_shop_spear"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/image_shop_spear_background"
+                app:layout_constraintHorizontal_bias="0.039"
+                app:layout_constraintStart_toStartOf="@+id/image_shop_spear_background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/red_circle" />
+
+            <ImageButton
+                android:id="@+id/image_shop_spear"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/rounded_button"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:layout_constraintBottom_toBottomOf="@id/border_image_shop_spear"
+                app:layout_constraintEnd_toEndOf="@id/border_image_shop_spear"
+                app:layout_constraintStart_toStartOf="@id/border_image_shop_spear"
+                app:layout_constraintTop_toTopOf="@id/border_image_shop_spear"
+                app:srcCompat="@drawable/spear" />
+
+            <ImageView
+                android:id="@+id/border_shop_spear_trade_amount"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.898"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.515"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_shop_spear_trade_amount"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_shop_spear_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_spear_trade_amount"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/border_shop_spear_trade_amount"
+                app:layout_constraintTop_toTopOf="@id/border_shop_spear_trade_amount"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <ImageButton
+                android:id="@+id/button_shop_spear_minus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/minus_button"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_spear_trade_amount"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/border_shop_spear_trade_amount"
+                app:layout_constraintTop_toBottomOf="@+id/text_shop_spear_trade_amount" />
+
+            <ImageButton
+                android:id="@+id/button_shop_spear_plus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/plus_button"
+                app:layout_constraintBottom_toTopOf="@+id/text_shop_spear_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_spear_trade_amount"
+                app:layout_constraintStart_toStartOf="@+id/border_shop_spear_trade_amount" />
+
+            <TextView
+                android:id="@+id/text_shop_spear_inv_price"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginEnd="84dp"
+                android:layout_marginRight="84dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_spear_buy_inv"
+                app:layout_constraintEnd_toEndOf="@+id/button_shop_spear_buy_inv"
+                app:layout_constraintTop_toTopOf="@+id/border_shop_spear_inv"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <TextView
+                android:id="@+id/text_shop_spear_inv_increase"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="88dp"
+                android:layout_marginLeft="88dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_spear_buy_inv"
+                app:layout_constraintStart_toStartOf="@+id/button_shop_spear_buy_inv"
+                app:layout_constraintTop_toTopOf="@+id/border_shop_spear_inv"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageButton
+                android:id="@+id/button_shop_spear_buy_inv"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleX="0.82"
+                android:scaleY="0.82"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.35"
+                app:srcCompat="@drawable/buy_label" />
+
+            <TextView
+                android:id="@+id/text_shop_spear_rate_price"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="84dp"
+                android:layout_marginRight="84dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_spear_buy_rate"
+                app:layout_constraintEnd_toEndOf="@+id/button_shop_spear_buy_rate"
+                app:layout_constraintTop_toTopOf="@+id/button_shop_spear_buy_rate"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/text_shop_spear_rate_increase"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="84dp"
+                android:layout_marginLeft="84dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_spear_buy_rate"
+                app:layout_constraintStart_toStartOf="@+id/button_shop_spear_buy_rate"
+                app:layout_constraintTop_toTopOf="@+id/button_shop_spear_buy_rate" />
+
+            <ImageButton
+                android:id="@+id/button_shop_spear_buy_rate"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleX="0.82"
+                android:scaleY="0.82"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.67"
+                app:srcCompat="@drawable/buy_label" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/module_sword"
+            android:layout_width="409dp"
+            android:layout_height="170dp"
+            app:layout_constraintBottom_toTopOf="@+id/module_brick"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/module_spear">
+
+            <ImageView
+                android:id="@+id/image_shop_sword_background"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:scaleY="1.3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.482"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.512"
+                app:srcCompat="@drawable/stone_wall" />
+
+            <ImageView
+                android:id="@+id/border_shop_sword_inv"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginRight="36dp"
+                android:scaleY="1.6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_sword"
+                app:layout_constraintTop_toTopOf="@+id/image_shop_sword_background"
+                app:layout_constraintVertical_bias="0.15"
+                app:srcCompat="@drawable/red_bar" />
+
+            <ImageView
+                android:id="@+id/border_shop_sword_rate"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginRight="36dp"
+                android:scaleY="1.6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_sword"
+                app:layout_constraintTop_toTopOf="@+id/image_shop_sword_background"
+                app:layout_constraintVertical_bias="0.69"
+                app:srcCompat="@drawable/red_bar" />
+
+            <TextView
+                android:id="@+id/text_shop_sword_inv"
+                android:layout_width="230dp"
+                android:layout_height="25dp"
+                android:background="@drawable/rounded_yellow"
+                android:gravity="bottom|left"
+                android:inputType="none"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:layout_constraintBottom_toBottomOf="@+id/border_shop_sword_inv"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_sword_inv"
+                app:layout_constraintHorizontal_bias="0.36"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_sword"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.38" />
+
+            <TextView
+                android:id="@+id/text_shop_sword_rate"
+                android:layout_width="230dp"
+                android:layout_height="25dp"
+                android:background="@drawable/rounded_yellow"
+                android:gravity="bottom|left"
+                android:inputType="none"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_sword_rate"
+                app:layout_constraintHorizontal_bias="0.36"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_sword"
+                app:layout_constraintTop_toTopOf="@+id/border_shop_sword_rate"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageView
+                android:id="@+id/border_image_shop_sword"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/image_shop_sword_background"
+                app:layout_constraintHorizontal_bias="0.039"
+                app:layout_constraintStart_toStartOf="@+id/image_shop_sword_background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/red_circle" />
+
+            <ImageButton
+                android:id="@+id/image_shop_sword"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/rounded_button"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:layout_constraintBottom_toBottomOf="@id/border_image_shop_sword"
+                app:layout_constraintEnd_toEndOf="@id/border_image_shop_sword"
+                app:layout_constraintStart_toStartOf="@id/border_image_shop_sword"
+                app:layout_constraintTop_toTopOf="@id/border_image_shop_sword"
+                app:srcCompat="@drawable/sword" />
+
+            <ImageView
+                android:id="@+id/border_shop_sword_trade_amount"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.898"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.515"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_shop_sword_trade_amount"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_shop_sword_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_sword_trade_amount"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/border_shop_sword_trade_amount"
+                app:layout_constraintTop_toTopOf="@id/border_shop_sword_trade_amount"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <ImageButton
+                android:id="@+id/button_shop_sword_minus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/minus_button"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_sword_trade_amount"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/border_shop_sword_trade_amount"
+                app:layout_constraintTop_toBottomOf="@+id/text_shop_sword_trade_amount" />
+
+            <ImageButton
+                android:id="@+id/button_shop_sword_plus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/plus_button"
+                app:layout_constraintBottom_toTopOf="@+id/text_shop_sword_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_sword_trade_amount"
+                app:layout_constraintStart_toStartOf="@+id/border_shop_sword_trade_amount" />
+
+            <TextView
+                android:id="@+id/text_shop_sword_inv_price"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginEnd="84dp"
+                android:layout_marginRight="84dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_sword_buy_inv"
+                app:layout_constraintEnd_toEndOf="@+id/button_shop_sword_buy_inv"
+                app:layout_constraintTop_toTopOf="@+id/border_shop_sword_inv"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <TextView
+                android:id="@+id/text_shop_sword_inv_increase"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="84dp"
+                android:layout_marginLeft="84dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_sword_buy_inv"
+                app:layout_constraintStart_toStartOf="@+id/button_shop_sword_buy_inv"
+                app:layout_constraintTop_toTopOf="@+id/border_shop_sword_inv"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageButton
+                android:id="@+id/button_shop_sword_buy_inv"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleX="0.82"
+                android:scaleY="0.82"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.35"
+                app:srcCompat="@drawable/buy_label" />
+
+            <TextView
+                android:id="@+id/text_shop_sword_rate_price"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="84dp"
+                android:layout_marginRight="84dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_sword_buy_rate"
+                app:layout_constraintEnd_toEndOf="@+id/button_shop_sword_buy_rate"
+                app:layout_constraintTop_toTopOf="@+id/button_shop_sword_buy_rate"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/text_shop_sword_rate_increase"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="84dp"
+                android:layout_marginLeft="84dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_sword_buy_rate"
+                app:layout_constraintStart_toStartOf="@+id/button_shop_sword_buy_rate"
+                app:layout_constraintTop_toTopOf="@+id/button_shop_sword_buy_rate" />
+
+            <ImageButton
+                android:id="@+id/button_shop_sword_buy_rate"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleX="0.82"
+                android:scaleY="0.82"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.67"
+                app:srcCompat="@drawable/buy_label" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/module_brick"
+            android:layout_width="409dp"
+            android:layout_height="170dp"
+            app:layout_constraintBottom_toTopOf="@+id/module_house"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/module_sword">
+
+            <ImageView
+                android:id="@+id/image_shop_brick_background"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:scaleY="1.3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.482"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.512"
+                app:srcCompat="@drawable/stone_wall" />
+
+            <ImageView
+                android:id="@+id/border_shop_brick_inv"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginRight="36dp"
+                android:scaleY="1.6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_brick"
+                app:layout_constraintTop_toTopOf="@+id/image_shop_brick_background"
+                app:layout_constraintVertical_bias="0.15"
+                app:srcCompat="@drawable/red_bar" />
+
+            <ImageView
+                android:id="@+id/border_shop_brick_rate"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginRight="36dp"
+                android:scaleY="1.6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_brick"
+                app:layout_constraintTop_toTopOf="@+id/image_shop_brick_background"
+                app:layout_constraintVertical_bias="0.69"
+                app:srcCompat="@drawable/red_bar" />
+
+            <TextView
+                android:id="@+id/text_shop_brick_inv"
+                android:layout_width="230dp"
+                android:layout_height="25dp"
+                android:background="@drawable/rounded_yellow"
+                android:gravity="bottom|left"
+                android:inputType="none"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:layout_constraintBottom_toBottomOf="@+id/border_shop_brick_inv"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_brick_inv"
+                app:layout_constraintHorizontal_bias="0.36"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_brick"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.38" />
+
+            <TextView
+                android:id="@+id/text_shop_brick_rate"
+                android:layout_width="230dp"
+                android:layout_height="25dp"
+                android:background="@drawable/rounded_yellow"
+                android:gravity="bottom|left"
+                android:inputType="none"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_brick_rate"
+                app:layout_constraintHorizontal_bias="0.36"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_brick"
+                app:layout_constraintTop_toTopOf="@+id/border_shop_brick_rate"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageView
+                android:id="@+id/border_image_shop_brick"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/image_shop_brick_background"
+                app:layout_constraintHorizontal_bias="0.039"
+                app:layout_constraintStart_toStartOf="@+id/image_shop_brick_background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/red_circle" />
+
+            <ImageButton
+                android:id="@+id/image_shop_brick"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/rounded_button"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:layout_constraintBottom_toBottomOf="@id/border_image_shop_brick"
+                app:layout_constraintEnd_toEndOf="@id/border_image_shop_brick"
+                app:layout_constraintStart_toStartOf="@id/border_image_shop_brick"
+                app:layout_constraintTop_toTopOf="@id/border_image_shop_brick"
+                app:srcCompat="@drawable/brick" />
+
+            <ImageView
+                android:id="@+id/border_shop_brick_trade_amount"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.898"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.515"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_shop_brick_trade_amount"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_shop_brick_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_brick_trade_amount"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/border_shop_brick_trade_amount"
+                app:layout_constraintTop_toTopOf="@id/border_shop_brick_trade_amount"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <ImageButton
+                android:id="@+id/button_shop_brick_minus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/minus_button"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_brick_trade_amount"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/border_shop_brick_trade_amount"
+                app:layout_constraintTop_toBottomOf="@+id/text_shop_brick_trade_amount" />
+
+            <ImageButton
+                android:id="@+id/button_shop_brick_plus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/plus_button"
+                app:layout_constraintBottom_toTopOf="@+id/text_shop_brick_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_brick_trade_amount"
+                app:layout_constraintStart_toStartOf="@+id/border_shop_brick_trade_amount" />
+
+            <TextView
+                android:id="@+id/text_shop_brick_inv_price"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginEnd="84dp"
+                android:layout_marginRight="84dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_brick_buy_inv"
+                app:layout_constraintEnd_toEndOf="@+id/button_shop_brick_buy_inv"
+                app:layout_constraintTop_toTopOf="@+id/border_shop_brick_inv"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <TextView
+                android:id="@+id/text_shop_brick_inv_increase"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="84dp"
+                android:layout_marginLeft="84dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_brick_buy_inv"
+                app:layout_constraintStart_toStartOf="@+id/button_shop_brick_buy_inv"
+                app:layout_constraintTop_toTopOf="@+id/border_shop_brick_inv"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageButton
+                android:id="@+id/button_shop_brick_buy_inv"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleX="0.82"
+                android:scaleY="0.82"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.35"
+                app:srcCompat="@drawable/buy_label" />
+
+            <TextView
+                android:id="@+id/text_shop_brick_rate_price"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="84dp"
+                android:layout_marginRight="84dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_brick_buy_rate"
+                app:layout_constraintEnd_toEndOf="@+id/button_shop_brick_buy_rate"
+                app:layout_constraintTop_toTopOf="@+id/button_shop_brick_buy_rate"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/text_shop_brick_rate_increase"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="84dp"
+                android:layout_marginLeft="84dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_brick_buy_rate"
+                app:layout_constraintStart_toStartOf="@+id/button_shop_brick_buy_rate"
+                app:layout_constraintTop_toTopOf="@+id/button_shop_brick_buy_rate" />
+
+            <ImageButton
+                android:id="@+id/button_shop_brick_buy_rate"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleX="0.82"
+                android:scaleY="0.82"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.67"
+                app:srcCompat="@drawable/buy_label" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/module_house"
+            android:layout_width="409dp"
+            android:layout_height="170dp"
+            app:layout_constraintBottom_toTopOf="@+id/module_castle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/module_brick">
+
+            <ImageView
+                android:id="@+id/image_shop_house_background"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:scaleY="1.3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.482"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.512"
+                app:srcCompat="@drawable/stone_wall" />
+
+            <ImageView
+                android:id="@+id/border_shop_house_inv"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginRight="36dp"
+                android:scaleY="1.6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_house"
+                app:layout_constraintTop_toTopOf="@+id/image_shop_house_background"
+                app:layout_constraintVertical_bias="0.15"
+                app:srcCompat="@drawable/red_bar" />
+
+            <ImageView
+                android:id="@+id/border_shop_house_rate"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginRight="36dp"
+                android:scaleY="1.6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_house"
+                app:layout_constraintTop_toTopOf="@+id/image_shop_house_background"
+                app:layout_constraintVertical_bias="0.69"
+                app:srcCompat="@drawable/red_bar" />
+
+            <TextView
+                android:id="@+id/text_shop_house_inv"
+                android:layout_width="230dp"
+                android:layout_height="25dp"
+                android:background="@drawable/rounded_yellow"
+                android:gravity="bottom|left"
+                android:inputType="none"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:layout_constraintBottom_toBottomOf="@+id/border_shop_house_inv"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_house_inv"
+                app:layout_constraintHorizontal_bias="0.36"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_house"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.38" />
+
+            <TextView
+                android:id="@+id/text_shop_house_rate"
+                android:layout_width="230dp"
+                android:layout_height="25dp"
+                android:background="@drawable/rounded_yellow"
+                android:gravity="bottom|left"
+                android:inputType="none"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_house_rate"
+                app:layout_constraintHorizontal_bias="0.36"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_house"
+                app:layout_constraintTop_toTopOf="@+id/border_shop_house_rate"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageView
+                android:id="@+id/border_image_shop_house"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/image_shop_house_background"
+                app:layout_constraintHorizontal_bias="0.039"
+                app:layout_constraintStart_toStartOf="@+id/image_shop_house_background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/red_circle" />
+
+            <ImageButton
+                android:id="@+id/image_shop_house"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/rounded_button"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:layout_constraintBottom_toBottomOf="@id/border_image_shop_house"
+                app:layout_constraintEnd_toEndOf="@id/border_image_shop_house"
+                app:layout_constraintStart_toStartOf="@id/border_image_shop_house"
+                app:layout_constraintTop_toTopOf="@id/border_image_shop_house"
+                app:srcCompat="@drawable/house" />
+
+            <ImageView
+                android:id="@+id/border_shop_house_trade_amount"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.898"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.515"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_shop_house_trade_amount"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_shop_house_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_house_trade_amount"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/border_shop_house_trade_amount"
+                app:layout_constraintTop_toTopOf="@id/border_shop_house_trade_amount"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <ImageButton
+                android:id="@+id/button_shop_house_minus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/minus_button"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_house_trade_amount"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/border_shop_house_trade_amount"
+                app:layout_constraintTop_toBottomOf="@+id/text_shop_house_trade_amount" />
+
+            <ImageButton
+                android:id="@+id/button_shop_house_plus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/plus_button"
+                app:layout_constraintBottom_toTopOf="@+id/text_shop_house_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_house_trade_amount"
+                app:layout_constraintStart_toStartOf="@+id/border_shop_house_trade_amount" />
+
+            <TextView
+                android:id="@+id/text_shop_house_inv_price"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginEnd="84dp"
+                android:layout_marginRight="84dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_house_buy_inv"
+                app:layout_constraintEnd_toEndOf="@+id/button_shop_house_buy_inv"
+                app:layout_constraintTop_toTopOf="@+id/border_shop_house_inv"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <TextView
+                android:id="@+id/text_shop_house_inv_increase"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="84dp"
+                android:layout_marginLeft="84dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_house_buy_inv"
+                app:layout_constraintStart_toStartOf="@+id/button_shop_house_buy_inv"
+                app:layout_constraintTop_toTopOf="@+id/border_shop_house_inv"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageButton
+                android:id="@+id/button_shop_house_buy_inv"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleX="0.82"
+                android:scaleY="0.82"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.35"
+                app:srcCompat="@drawable/buy_label" />
+
+            <TextView
+                android:id="@+id/text_shop_house_rate_price"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="84dp"
+                android:layout_marginRight="84dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_house_buy_rate"
+                app:layout_constraintEnd_toEndOf="@+id/button_shop_house_buy_rate"
+                app:layout_constraintTop_toTopOf="@+id/button_shop_house_buy_rate"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/text_shop_house_rate_increase"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="84dp"
+                android:layout_marginLeft="84dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_house_buy_rate"
+                app:layout_constraintStart_toStartOf="@+id/button_shop_house_buy_rate"
+                app:layout_constraintTop_toTopOf="@+id/button_shop_house_buy_rate" />
+
+            <ImageButton
+                android:id="@+id/button_shop_house_buy_rate"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleX="0.82"
+                android:scaleY="0.82"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.67"
+                app:srcCompat="@drawable/buy_label" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/module_castle"
+            android:layout_width="409dp"
+            android:layout_height="170dp"
+            app:layout_constraintBottom_toTopOf="@+id/module_lamp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/module_house">
+
+            <ImageView
+                android:id="@+id/image_shop_castle_background"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:scaleY="1.3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.482"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.512"
+                app:srcCompat="@drawable/stone_wall" />
+
+            <ImageView
+                android:id="@+id/border_shop_castle_inv"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginRight="36dp"
+                android:scaleY="1.6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_castle"
+                app:layout_constraintTop_toTopOf="@+id/image_shop_castle_background"
+                app:layout_constraintVertical_bias="0.15"
+                app:srcCompat="@drawable/red_bar" />
+
+            <ImageView
+                android:id="@+id/border_shop_castle_rate"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginRight="36dp"
+                android:scaleY="1.6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_castle"
+                app:layout_constraintTop_toTopOf="@+id/image_shop_castle_background"
+                app:layout_constraintVertical_bias="0.69"
+                app:srcCompat="@drawable/red_bar" />
+
+            <TextView
+                android:id="@+id/text_shop_castle_inv"
+                android:layout_width="230dp"
+                android:layout_height="25dp"
+                android:background="@drawable/rounded_yellow"
+                android:gravity="bottom|left"
+                android:inputType="none"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:layout_constraintBottom_toBottomOf="@+id/border_shop_castle_inv"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_castle_inv"
+                app:layout_constraintHorizontal_bias="0.36"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_castle"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.38" />
+
+            <TextView
+                android:id="@+id/text_shop_castle_rate"
+                android:layout_width="230dp"
+                android:layout_height="25dp"
+                android:background="@drawable/rounded_yellow"
+                android:gravity="bottom|left"
+                android:inputType="none"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_castle_rate"
+                app:layout_constraintHorizontal_bias="0.36"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_castle"
+                app:layout_constraintTop_toTopOf="@+id/border_shop_castle_rate"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageView
+                android:id="@+id/border_image_shop_castle"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/image_shop_castle_background"
+                app:layout_constraintHorizontal_bias="0.039"
+                app:layout_constraintStart_toStartOf="@+id/image_shop_castle_background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/red_circle" />
+
+            <ImageButton
+                android:id="@+id/image_shop_castle"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/rounded_button"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:layout_constraintBottom_toBottomOf="@id/border_image_shop_castle"
+                app:layout_constraintEnd_toEndOf="@id/border_image_shop_castle"
+                app:layout_constraintStart_toStartOf="@id/border_image_shop_castle"
+                app:layout_constraintTop_toTopOf="@id/border_image_shop_castle"
+                app:srcCompat="@drawable/castle" />
+
+            <ImageView
+                android:id="@+id/border_shop_castle_trade_amount"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.898"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.515"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_shop_castle_trade_amount"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_shop_castle_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_castle_trade_amount"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/border_shop_castle_trade_amount"
+                app:layout_constraintTop_toTopOf="@id/border_shop_castle_trade_amount"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <ImageButton
+                android:id="@+id/button_shop_castle_minus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/minus_button"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_castle_trade_amount"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/border_shop_castle_trade_amount"
+                app:layout_constraintTop_toBottomOf="@+id/text_shop_castle_trade_amount" />
+
+            <ImageButton
+                android:id="@+id/button_shop_castle_plus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/plus_button"
+                app:layout_constraintBottom_toTopOf="@+id/text_shop_castle_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_castle_trade_amount"
+                app:layout_constraintStart_toStartOf="@+id/border_shop_castle_trade_amount" />
+
+            <TextView
+                android:id="@+id/text_shop_castle_inv_price"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginEnd="84dp"
+                android:layout_marginRight="84dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_castle_buy_inv"
+                app:layout_constraintEnd_toEndOf="@+id/button_shop_castle_buy_inv"
+                app:layout_constraintTop_toTopOf="@+id/border_shop_castle_inv"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <TextView
+                android:id="@+id/text_shop_castle_inv_increase"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="84dp"
+                android:layout_marginLeft="84dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_castle_buy_inv"
+                app:layout_constraintStart_toStartOf="@+id/button_shop_castle_buy_inv"
+                app:layout_constraintTop_toTopOf="@+id/border_shop_castle_inv"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageButton
+                android:id="@+id/button_shop_castle_buy_inv"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleX="0.82"
+                android:scaleY="0.82"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.35"
+                app:srcCompat="@drawable/buy_label" />
+
+            <TextView
+                android:id="@+id/text_shop_castle_rate_price"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="84dp"
+                android:layout_marginRight="84dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_castle_buy_rate"
+                app:layout_constraintEnd_toEndOf="@+id/button_shop_castle_buy_rate"
+                app:layout_constraintTop_toTopOf="@+id/button_shop_castle_buy_rate"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/text_shop_castle_rate_increase"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="84dp"
+                android:layout_marginLeft="84dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_castle_buy_rate"
+                app:layout_constraintStart_toStartOf="@+id/button_shop_castle_buy_rate"
+                app:layout_constraintTop_toTopOf="@+id/button_shop_castle_buy_rate" />
+
+            <ImageButton
+                android:id="@+id/button_shop_castle_buy_rate"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleX="0.82"
+                android:scaleY="0.82"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.67"
+                app:srcCompat="@drawable/buy_label" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/module_lamp"
+            android:layout_width="409dp"
+            android:layout_height="170dp"
+            app:layout_constraintBottom_toTopOf="@+id/module_book"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/module_castle">
+
+            <ImageView
+                android:id="@+id/image_shop_lamp_background"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:scaleY="1.3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.482"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.512"
+                app:srcCompat="@drawable/stone_wall" />
+
+            <ImageView
+                android:id="@+id/border_shop_lamp_inv"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginRight="36dp"
+                android:scaleY="1.6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_lamp"
+                app:layout_constraintTop_toTopOf="@+id/image_shop_lamp_background"
+                app:layout_constraintVertical_bias="0.15"
+                app:srcCompat="@drawable/red_bar" />
+
+            <ImageView
+                android:id="@+id/border_shop_lamp_rate"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginRight="36dp"
+                android:scaleY="1.6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_lamp"
+                app:layout_constraintTop_toTopOf="@+id/image_shop_lamp_background"
+                app:layout_constraintVertical_bias="0.69"
+                app:srcCompat="@drawable/red_bar" />
+
+            <TextView
+                android:id="@+id/text_shop_lamp_inv"
+                android:layout_width="230dp"
+                android:layout_height="25dp"
+                android:background="@drawable/rounded_yellow"
+                android:gravity="bottom|left"
+                android:inputType="none"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:layout_constraintBottom_toBottomOf="@+id/border_shop_lamp_inv"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_lamp_inv"
+                app:layout_constraintHorizontal_bias="0.36"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_lamp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.38" />
+
+            <TextView
+                android:id="@+id/text_shop_lamp_rate"
+                android:layout_width="230dp"
+                android:layout_height="25dp"
+                android:background="@drawable/rounded_yellow"
+                android:gravity="bottom|left"
+                android:inputType="none"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_lamp_rate"
+                app:layout_constraintHorizontal_bias="0.36"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_lamp"
+                app:layout_constraintTop_toTopOf="@+id/border_shop_lamp_rate"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageView
+                android:id="@+id/border_image_shop_lamp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/image_shop_lamp_background"
+                app:layout_constraintHorizontal_bias="0.039"
+                app:layout_constraintStart_toStartOf="@+id/image_shop_lamp_background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/red_circle" />
+
+            <ImageButton
+                android:id="@+id/image_shop_lamp"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/rounded_button"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:layout_constraintBottom_toBottomOf="@id/border_image_shop_lamp"
+                app:layout_constraintEnd_toEndOf="@id/border_image_shop_lamp"
+                app:layout_constraintStart_toStartOf="@id/border_image_shop_lamp"
+                app:layout_constraintTop_toTopOf="@id/border_image_shop_lamp"
+                app:srcCompat="@drawable/lamp" />
+
+            <ImageView
+                android:id="@+id/border_shop_lamp_trade_amount"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.898"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.515"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_shop_lamp_trade_amount"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_shop_lamp_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_lamp_trade_amount"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/border_shop_lamp_trade_amount"
+                app:layout_constraintTop_toTopOf="@id/border_shop_lamp_trade_amount"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <ImageButton
+                android:id="@+id/button_shop_lamp_minus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/minus_button"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_lamp_trade_amount"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/border_shop_lamp_trade_amount"
+                app:layout_constraintTop_toBottomOf="@+id/text_shop_lamp_trade_amount" />
+
+            <ImageButton
+                android:id="@+id/button_shop_lamp_plus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/plus_button"
+                app:layout_constraintBottom_toTopOf="@+id/text_shop_lamp_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_lamp_trade_amount"
+                app:layout_constraintStart_toStartOf="@+id/border_shop_lamp_trade_amount" />
+
+            <TextView
+                android:id="@+id/text_shop_lamp_inv_price"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginEnd="84dp"
+                android:layout_marginRight="84dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_lamp_buy_inv"
+                app:layout_constraintEnd_toEndOf="@+id/button_shop_lamp_buy_inv"
+                app:layout_constraintTop_toTopOf="@+id/border_shop_lamp_inv"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <TextView
+                android:id="@+id/text_shop_lamp_inv_increase"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="84dp"
+                android:layout_marginLeft="84dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_lamp_buy_inv"
+                app:layout_constraintStart_toStartOf="@+id/button_shop_lamp_buy_inv"
+                app:layout_constraintTop_toTopOf="@+id/border_shop_lamp_inv"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageButton
+                android:id="@+id/button_shop_lamp_buy_inv"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleX="0.82"
+                android:scaleY="0.82"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.35"
+                app:srcCompat="@drawable/buy_label" />
+
+            <TextView
+                android:id="@+id/text_shop_lamp_rate_price"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="84dp"
+                android:layout_marginRight="84dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_lamp_buy_rate"
+                app:layout_constraintEnd_toEndOf="@+id/button_shop_lamp_buy_rate"
+                app:layout_constraintTop_toTopOf="@+id/button_shop_lamp_buy_rate"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/text_shop_lamp_rate_increase"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="84dp"
+                android:layout_marginLeft="84dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_lamp_buy_rate"
+                app:layout_constraintStart_toStartOf="@+id/button_shop_lamp_buy_rate"
+                app:layout_constraintTop_toTopOf="@+id/button_shop_lamp_buy_rate" />
+
+            <ImageButton
+                android:id="@+id/button_shop_lamp_buy_rate"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleX="0.82"
+                android:scaleY="0.82"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.67"
+                app:srcCompat="@drawable/buy_label" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/module_book"
+            android:layout_width="409dp"
+            android:layout_height="170dp"
+            android:layout_marginBottom="80dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/module_lamp">
+
+            <ImageView
+                android:id="@+id/image_shop_book_background"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:scaleY="1.3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.482"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.512"
+                app:srcCompat="@drawable/stone_wall" />
+
+            <ImageView
+                android:id="@+id/border_shop_book_inv"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginRight="36dp"
+                android:scaleY="1.6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_book"
+                app:layout_constraintTop_toTopOf="@+id/image_shop_book_background"
+                app:layout_constraintVertical_bias="0.15"
+                app:srcCompat="@drawable/red_bar" />
+
+            <ImageView
+                android:id="@+id/border_shop_book_rate"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="36dp"
+                android:layout_marginRight="36dp"
+                android:scaleY="1.6"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_book"
+                app:layout_constraintTop_toTopOf="@+id/image_shop_book_background"
+                app:layout_constraintVertical_bias="0.69"
+                app:srcCompat="@drawable/red_bar" />
+
+            <TextView
+                android:id="@+id/text_shop_book_inv"
+                android:layout_width="230dp"
+                android:layout_height="25dp"
+                android:background="@drawable/rounded_yellow"
+                android:gravity="bottom|left"
+                android:inputType="none"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:layout_constraintBottom_toBottomOf="@+id/border_shop_book_inv"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_book_inv"
+                app:layout_constraintHorizontal_bias="0.36"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_book"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.38" />
+
+            <TextView
+                android:id="@+id/text_shop_book_rate"
+                android:layout_width="230dp"
+                android:layout_height="25dp"
+                android:background="@drawable/rounded_yellow"
+                android:gravity="bottom|left"
+                android:inputType="none"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                android:typeface="sans"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_book_rate"
+                app:layout_constraintHorizontal_bias="0.36"
+                app:layout_constraintStart_toStartOf="@+id/border_image_shop_book"
+                app:layout_constraintTop_toTopOf="@+id/border_shop_book_rate"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageView
+                android:id="@+id/border_image_shop_book"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/image_shop_book_background"
+                app:layout_constraintHorizontal_bias="0.039"
+                app:layout_constraintStart_toStartOf="@+id/image_shop_book_background"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                app:srcCompat="@drawable/red_circle" />
+
+            <ImageButton
+                android:id="@+id/image_shop_book"
+                android:layout_width="76dp"
+                android:layout_height="76dp"
+                android:background="@drawable/rounded_button"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:layout_constraintBottom_toBottomOf="@id/border_image_shop_book"
+                app:layout_constraintEnd_toEndOf="@id/border_image_shop_book"
+                app:layout_constraintStart_toStartOf="@id/border_image_shop_book"
+                app:layout_constraintTop_toTopOf="@id/border_image_shop_book"
+                app:srcCompat="@drawable/book" />
+
+            <ImageView
+                android:id="@+id/border_shop_book_trade_amount"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.898"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.515"
+                app:srcCompat="@drawable/red_button1" />
+
+            <TextView
+                android:id="@+id/text_shop_book_trade_amount"
+                android:layout_width="45dp"
+                android:layout_height="40dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/border_shop_book_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_book_trade_amount"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/border_shop_book_trade_amount"
+                app:layout_constraintTop_toTopOf="@id/border_shop_book_trade_amount"
+                app:layout_constraintVertical_bias="0.5" />
+
+            <ImageButton
+                android:id="@+id/button_shop_book_minus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/minus_button"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_book_trade_amount"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/border_shop_book_trade_amount"
+                app:layout_constraintTop_toBottomOf="@+id/text_shop_book_trade_amount" />
+
+            <ImageButton
+                android:id="@+id/button_shop_book_plus"
+                android:layout_width="53dp"
+                android:layout_height="25dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:src="@drawable/plus_button"
+                app:layout_constraintBottom_toTopOf="@+id/text_shop_book_trade_amount"
+                app:layout_constraintEnd_toEndOf="@+id/border_shop_book_trade_amount"
+                app:layout_constraintStart_toStartOf="@+id/border_shop_book_trade_amount" />
+
+            <TextView
+                android:id="@+id/text_shop_book_inv_price"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginEnd="84dp"
+                android:layout_marginRight="84dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_book_buy_inv"
+                app:layout_constraintEnd_toEndOf="@+id/button_shop_book_buy_inv"
+                app:layout_constraintTop_toTopOf="@+id/border_shop_book_inv"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <TextView
+                android:id="@+id/text_shop_book_inv_increase"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="84dp"
+                android:layout_marginLeft="84dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_book_buy_inv"
+                app:layout_constraintStart_toStartOf="@+id/button_shop_book_buy_inv"
+                app:layout_constraintTop_toTopOf="@+id/border_shop_book_inv"
+                app:layout_constraintVertical_bias="0.55" />
+
+            <ImageButton
+                android:id="@+id/button_shop_book_buy_inv"
+                android:layout_width="100dp"
+                android:layout_height="48dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:scaleX="0.82"
+                android:scaleY="0.82"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.35"
+                app:srcCompat="@drawable/buy_label" />
+
+            <TextView
+                android:id="@+id/text_shop_book_rate_price"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="84dp"
+                android:layout_marginRight="84dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_book_buy_rate"
+                app:layout_constraintEnd_toEndOf="@+id/button_shop_book_buy_rate"
+                app:layout_constraintTop_toTopOf="@+id/button_shop_book_buy_rate"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <TextView
+                android:id="@+id/text_shop_book_rate_increase"
+                android:layout_width="60dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="84dp"
+                android:layout_marginLeft="84dp"
+                android:background="@drawable/square_rounded_green"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:textStyle="bold|italic"
+                app:fontFamily="serif"
+                app:layout_constraintBottom_toBottomOf="@+id/button_shop_book_buy_rate"
+                app:layout_constraintStart_toStartOf="@+id/button_shop_book_buy_rate"
+                app:layout_constraintTop_toTopOf="@+id/button_shop_book_buy_rate" />
+
+            <ImageButton
+                android:id="@+id/button_shop_book_buy_rate"
                 android:layout_width="100dp"
                 android:layout_height="48dp"
                 android:foreground="?android:attr/selectableItemBackground"
